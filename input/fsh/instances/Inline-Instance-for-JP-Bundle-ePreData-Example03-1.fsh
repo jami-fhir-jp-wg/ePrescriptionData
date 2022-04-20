@@ -1,0 +1,28 @@
+Instance: Inline-Instance-for-JP-Bundle-ePreData-Example03-1
+InstanceOf: Composition
+Usage: #inline
+* extension.url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
+* extension.valueString = "1"
+* identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier"
+* identifier.value = "34875506"
+* status = #final
+* type = $doc-typecodes#57833-6 "処方箋"
+* category = $prescription-category#01 "一般処方箋"
+* subject = Reference(urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4) "患者リソースPatient"
+* encounter = Reference(urn:uuid:1b3c3e11-ca7d-4172-aa5e-c76c39bf75e3) "受診Encounterリソース"
+* date = "2020-08-21T12:12:20+09:00"
+* author[0] = Reference(urn:uuid:9b244427-7479-406f-a366-ee083526c74d) "処方作成者PractitionerRoleリソース"
+* author[+] = Reference(urn:uuid:73f5fad9-530c-40b1-856f-c5a46fbad8cd) "処方作成診療科Organaizationリソース"
+* title = "処方箋"
+* custodian = Reference(urn:uuid:9f1993bc-753f-479e-9e01-f0a53929a6fc) "処方箋交付責任機関Organaizationリソース"
+* event.code.text = "処方箋交付"
+* event.period.start = "2020-09-04"
+* section.title = "処方情報"
+* section.code = $prescription-section#01 "処方情報セクション"
+* section.entry[0] = Reference(urn:uuid:01993fc0-9c95-4635-a7d8-b506bc9da534) "健康保険Coverage"
+* section.entry[+] = Reference(urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5) "健康保険者Organaization"
+* section.entry[+] = Reference(urn:uuid:221b1923-e89e-4589-a3b7-5504c6d8d4e4) "公費負担Coverage"
+* section.entry[+] = Reference(urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5) "公費負担者Organaization"
+* section.entry[+] = Reference(urn:uuid:7038d706-ae0c-132b-f397-d2ca328e7afb) "処方指示 内服処方7日分MedicationRequestリソース"
+* section.entry[+] = Reference(urn:uuid:b8d42aea-c98c-4829-b0f1-c8cac0dd9bce) "処方指示 外用点眼MedicationRequestリソース"
+* section.entry[+] = Reference(urn:uuid:163c025e-d276-4134-803b-6eb4472e7164) "調剤者への指示"
