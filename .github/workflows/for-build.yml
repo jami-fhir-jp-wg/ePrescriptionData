@@ -49,7 +49,7 @@ jobs:
 
     - name: Run IG Publisher
       env:
-        PACKAGE: jp-core.draft1#1.0.0
+        PACKAGE: jp-core.draft1#1.0.1-beta
       run: | 
         mkdir input-cache
         mv ./publisherJPFHIR.jar ./input-cache
