@@ -26,6 +26,7 @@ dependencies:
     uri: http://jpfhir.jp/fhir/core/jp-core.draft1
     version: 1.0.1-beta
 
+
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for id, uri, and version.
