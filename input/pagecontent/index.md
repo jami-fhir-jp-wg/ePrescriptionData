@@ -4,7 +4,7 @@ table {
   border: solid 1px black;
   border-collapse: collapse;
 }
-
+ 
 table td {
   border: solid 1px black;
 
@@ -95,6 +95,7 @@ table th {
 などがある。
 本仕様書では、1）の情報だけを扱う。2）から4）の情報は、異なる仕様として別に作成されることを想定している。
 従って、本仕様は、処方箋として交付され電子データとしてデータベース等に蓄積された情報をFHIR準拠の記述データとして作成し、FHIR規格対応のソフトウエアで処理することやFHIRデータサーバに蓄積すること、処方情報作成システム（処方オーダシステム）や電子処方箋作成システムが作成した処方情報をFHIR準拠の記述データとして作成し、別のシステムに伝送したり電子的な診療情報提供書や退院時サマリーに添付するときなどに使用することが想定される。
+
 ## 本仕様の適用範囲外
 本仕様は、上述したように、処方箋情報を1）処方作成、2）調剤、3）服薬指示、4）服用実施・服用記録、といった一連の業務フローにおける記録のなかで使用することを想定して作成されたものではない。そのため、たとえば分割処方調剤の運用に対応した分割処方情報の作成と記録、疑義照会記録、後発医薬品への変更記録や変更不可時の電子署名、調剤時の規格変更や用量、日数の変更記録などには対応していない。
 これらの情報を含めて記述し、業務の中で運用するには、他にもさまざまな仕様の取り決めと運用ルールの作成が必要であり、本仕様書では対応していないことに、十分留意すべきである。繰り返しになるが、電子処方箋のFHIR仕様ではない。
@@ -120,6 +121,7 @@ table th {
 ### 全体構造
 FHIR では、医療情報はFHIRリソースと呼ばれる単位で記述される。処方箋に記述される処方情報は文書形式のデータの一種である。
 FHIRにおけるBundleリソースは、複数のFHIRリソースの集合を、あるコンテクストに関する情報（この場合には、処方箋の作成に関する日付情報や発行者、発行機関情報など）とともにひとまとまりの情報にまとめあげたものを記述するのに使われるFHIRリソースであり、以下のような要素から構成される。あるシステムから別のシステムに処方情報を送信する場合は、このBundleリソースの単位で行われる。
+
 
 <img src="image1.png" width="60%"><br clear="all">
 図1 Bundleリソース
@@ -307,7 +309,7 @@ MedicatonRequestリソースの要素の詳細を表12に示す。
 ＜[仕様表12](ePreTables.html#tbl-12)＞
 表12のNo.14「dosageInstruction」要素は、Dosage型の要素であり、用法や投与量を表す。
 
-dosageInstruction要素の詳細を表13に示す。treeビューとjson形式は表12のそれに含まれる。
+dosageInstruction要素の詳細を表13に示す。
 
 ＜[仕様表13](ePreTables.html#tbl-13)＞
 
@@ -384,45 +386,42 @@ Ratio型は比を扱うデータ型で、分母にあたるdosageInstruction.dos
 投与量「1回1錠（1日3錠）」を製剤量で記述したdosageInstruction要素の記述例を示す。
 ```
 "dosageInstruction": [
-  {
-    "text": "内服・経口・１日３回朝昼夕食後　１回１錠　７日分",
-    （中略）
-    ,
-    "doseAndRate": [
-      {
-        "type": {
-          "coding": [
+    {
+        "text": "内服・経口・１日３回朝昼夕食後　１回１錠　７日分",    （中略）    ,
+        "doseAndRate": [
             {
-              "system": "urn:oid:1.2.392.100495.20.2.22",
-              "code": "1",
-              "display": "製剤量"
+                "type": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:1.2.392.100495.20.2.22",
+                            "code": "1",
+                            "display": "製剤量"
+                        }
+                    ]
+                },
+                "doseQuantity": {
+                    "value": 1,
+                    "unit": "錠",
+                    "system": "urn:oid:1.2.392.100495.20.2.101",
+                    "code": "TAB"
+                },
+                "rateRatio": {
+                    "numerator": {
+                        "value": 3,
+                        "unit": "錠",
+                        "system": "urn:oid:1.2.392.100495.20.2.101",
+                        "code": "TAB"
+                    },
+                    "denominator": {
+                        "value": 1,
+                        "unit": "日",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    }
+                }
             }
-          ]
-        },
-        "doseQuantity": {
-          "value": 1,
-          "unit": "錠",
-          "system": "urn:oid:1.2.392.100495.20.2.101",
-          "code": "TAB"
-        },
-        "rateRatio": {
-          "numerator": {
-            "value": 3,
-            "unit": "錠",
-            "system": "urn:oid:1.2.392.100495.20.2.101",
-            "code": "TAB"
-          },
-          "denominator": {
-            "value": 1,
-            "unit": "日",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
-          }
-        }
-      }
-    ]
-  }
-
+        ]
+    }
 
 ```
 
@@ -444,7 +443,7 @@ Timingデータ型のrepeat.boundsDuration要素を記述したdosageInstruction
 "dosageInstruction": [
     {
         "text": "内服・経口・１日３回朝昼夕食後　１回１錠　７日分",
-　　　"timing": {
+        "timing": {
             "repeat": {
                 "boundsDuration": {
                     "value": 7,
@@ -453,17 +452,17 @@ Timingデータ型のrepeat.boundsDuration要素を記述したdosageInstruction
                     "code": "d"
                 }
             },
-      　　"extension": [
-          {
-         　　"url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration",
-            　"valueDuration": {
-              "value": 7,
-            　"unit": "日",
-              "system": "http://unitsofmeasure.org",
-              "code": "d"
-              }
-            }
-         ],
+            "extension": [
+                {
+                    "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration",
+                    "valueDuration": {
+                        "value": 7,
+                        "unit": "日",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    }
+                }
+            ],
             "code": {
                 "coding": [
                     {
@@ -474,20 +473,23 @@ Timingデータ型のrepeat.boundsDuration要素を記述したdosageInstruction
                 ]
             }
         },
-      ＜中略＞
+              ＜中略＞
+    }
+]
 
 ```
 
 ######   投与開始日
-期間指定など投与開始日を明示する必要がある場合には、MedicationRequestリソースに対して本文書で定義した拡張「JP_MedicationRequestd_DosageInstruction_PeriodOfUse」を使用し、Period型で開始日を記録する。記述例を示す。
+期間指定など投与開始日を明示する必要がある場合には、MedicationRequestリソースに対して本文書で定義した拡張「JP_MedicationRequest_PeriodOfUse」を使用し、Period型で開始日を記録する。記述例を示す。
+
 ```
 "extension": [
-  {
-    "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestd_DosageInstruction_PeriodOfUse",
-    "valuePeriod": {
-      "start": "2020-04-01"
+    {
+        "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestd_DosageInstruction_PeriodOfUse",
+        "valuePeriod": {
+            "start": "2020-04-01"
+        }
     }
-  }
 ]
 ```
 
@@ -495,18 +497,18 @@ Timingデータ型のrepeat.boundsDuration要素を記述したdosageInstruction
 MedicationRequestリソースのdispenseRequest.quantityに、SimpleQuantity型で記録する。単位コードには、投与量と同様に医薬品単位略号（urn:oid:1.2.392.100495.20.2.101）を使用する。21錠（1日3錠×7日分）を調剤する場合の記述例を以下に示す。
 ```
 "dispenseRequest": {
-  "quantity": {
-    "value": 21,
-    "unit": "錠",
-    "system": "urn:oid:1.2.392.100495.20.2.101",
-    "code": "TAB"
-  },
-  "expectedSupplyDuration": {
-    "value": 7,
-    "unit": "日",
-    "system": "http://unitsofmeasure.org",
-    "code": "d"
-  }
+    "quantity": {
+        "value": 21,
+        "unit": "錠",
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "TAB"
+    },
+    "expectedSupplyDuration": {
+        "value": 7,
+        "unit": "日",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+    }
 }
 ```
 
@@ -514,16 +516,16 @@ MedicationRequestリソースのdispenseRequest.quantityに、SimpleQuantity型�
 例えば「1回2錠、5回分（10錠）」など、頓用の場合に錠数ではなく回数で調剤量を表現したい場合には、dispenseRequest要素に対して本文書で定義した拡張「JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount」(http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount)を使用し、以下のように記録する。
 ```
 "dispenseRequest": {
-  "extension": {
-    "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount",
-    "valueInterger": 5
-  },
-  "quantity": {
-    "value": 10,
-    "unit": "錠",
-    "system": "urn:oid:1.2.392.100495.20.2.101",
-    "code": "TAB"
-  }
+    "extension": {
+        "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount",
+        "valueInterger": 5
+    },
+    "quantity": {
+        "value": 10,
+        "unit": "錠",
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "TAB"
+    }
 }
 ```
 
@@ -532,18 +534,18 @@ MedicationRequestリソースのdispenseRequest.expectedSupplyDuration 要素に
 調剤日数の記述例を示す。
 ```
 "dispenseRequest": {
-  "quantity": {
-    "value": 21,
-    "unit": "錠",
-    "system": "urn:oid:1.2.392.100495.20.2.101",
-    "code": "TAB"
-  },
-  "expectedSupplyDuration": {
-    "value": 7,
-    "unit": "日",
-    "system": "http://unitsofmeasure.org",
-    "code": "d"
-  }
+    "quantity": {
+        "value": 21,
+        "unit": "錠",
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "TAB"
+    },
+    "expectedSupplyDuration": {
+        "value": 7,
+        "unit": "日",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+    }
 }
 
 ```
@@ -602,23 +604,23 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 以下に、用法「1日3回 毎食後7日分」を表現する記述例を示す。
 ```
 "timing": {
-  "repeat": {
-    "boundsDuration": {
-      "value": 7,
-      "unit": "日",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
+    "repeat": {
+        "boundsDuration": {
+            "value": 7,
+            "unit": "日",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "1013044400000000",
+                "display": "内服・経口・１日３回朝昼夕食後"
+            }
+        ]
     }
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "1013044400000000",
-        "display": "内服・経口・１日３回朝昼夕食後"
-      }
-    ]
-  }
 }
 ```
 
@@ -629,23 +631,23 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 用法「1日3回 8時間毎 7日分」を表現する記述例を示す。
 ```
 "timing": {
-  "repeat": {
-    "boundsDuration": {
-      "value": 7,
-      "unit": "日",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
+    "repeat": {
+        "boundsDuration": {
+            "value": 7,
+            "unit": "日",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "1023000000000000",
+                "display": "内服・経口・１日３回８時間毎"
+            }
+        ]
     }
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "1023000000000000",
-        "display": "内服・経口・１日３回８時間毎"
-      }
-    ]
-  }
 }
 ```
 
@@ -654,25 +656,26 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 
 MedicationRequestリソースのdosageInstruction.timing.code要素 に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の 「5.3　1日回数と服用時刻を明示した内服用法」 を参照のこと。
 用法「1日3回 8時、15時、21時 7日分」を表現する記述例を示す。
+
 ```
 "timing": {
-  "repeat": {
-    "boundsDuration": {
-      "value": 7,
-      "unit": "日",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
+    "repeat": {
+        "boundsDuration": {
+            "value": 7,
+            "unit": "日",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "1033IPV000000000",
+                "display": "内服・経口・１日３回８時、１５時、２１時"
+            }
+        ]
     }
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "1033IPV000000000",
-        "display": "内服・経口・１日３回８時、１５時、２１時"
-      }
-    ]
-  }
 }
 
 ```
@@ -683,15 +686,15 @@ MedicationRequestリソースのdosageInstruction.timing.code要素 に Codeable
 「1日3回 哺乳時」を表現する記述例を示す。
 ```
 "timing": {
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "1043B70000000000",
-        "display": "内服・経口・１日３回哺乳時"
-      }
-    ]
-  }
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "1043B70000000000",
+                "display": "内服・経口・１日３回哺乳時"
+            }
+        ]
+    }
 }
 ```
 
@@ -703,15 +706,15 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 用法「1日2回 朝と就寝前 塗布」を表現する記述例を示す。
 ```
 "timing": {
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "2B62100900000000",
-        "display": "外用・塗布・１日２回朝と就寝前"
-      }
-    ]
-  }
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "2B62100900000000",
+                "display": "外用・塗布・１日２回朝と就寝前"
+            }
+        ]
+    }
 }
 ```
 
@@ -722,23 +725,23 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 用法「1日1～2回 塗布 7日分」を表現する記述例を示す。
 ```
 "timing": {
-  "repeat": {
-    "boundsDuration": {
-      "value": 7,
-      "unit": "日",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
+    "repeat": {
+        "boundsDuration": {
+            "value": 7,
+            "unit": "日",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "2B71200000000000",
+                "display": "外用・塗布・１日１～２回"
+            }
+        ]
     }
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "2B71200000000000",
-        "display": "外用・塗布・１日１～２回"
-      }
-    ]
-  }
 }
 ```
 
@@ -749,23 +752,23 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 用法「4～6時間ごと 塗布 7日分」を表現する記述例を示す。
 ```
 "timing": {
-  "repeat": {
-    "boundsDuration": {
-      "value": 7,
-      "unit": "日",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
+    "repeat": {
+        "boundsDuration": {
+            "value": 7,
+            "unit": "日",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                "code": "2B84600000000000",
+                "display": "外用・塗布・４～６時間毎"
+            }
+        ]
     }
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.200250.2.2.20.20",
-        "code": "2B84600000000000",
-        "display": "外用・塗布・４～６時間毎"
-      }
-    ]
-  }
 }
 ```
 
@@ -774,39 +777,42 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 ある状況になったときに服用を指示する頓用と呼ばれる指示に使用する。
 MedicationRequestリソースのdosageInstruction.timing.code 要素に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の「 5.5　頓用型の内服用法」を参照のこと。
 さらに、頓用であることを明示するために、dosageInstruction.asNeededBoolean 要素に true を指定する。
-以下に、用法「疼痛時 1回2錠 5回分」を表現する記述例を示す。「5回分」という情報を表すために、「6.9.3.2 内服薬 ５)調剤量」に示した拡張「ExpectedRepeatCount」（http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount）をdispenseRequest. extensionで使用してvalueInteger要素に値5を指定する。
+以下に、用法「疼痛時 1回2錠 5回分」を表現する記述例を示す。「5回分」という情報を表すために、「6.9.3.2** **内服薬 ５)調剤量」に示した拡張「ExpectedRepeatCount」（http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount）をdispenseRequest. extensionで使用してvalueInteger要素に値5を指定する。
 
 ```
 "dosageInstruction": [
     {
-      "text": "内服・経口・疼痛時　１回２錠　５回分",
-      "timing": {
-        "code": {
-          "coding": [
-            {
-              "system": "urn:oid:1.2.392.200250.2.2.20.20",
-              "code": "1050110000000000",
-              "display": "内服・経口・疼痛時"
+        "text": "内服・経口・疼痛時　１回２錠　５回分",
+        "timing": {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                        "code": "1050110000000000",
+                        "display": "内服・経口・疼痛時"
+                    }
+                ]
             }
-          ]
+        },
+        "asNeededBoolean": true,
+        :　(中略)
+    }
+],
+"dispenseRequest": {
+    "extension": [
+        {
+            "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount",
+            "valueInteger": 5
         }
-      },
-      "asNeededBoolean": true,
-      :　(中略)
-    } ],
- "dispenseRequest": {
-     "extension": [ {
-        "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount",
-        "valueInteger": 5
-      } ],
-      "quantity": {
-      　 "value": 10,
+    ],
+    "quantity": {
+        "value": 10,
         "unit": "錠",
-         "system": "urn:oid:1.2.392.100495.20.2.101",
-         "code": "TAB"
-      },
-  },
-　　:　(以下省略)
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "TAB"
+    },
+},
+:　(以下省略)
 ```
 
 ######   頓用型の外用用法
@@ -817,39 +823,48 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 ```
 "dosageInstruction": [
     {
-      "text": "かゆいとき患部に塗布",
-      "timing": {
-        "code": {
-          "coding": [
-            {
-              "system": "urn:oid:1.2.392.200250.2.2.20.20",
-              "code": "2B50810000000000",
-              "display": "外用・塗布・かゆいとき"
+        "text": "かゆいとき患部に塗布",
+        "timing": {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                        "code": "2B50810000000000",
+                        "display": "外用・塗布・かゆいとき"
+                    }
+                ]
             }
-          ]
+        },
+        "asNeededBoolean": true,
+        "site": {
+            "coding": [
+                {
+                    "system": "urn:oid:1.2.392.200250.2.2.20.32",
+                    "code": "AA0",
+                    "display": "患部"
+                }
+            ]
+        },
+        "method": {
+            "coding": [
+                {
+                    "system": "urn:oid:1.2.392.200250.2.2.20.40",
+                    "code": "2B",
+                    "display": "塗布"
+                }
+            ]
         }
-      },
-      "asNeededBoolean": true,
-      "site": {
-        "coding": [
-          {
-            "system": "urn:oid:1.2.392.200250.2.2.20.32",
-            "code": "AA0",
-            "display": "患部"
-          }
-        ]
-      },
-      
-      "method": {
-        "coding": [
-          {
-            "system": "urn:oid:1.2.392.200250.2.2.20.40",
-            "code": "2B",
-            "display": "塗布"
-          }
-        ]
-      }
     }
+],
+"dispenseRequest": {
+    "quantity": {
+        "value": 1,
+        "unit": "本",
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "HON"
+    }
+},
+
 ```
 
 
@@ -858,7 +873,7 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 
 #####   １回用法の例
 朝食後に4錠、昼食後2錠、夕食後1錠、合計1日投与量7錠であることを1回用法で３つの剤グループで表現したインスタンスの例である。それぞれの剤グループの表現方法は「6.9.4.1 定時用法」に従う。
-<p>[例14 不均等投与インスタンス例（１回ごと記述）</p>
+<p>[例14 1)不均等投与インスタンス例（１回ごと記述）</p>
 
 * ＜[1)1回目](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTime01.html)＞
 * ＜[2)2回目](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes02.html)＞
@@ -874,7 +889,7 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 #####     隔日投与
 隔日投与など、連続して服用する日数と、その後の連続して休薬する日数を指定する方法。
 
-MedicationRequestリソースのdosageInstruction.timing.code 要素に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。さらに、dosageInstruction.timing.additionalInstruction要素に、CodeableConcept型で、JAMI標準「処方・注射オーダ標準用法規格」 8桁補足用法コード（urn:oid:1.2.392.200250.2.2.20.22）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の 「8.1　日数間隔指定」 を参照のこと。
+MedicationRequestリソースのdosageInstruction.timing.code 要素に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。さらに、dosageInstruction.timing.additionalInstrunction要素に、CodeableConcept型で、JAMI標準「処方・注射オーダ標準用法規格」 8桁補足用法コード（urn:oid:1.2.392.200250.2.2.20.22）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の 「8.1　日数間隔指定」 を参照のこと。
 用法「1日3回 朝昼夕食後 1回1錠 7日分（隔日投与）」をJAMI標準用法コード、及び、補足用法コードで表現した記述例を示す。
 
 ＜[例16　隔日投与のインスタンス例](MedicationRequest-JP-MedReq-ePreData-Example-kakujitsu.html)＞
@@ -925,48 +940,47 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 薬剤単位の調剤指示を表すdispenseRequestの記述例を示す。
 ```
 "dispenseRequest": {
-  "extension": [
-    {
-      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense",
-      "extension": [
+    "extension": [
         {
-           "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "C",
-                "system": "urn:oid:1.2.392.200250.2.2.30.10",
-                "display": "粉砕指示"
-              }
+            "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense",
+            "extension": [
+                {
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "code": "C",
+                                "system": "urn:oid:1.2.392.200250.2.2.30.10",
+                                "display": "粉砕指示"
+                            }
+                        ]            text: "嚥下障害のため、上記粉砕指示"
+                    }
+                }
             ]
-            text: "嚥下障害のため、上記粉砕指示"
-          }
         }
-      ]
+    ],
+    "quantity": {
+        "value": 21,
+        "unit": "錠",
+        "system": "urn:oid:1.2.392.100495.20.2.101",
+        "code": "TAB"
+    },
+    "expectedSupplyDuration": {
+        "value": 7,
+        "unit": "日",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
     }
-  ],
-  "quantity": {
-    "value": 21,
-    "unit": "錠",
-    "system": "urn:oid:1.2.392.100495.20.2.101",
-    "code": "TAB"
-  },
-  "expectedSupplyDuration": {
-    "value": 7,
-    "unit": "日",
-    "system": "http://unitsofmeasure.org",
-    "code": "d"
-  }
 },
 "substitution": {
-  "allowedCodeableConcept": {
-    "coding": [
-      {
-        "system": "urn:oid:1.2.392.100495.20.2.41",
-        "code": "0",
-        "display": "変更可"
-      }
-    ]
-  }
+    "allowedCodeableConcept": {
+        "coding": [
+            {
+                "system": "urn:oid:1.2.392.100495.20.2.41",
+                "code": "0",
+                "display": "変更可"
+            }
+        ]
+    }
 }
 ```
 
@@ -976,29 +990,30 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 Communicationリソースは、後述する処方箋備考や残薬確認指示でも使用する。そのため、Communicationリソースのcategory要素に指定するコード（http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category）から「2:調剤者への指示」を指定することで、Communicationリソースが表現する内容が調剤者への指示であることを識別する。複数の指示を指定する場合は、Communicationリソース単位で繰り返す。
 
 処方箋全体にかかわる調剤指示を表現するCommunicationリソースの記述例を示す。
+
 ```
 "resource": {
-  "resourceType": "Communication",
-  "extension": [
-    {
-      "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_CommunicationContent",
-      "extension": [
+    "resourceType": "Communication",
+    "extension": [
         {
-          "url": "TextContent",
-          "valueString": "Rp01. 1回量が9mLなので、 水を1mL加え、1回量を10mLとする。"
+            "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_CommunicationContent",
+            "extension": [
+                {
+                    "url": "TextContent",
+                    "valueString": "Rp01. 1回量が9mLなので、 水を1mL加え、1回量を10mLとする。"
+                }
+            ]
         }
-      ]
+    ],
+    "category": {
+        "coding": [
+            {
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+                "code": "2",
+                "display": "調剤者への指示"
+            }
+        ]
     }
-  ],
-  "category": {
-    "coding": [
-      {
-        "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
-        "code": "2",
-        "display": "調剤者への指示"
-      }
-    ]
-  }
 }
 ```
 
@@ -1051,27 +1066,27 @@ Communicationリソース、category要素には、このリソースが処方�
 以下に、テキストによる備考のみを含む記述例を示す。
 ```
 "resource": {
-  "resourceType": "Communication",
-  "extension": [
-    {
-      "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_CommunicationContent",
-      "extension": [
+    "resourceType": "Communication",
+    "extension": [
         {
-          "url": "TextContent",
-          "valueString": "定期的に肝機能検査実施。特に異常なし。"
+            "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_CommunicationContent",
+            "extension": [
+                {
+                    "url": "TextContent",
+                    "valueString": "定期的に肝機能検査実施。特に異常なし。"
+                }
+            ]
         }
-      ]
+    ],
+    "category": {
+        "coding": [
+            {
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+                "code": "1",
+                "display": "処方箋備考"
+            }
+        ]
     }
-  ],
-  "category": {
-    "coding": [
-      {
-        "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
-        "code": "1",
-        "display": "処方箋備考"
-      }
-    ]
-  }
 }
 ```
 ###   残薬確認指示
@@ -1079,33 +1094,33 @@ Communicationリソース、category要素には、このリソースが処方�
 Communicationの記述例を示す。
 ```
 "resource": {
-  "resourceType": "Communication",
-  "extension": {
-    "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/CommunicationContent",
-    "extension": [
-      {
-        "url": "CodedContent",
-        "valueCodeableConcept": {
-          "coding": [
+    "resourceType": "Communication",
+    "extension": {
+        "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/CommunicationContent",
+        "extension": [
             {
-              "system": "urn:oid:1.2.392.100495.20.2.42",
-              "code": "1",
-              "display": "疑義照会の上調剤"
+                "url": "CodedContent",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:1.2.392.100495.20.2.42",
+                            "code": "1",
+                            "display": "疑義照会の上調剤"
+                        }
+                    ]
+                }
             }
-          ]
-        }
-      }
-    ]
-  },
-  "category": {
-    "coding": [
-      {
-        "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
-        "code": "3",
-        "display": "残薬確認指示"
-      }
-    ]
-  }
+        ]
+    },
+    "category": {
+        "coding": [
+            {
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+                "code": "3",
+                "display": "残薬確認指示"
+            }
+        ]
+    }
 }
 ```
 
@@ -1113,6 +1128,7 @@ Communicationの記述例を示す。
 分割指示に係わる処方箋は、分割の1回分に対応するBundleリソースを、全体のヘッダ（分割処方箋の別紙）に相当するBundleリソースで束ねる構造をとる。
 分割処方箋の別紙に相当するBundleリソースには、分割処方箋セクションと別紙セクションの2つのセクションを含むCompositionリソースが含まれる。そのCompositionリソースからは、患者を表すPatientリソースや、分割処方箋の作成医であるPractitionerRoleリソースが参照される。
 個々の処方箋に対応するBundleリソースは、分割処方箋セクションのentryとして参照される。別紙セクションは、発行保健医療機関を表すOrganizationリソースを含む。（図 5）
+
 
 <img src="image5.png" width="60%"><br clear="all">
 図 5 分割処方箋の構造
