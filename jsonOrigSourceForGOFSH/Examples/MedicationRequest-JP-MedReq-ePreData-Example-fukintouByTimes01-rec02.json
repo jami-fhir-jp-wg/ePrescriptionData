@@ -24,7 +24,7 @@
     "medicationCodeableConcept": {
         "coding": [
             {
-                "system": "urn:oid: 1.2.392.200119.4.403.1",
+                "system": "urn:oid:1.2.392.200119.4.403.1",
                 "code": "105271807",
                 "display": "プレドニン錠５ｍｇ"
             }
