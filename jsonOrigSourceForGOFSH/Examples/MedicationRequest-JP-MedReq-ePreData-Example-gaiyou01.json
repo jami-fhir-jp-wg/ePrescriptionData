@@ -1,0 +1,132 @@
+{
+  "resourceType": "MedicationRequest",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>RP:1</li><li>チモプトール点眼薬０．２５％　５ｍＬ</li><li>　外用・点眼・１日３回　２本、１回１滴（右眼）、1回２滴（左眼）</li></ul></div>"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.81",
+      "value": "1"
+    },
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.82",
+      "value": "1"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.392.200119.4.403.1",
+        "code": "102094601",
+        "display": "チモプトール点眼薬０．２５％　５ｍＬ"
+      }
+    ],
+    "text": "チモプトール点眼薬０．２５％５ｍＬ"
+  },
+  "subject": {
+    "reference": "urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f"
+  },
+  "authoredOn": "2020-08-21T12:28:17+09:00",
+  "dosageInstruction": [
+    {
+      "text": "外用・点眼・１日３回　１回１滴（右眼）",
+      "timing": {
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.200250.2.2.20.20",
+              "code": "2H73000000000000",
+              "display": "外用・点眼・１日３回"
+            }
+          ]
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.392.200250.2.2.20.32",
+            "code": "26R",
+            "display": "右眼"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:oid:1.2.392.100495.20.2.22",
+                "code": "1",
+                "display": "製剤量"
+              }
+            ]
+          },
+          "doseQuantity": {
+            "value": 1,
+            "unit": "滴",
+            "system": "urn:oid:1.2.392.100495.20.2.101",
+            "code": "DROP"
+          }
+        }
+      ]
+    },
+    {
+      "text": "外用・点眼・１日３回　１回２滴（左眼）",
+      "timing": {
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.200250.2.2.20.20",
+              "code": "2H73000000000000",
+              "display": "外用・点眼・１日３回"
+            }
+          ]
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.392.200250.2.2.20.32",
+            "code": "26L",
+            "display": "左眼"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:oid:1.2.392.100495.20.2.22",
+                "code": "1",
+                "display": "製剤量"
+              }
+            ]
+          },
+          "doseQuantity": {
+            "value": 2,
+            "unit": "滴",
+            "system": "urn:oid:1.2.392.100495.20.2.101",
+            "code": "DROP"
+          }
+        }
+      ],
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 2,
+      "unit": "本",
+      "system": "urn:oid:1.2.392.100495.20.2.101",
+      "code": "HON"
+    }
+  }
+}

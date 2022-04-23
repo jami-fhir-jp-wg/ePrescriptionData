@@ -19,4 +19,4 @@ Usage: #example
 * birthDate = "1920-02-11"
 * address.text = "神奈川県横浜市港区１－２－３"
 * address.postalCode = "123-4567"
-* address.country = "JP"
+* address.country = "JP"    

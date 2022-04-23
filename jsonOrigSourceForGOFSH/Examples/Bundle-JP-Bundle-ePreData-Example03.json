@@ -1,0 +1,875 @@
+{
+  "resourceType": "Bundle",
+  "id": "JP-Bundle-ePreData-Example03",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
+  },
+  "type": "document",
+  "timestamp": "2020-08-21T12:12:21+09:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:e555a9a4-e60a-4825-8388-19a4f63ad18b",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+          }
+        ],
+        "identifier": {
+          "system": "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier",
+          "value": "34875506"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "code": "57833-6",
+              "system": "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes",
+              "display": "処方箋"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "01",
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category",
+                "display": "一般処方箋"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+          "display": "患者リソースPatient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:1b3c3e11-ca7d-4172-aa5e-c76c39bf75e3",
+          "display": "受診Encounterリソース"
+        },
+        "date": "2020-08-21T12:12:20+09:00",
+        "author": [
+          {
+            "reference": "urn:uuid:9b244427-7479-406f-a366-ee083526c74d",
+            "display": "処方作成者PractitionerRoleリソース"
+          },
+          {
+            "reference": "urn:uuid:73f5fad9-530c-40b1-856f-c5a46fbad8cd",
+            "display": "処方作成診療科Organaizationリソース"
+          }
+        ],
+        "title": "処方箋",
+        "custodian": {
+          "reference": "urn:uuid:9f1993bc-753f-479e-9e01-f0a53929a6fc",
+          "display": "処方箋交付責任機関Organaizationリソース"
+        },
+        "event": [
+          {
+            "code": [
+              {
+                "text": "処方箋交付"
+              }
+            ],
+            "period": {
+              "start": "2020-09-04"
+            }
+          }
+        ],
+        "section": [
+          {
+            "title": "処方情報",
+            "code": {
+              "coding": [
+                {
+                  "code": "01",
+                  "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section",
+                  "display": "処方情報セクション"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:01993fc0-9c95-4635-a7d8-b506bc9da534",
+                "display": "健康保険Coverage"
+              },
+              {
+                "reference": "urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5",
+                "display": "健康保険者Organaization"
+              },
+              {
+                "reference": "urn:uuid:221b1923-e89e-4589-a3b7-5504c6d8d4e4",
+                "display": "公費負担Coverage"
+              },
+              {
+                "reference": "urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5",
+                "display": "公費負担者Organaization"
+              },
+              {
+                "reference": "urn:uuid:7038d706-ae0c-132b-f397-d2ca328e7afb",
+                "display": "処方指示 内服処方7日分MedicationRequestリソース"
+              },
+              {
+                "reference": "urn:uuid:b8d42aea-c98c-4829-b0f1-c8cac0dd9bce",
+                "display": "処方指示 外用点眼MedicationRequestリソース"
+              },
+              {
+                "reference": "urn:uuid:163c025e-d276-4134-803b-6eb4472e7164",
+                "display": "調剤者への指示"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-2",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.51.11311234567",
+            "value": "00000010"
+          }
+        ],
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "use": "official",
+            "text": "東京　太郎",
+            "family": "東京",
+            "given": [
+              "太郎"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "use": "official",
+            "text": "トウキョウ　タロウ",
+            "family": "トウキョウ",
+            "given": [
+              "タロウ"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1920-02-11",
+        "address": [
+          {
+            "text": "神奈川県横浜市港区１－２－３",
+            "postalCode": "123-4567",
+            "country": "JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1b3c3e11-ca7d-4172-aa5e-c76c39bf75e3",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-3",
+        "status": "finished",
+        "class": {
+          "code": "AMB",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "外来"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:01993fc0-9c95-4635-a7d8-b506bc9da534",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-4",
+        "extension": [
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol",
+            "valueString": "12345"
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonNumber",
+            "valueString": "６７８９０"
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSubNumber",
+            "valueString": "01"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "1",
+              "system": "urn:oid:1.2.392.100495.20.2.61"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+          "display": "患者Patientリソース"
+        },
+        "dependent": "01",
+        "relationship": {
+          "coding": [
+            {
+              "code": "1",
+              "system": "urn:oid:1.2.392.100495.20.2.62",
+              "display": "被保険者"
+            }
+          ]
+        },
+        "period": {
+          "start": "2018-04-01"
+        },
+        "payor": [
+          {
+            "reference": "urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5",
+            "display": "保険者Organizationリソース"
+          }
+        ],
+        "costToBeneficiary": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "copaypct",
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-copay-type",
+                  "display": "負担率"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 30,
+              "code": "%",
+              "system": "http://unitsofmeasure.org",
+              "unit": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:221b1923-e89e-4589-a3b7-5504c6d8d4e4",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-5",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "8",
+              "system": "urn:oid:1.2.392.100495.20.2.61"
+            }
+          ]
+        },
+        "subscriberId": "12345678",
+        "beneficiary": {
+          "reference": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+          "display": "患者Patientリソース"
+        },
+        "period": {
+          "start": "2020-01-01",
+          "end": "2020-12-31"
+        },
+        "payor": [
+          {
+            "reference": "urn:uuid:cbeaffaf-984a-458a-93ea-7e3603381612",
+            "display": "公費負担者Organization"
+          }
+        ],
+        "order": 1,
+        "costToBeneficiary": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "copaypct",
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-copay-type",
+                  "display": "負担率"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 10,
+              "code": "%",
+              "system": "http://unitsofmeasure.org",
+              "unit": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fd6b178f-e3d6-4609-8dc9-b20e842001a5",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-6",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.61",
+            "value": "06123456"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "ins",
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+              }
+            ]
+          }
+        ],
+        "name": "サンプル健康保険組合"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cbeaffaf-984a-458a-93ea-7e3603381612",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-7",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.71",
+            "value": "94733"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "other",
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+              }
+            ]
+          }
+        ],
+        "name": "神奈川県横浜市"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9f1993bc-753f-479e-9e01-f0a53929a6fc",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-8",
+        "extension": [
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo",
+            "valueIdentifier": {
+              "system": "urn:oid:1.2.392.100495.20.3.21",
+              "value": "13"
+            }
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationCategory",
+            "valueIdentifier": {
+              "system": "urn:oid:1.2.392.100495.20.3.22",
+              "value": "1"
+            }
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo",
+            "valueIdentifier": {
+              "system": "urn:oid:1.2.392.100495.20.3.23",
+              "value": "1234567"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no",
+            "value": "1311234567"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "prov",
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+              }
+            ]
+          }
+        ],
+        "name": "第一病院",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0123-456-7890"
+          }
+        ],
+        "address": [
+          {
+            "text": "〒100-0001 東京都千代田区千代田９－９－９"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:73f5fad9-530c-40b1-856f-c5a46fbad8cd",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "JP-Organization-ePrescriptionData-departmentOfIssuer-Example",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.2.51",
+            "value": "01"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "dept",
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+              }
+            ]
+          }
+        ],
+        "name": "内科",
+        "partOf": {
+          "reference": "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9b244427-7479-406f-a366-ee083526c74d",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-10",
+        "identifier": [
+          {
+            "system": "http://exapmleHospital.jp/IdSystem/hisUserRoleId",
+            "value": "702"
+          }
+        ],
+        "practitioner": {
+          "reference": "urn:uuid:da2c7e42-369e-4143-8ae3-7b1c7a4c4c94",
+          "display": "医療者Practionerリソース"
+        },
+        "organization": {
+          "reference": "urn:uuid:9f1993bc-753f-479e-9e01-f0a53929a6fc",
+          "display": "医療機関Organizationリソース"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "doctor",
+                "system": "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:da2c7e42-369e-4143-8ae3-7b1c7a4c4c94",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-11",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.41.11311234567",
+            "value": "123"
+          }
+        ],
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "text": "神奈川　花子",
+            "family": "神奈川",
+            "given": [
+              "花子"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "text": "カナガワ　ハナコ",
+            "family": "カナガワ",
+            "given": [
+              "ハナコ"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "identifier": [
+              {
+                "system": "urn:oid:1.2.392.100495.20.3.31",
+                "value": "123456"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "code": "MedicalDoctorLicense",
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category"
+                }
+              ]
+            }
+          },
+          {
+            "identifier": [
+              {
+                "system": "urn:oid:1.2.392.100495.20.3.32.113",
+                "value": "4-321"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "code": "NarcoticsPractitioner",
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/Practitioner-certificate-category"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7038d706-ae0c-132b-f397-d2ca328e7afb",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-12",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.81",
+            "value": "1"
+          },
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.82",
+            "value": "1"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "103831601",
+              "system": "urn:oid:1.2.392.200119.4.403.1",
+              "display": "カルボシステイン錠２５０ｍｇ"
+            },
+            {
+              "code": "2233002F1280",
+              "system": "urn:oid:1.2.392.100495.20.2.73",
+              "display": "カルボシステイン錠２５０ｍｇ"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+          "display": "患者Patientリソース"
+        },
+        "authoredOn": "2020-08-21T12:28:17+09:00",
+        "note": [
+          {
+            "text": "薬剤単位の備考"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "内服・経口・１日３回朝昼夕食後　１回１錠　７日分",
+            "extension": [
+              {
+                "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration",
+                "valueDuration": {
+                  "value": 7,
+                  "code": "d",
+                  "system": "http://unitsofmeasure.org",
+                  "unit": "日"
+                }
+              }
+            ],
+            "timing": {
+              "repeat": {
+                "boundsDuration": {
+                  "value": 7,
+                  "code": "d",
+                  "system": "http://unitsofmeasure.org",
+                  "unit": "日"
+                }
+              },
+              "code": {
+                "coding": [
+                  {
+                    "code": "1013044400000000",
+                    "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                    "display": "内服・経口・１日３回朝昼夕食後"
+                  }
+                ]
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "PO",
+                  "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+                  "display": "口"
+                }
+              ]
+            },
+            "method": {
+              "coding": [
+                {
+                  "code": "1",
+                  "system": "urn:oid:1.2.392.200250.2.2.20.30",
+                  "display": "内服"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "code": "1",
+                      "system": "urn:oid:1.2.392.100495.20.2.22",
+                      "display": "製剤量"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "code": "TAB",
+                  "system": "urn:oid:1.2.392.100495.20.2.101",
+                  "unit": "錠"
+                },
+                "rateRatio": {
+                  "numerator": {
+                    "value": 3,
+                    "code": "TAB",
+                    "system": "urn:oid:1.2.392.100495.20.2.101",
+                    "unit": "錠"
+                  },
+                  "denominator": {
+                    "value": 1,
+                    "code": "d",
+                    "system": "http://unitsofmeasure.org",
+                    "unit": "日"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 21,
+            "code": "TAB",
+            "system": "urn:oid:1.2.392.100495.20.2.101",
+            "unit": "錠"
+          },
+          "expectedSupplyDuration": {
+            "value": 7,
+            "code": "d",
+            "system": "http://unitsofmeasure.org",
+            "unit": "日"
+          }
+        },
+        "substitution": {
+          "allowedCodeableConcept": {
+            "coding": [
+              {
+                "code": "1",
+                "system": "urn:oid:1.2.392.100495.20.2.41",
+                "display": "変更不可"
+              }
+            ]
+          },
+          "reason": {
+            "text": "患者からの強い要望により"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b8d42aea-c98c-4829-b0f1-c8cac0dd9bce",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-13",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.81",
+            "value": "2"
+          },
+          {
+            "system": "urn:oid:1.2.392.100495.20.3.82",
+            "value": "1"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "106062101",
+              "system": "urn:oid:1.2.392.200119.4.403.1",
+              "display": "リンデロンＶＧクリーム ５ｇ"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4",
+          "display": "患者Patientリソース"
+        },
+        "authoredOn": "2020-08-21T12:28:17+09:00",
+        "dosageInstruction": [
+          {
+            "text": "１日３回患部に塗布（膝）",
+            "timing": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "2B73000000000000",
+                    "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                    "display": "外用・塗布・１日３回"
+                  }
+                ]
+              }
+            },
+            "site": {
+              "coding": [
+                {
+                  "code": "950",
+                  "system": "urn:oid:1.2.392.200250.2.2.20.32",
+                  "display": "膝"
+                }
+              ]
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "AP",
+                  "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+                  "display": "外用"
+                }
+              ]
+            },
+            "method": {
+              "coding": [
+                {
+                  "code": "2B",
+                  "system": "urn:oid:1.2.392.200250.2.2.20.40",
+                  "display": "塗布"
+                }
+              ]
+            }
+          },
+          {
+            "text": "１日３回患部に塗布（すね）",
+            "timing": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "2B73000000000000",
+                    "system": "urn:oid:1.2.392.200250.2.2.20.20",
+                    "display": "外用・塗布・１日３回"
+                  }
+                ]
+              }
+            },
+            "site": {
+              "coding": [
+                {
+                  "code": "970",
+                  "system": "urn:oid:1.2.392.200250.2.2.20.32",
+                  "display": "すね"
+                }
+              ]
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "AP",
+                  "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+                  "display": "外用"
+                }
+              ]
+            },
+            "method": {
+              "coding": [
+                {
+                  "code": "2B",
+                  "system": "urn:oid:1.2.392.200250.2.2.20.40",
+                  "display": "塗布"
+                }
+              ]
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 2,
+            "code": "HON",
+            "system": "urn:oid:1.2.392.100495.20.2.101",
+            "unit": "本"
+          }
+        },
+        "substitution": {
+          "allowedCodeableConcept": {
+            "coding": [
+              {
+                "code": "0",
+                "system": "urn:oid:1.2.392.100495.20.2.41",
+                "display": "変更可"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:163c025e-d276-4134-803b-6eb4472e7164",
+      "resource": {
+        "resourceType": "Communication",
+        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example03-14",
+        "extension": [
+          {
+            "url": "http://jpfhir.jp/fhir/ePrescription/Extension/StructureDefinition/JP_Communication_CommunicationContent",
+            "valueString": "患者は聴覚障害のため説明を紙に記載して渡すようにしてください。"
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "2",
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+                "display": "調剤者への指示"
+              }
+            ]
+          }
+        ],
+        "status": "completed"
+      }
+    }
+  ]
+}
