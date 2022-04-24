@@ -1,5 +1,6 @@
 {
   "resourceType": "MedicationRequest",
+  "id": "JP-MedReq-ePreData-Example-zenzou02per03",
   "meta": {
     "profile": [
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"

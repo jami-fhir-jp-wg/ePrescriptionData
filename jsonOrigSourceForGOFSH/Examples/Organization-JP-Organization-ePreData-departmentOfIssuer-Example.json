@@ -1,0 +1,31 @@
+{
+  "resourceType": "Organization",
+  "id": "JP-Organization-ePreData-departmentOfIssuer-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>診療科：01 内科</li></ul></div>"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.100495.20.2.51",
+      "value": "01"
+    }
+  ],
+  "type": [
+    {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "code": "dept"
+      }
+    }
+  ],
+  "name": "内科",
+  "partOf": {
+    "reference": "urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"
+  }
+}

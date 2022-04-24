@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "JP-MedReq-ePreData-Example-bunkatsu",
   "meta": {
     "profile": [
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
@@ -33,7 +34,7 @@
         ],
         "identifier": [
           {
-            "system": "urn:oid:1.2.392.100495.20.3.11",
+            "system": "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier",
             "value": "1311234567-2020-00123456"
           }
         ],
@@ -47,15 +48,17 @@
             }
           ]
         },
-        "category": {
-          "coding": [
-            {
-              "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category",
-              "code": "03",
-              "display": "分割処方箋"
-            }
-          ]
-        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category",
+                "code": "03",
+                "display": "分割処方箋"
+              }
+            ]
+          }
+        ],
         "subject": {
           "reference": "urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f"
         },
@@ -128,21 +131,21 @@
       "fullUrl": "urn:uuid:9495ef34-a77d-4f3e-8dce-5688e169d0fa",
       "resource": {
         "resourceType": "Bundle",
-        "": "～ 省略 ～"
+        "dummy": "～ 省略 ～"
       }
     },
     {
       "fullUrl": "urn:uuid:b0025d4d-3002-4f5e-fb4e-abead28aee35",
       "resource": {
         "resourceType": "Bundle",
-        "": "～ 省略 ～"
+        "dummy": "～ 省略 ～"
       }
     },
     {
       "fullUrl": "urn:uuid:df8b4e6a-5d45-f4ce-a1af-ff0ca94242b8",
       "resource": {
         "resourceType": "Bundle",
-        "": "～ 省略 ～"
+        "dummy": "～ 省略 ～"
       }
     },
     {

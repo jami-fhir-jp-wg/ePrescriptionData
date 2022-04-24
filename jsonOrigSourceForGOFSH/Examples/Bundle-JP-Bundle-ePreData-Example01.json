@@ -1,6 +1,11 @@
 {
   "resourceType": "Bundle",
   "id": "JP-Bundle-ePreData-Example01",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
+    ]
+  },
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
@@ -12,16 +17,20 @@
       "fullUrl": "urn:uuid:20ade057-b106-9223-585e-20aa8d1635af",
       "resource": {
         "resourceType": "Composition",
-        "id": "Inline-Instance-for-JP-Bundle-ePreData-Example01-1",
+        "meta": {
+          "profile": [
+            "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
+          ]
+        },
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
-            "valueString": "1"
+            "valueString": "1.0"
           }
         ],
         "identifier": {
           "system": "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier",
-          "value": "34875506"
+          "value": "1311234567-2020-00123456"
         },
         "status": "final",
         "type": {
@@ -37,8 +46,8 @@
           {
             "coding": [
               {
-                "code": "01",
                 "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category",
+                "code": "01",
                 "display": "一般処方箋"
               }
             ]
@@ -86,8 +95,8 @@
             "code": {
               "coding": [
                 {
-                  "code": "01",
                   "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section",
+                  "code": "01",
                   "display": "処方情報セクション"
                 }
               ]

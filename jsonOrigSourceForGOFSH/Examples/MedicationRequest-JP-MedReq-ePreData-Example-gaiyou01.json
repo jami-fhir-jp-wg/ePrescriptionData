@@ -1,5 +1,6 @@
 {
   "resourceType": "MedicationRequest",
+  "id": "JP-MedReq-ePreData-Example-gaiyou01",
   "meta": {
     "profile": [
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
@@ -118,7 +119,7 @@
             "code": "DROP"
           }
         }
-      ],
+      ]
     }
   ],
   "dispenseRequest": {
