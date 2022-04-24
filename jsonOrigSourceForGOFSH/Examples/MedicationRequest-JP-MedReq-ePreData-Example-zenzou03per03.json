@@ -25,7 +25,7 @@
   "medicationCodeableConcept": {
     "coding": [
       {
-        "system": "urn:oid: 1.2.392.200119.4.403.1",
+        "system": "urn:oid:1.2.392.200119.4.403.1",
         "code": "1012309020",
         "display": "ペルマックス錠　５０μｇ"
       }
