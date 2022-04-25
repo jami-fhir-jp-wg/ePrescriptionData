@@ -214,14 +214,14 @@ Patientリソースでは、患者の氏名（漢字等）、性別、生年月�
 
 ＜[Patientリソース処方](StructureDefinition-JP-Patient-ePrescriptionData.html)＞
 ＜[仕様表3](ePreTables.html#tbl-03)＞
-＜[例1  Patientリソース処方の記述例](Patient-JP-Patient-ePrescriptionData-Example.html)＞
+＜[例1  Patientリソース処方の記述例](Patient-JP-Patient-ePreData-Example.html)＞
 
 ### 受診時状況情報
 処方が作成された受診時状況（外来、入院、退院時など）情報を、Encounterリソースにより記録する。本リソースは公文書として発行される処方箋では必須ではないため省略できる仕様としているが、医療機関内での処方情報の管理や、処方情報を患者や他の医療機関とやり取りする上では、通常必須として記述することを推奨する。
 
 ＜[Encounterリソース処方](StructureDefinition-JP-Encounter-ePrescriptionData.html)＞
 ＜[仕様表4](ePreTables.html#tbl-04)＞
-＜[例2  Encounterリソース処方の記述例](Encounter-JP-Encounter-ePrescriptionData-Example.html)＞
+＜[例2  Encounterリソース処方の記述例](Encounter-JP-Encounter-ePreData-Example.html)＞
 
 ### 保険・公費情報
 保険情報、公費情報ともに個々の保険給付ごとに別々のCoverageリソースで記述する。以下ではそれぞれについて説明する。
@@ -229,23 +229,23 @@ Patientリソースでは、患者の氏名（漢字等）、性別、生年月�
 #### 保険情報
 自費など保険のない診療における処方であってもこのCoverageリソースは必須とし、適切な保険種別を指定する。
 
-＜[Coverageリソース処方（保険・自費情報）](StructureDefinition-JP-Coverage-ePrescriptionData-insurance.html)＞
+＜[Coverageリソース処方（保険・自費情報）](StructureDefinition-JP-Coverage-ePreData-insurance.html)＞
 ＜[仕様表5](ePreTables.html#tbl-05)＞
-＜[例3  Coverageリソース処方（保険・自費情報）の記述例](Coverage-JP-Coverage-ePrescriptionData-insurance-Example.html)＞
+＜[例3  Coverageリソース処方（保険・自費情報）の記述例](Coverage-JP-Coverage-ePreData-insurance-Example.html)＞
 
 #### 公費情報
 公費医療をうける場合のみ必要。複数の公費医療の場合には、その数だけCoverageリソースを繰り返す。公費医療でない場合には記述は不要。
 
 ＜[Coverageリソース処方（公費情報）](StructureDefinition-JP-Coverage-ePrescriptionData-publicPayment.html)＞
 ＜[仕様表6](ePreTables.html#tbl-06)＞
-＜[例4  Coverageリソース処方（保険・自費情報）の記述例](Coverage-JP-Coverage-ePrescriptionData-publicPayment-Example.html)＞
+＜[例4  Coverageリソース処方（保険・自費情報）の記述例](Coverage-JP-Coverage-ePreData-publicPayment-Example.html)＞
 
 #### 費用負担者（保険者等）情報
 保険種別が「6:自費」以外の場合、費用負担者情報を、Coverageリソースのpayorから参照されるOrganizationリソースとして記録する。保険種別が「1:医保」、「2:国保」、「7:後期高齢者」の場合は保険者を意味し、Organization.identifier要素に保険者番号を記録する。その他の保険種別の場合は、identifier要素は出現しない。費用負担者の名称を可能な範囲でOrganization.name要素に記録する。
 
 ＜[Organizationリソース処方（費用負担者（保険者等）情報）](StructureDefinition-JP-Organization-ePrescriptionData-coveragePayer.html)＞
 ＜[仕様表7](ePreTables.html#tbl-07)＞
-＜[例5  Organizationリソース処方（費用負担者（保険者等）情報）の記述例](Organization-JP-Organization-ePrescriptionData-coveragePayer-Example.html)＞
+＜[例5  Organizationリソース処方（費用負担者（保険者等）情報）の記述例](Organization-JP-Organization-ePreData-coveragePayer-Example.html)＞
 
 ###  処方医療機関と診療科情報
 ####  処方医療機関情報
@@ -255,7 +255,7 @@ Patientリソースでは、患者の氏名（漢字等）、性別、生年月�
 
 ＜[Organizationリソース処方（処方医療機関情報）](StructureDefinition-JP-Organization-ePrescriptionData-issuer.html)＞
 ＜[表8　仕様](ePreTables.html#tbl-08)＞
-＜[例6  Organizationリソース処方（処方医療機関情報）の記述例](Organization-JP-Organization-ePrescriptionData-issuer-Example.html)＞
+＜[例6  Organizationリソース処方（処方医療機関情報）の記述例](Organization-JP-Organization-ePreData-issuer-Example.html)＞
 
 
 #### 処方診療科情報
@@ -263,7 +263,7 @@ Patientリソースでは、患者の氏名（漢字等）、性別、生年月�
 
 ＜[Organizationリソース処方（処方診療科情報）](StructureDefinition-JP-Organization-ePrescriptionData-departmentOfIssuer.html)＞
 ＜[仕様表9](ePreTables.html#tbl-09)＞
-＜[例7  Organizationリソース処方（処方診療科情報）の記述例](Organization-JP-Organization-ePrescriptionData-departmentOfIssuer-Example.html)＞
+＜[例7  Organizationリソース処方（処方診療科情報）の記述例](Organization-JP-Organization-ePreData-departmentOfIssuer-Example.html)＞
 
 
 ###  処方医師情報
@@ -277,7 +277,7 @@ identifierには、その医療機関が医療者に付与する「処方を発�
 
 ＜[PractitionerRoleリソース処方（処方医役割情報）](StructureDefinition-JP-PractitionerRole-ePrescriptionData-author.html)＞
 ＜[仕様表10](ePreTables.html#tbl-10)＞
-＜[例8　PractitionerRoleリソース処方（処方医役割情報）の記述例](PractitionerRole-JP-PractitionerRole-ePrescriptionData-author-Example.html)＞
+＜[例8　PractitionerRoleリソース処方（処方医役割情報）の記述例](PractitionerRole-JP-PractitionerRole-ePreData-author-Example.html)＞
 
 #### 処方医情報
 処方医はPractitionerリソースとして記述し、PractitionerRoleリソース（処方医役割情報）から参照する。処方医を識別するIDや番号として、処方医療機関における処方医ID（たとえば端末利用者アカウント、あるいは職員番号など）をPractitionerリソースのidentifier要素に記録する。処方医療機関における処方医IDを記述する場合は、医療機関のOID付番方法（9.1識別子名前空間一覧」を参照）に従ってそのOIDを指定する。
@@ -286,7 +286,7 @@ qualification要素には、必要なら医籍登録番号を記述できる。�
 
 ＜[Practitionerリソース処方（処方医情報）](StructureDefinition-JP-Practitioner-ePrescriptionData-author.html)＞
 ＜[仕様表11](ePreTables.html#tbl-11)＞
-＜[例9  Practitionerリソース処方（処方医情報）の記述例](Practitioner-JP-Practitioner-ePrescriptionData-author-Example.html)＞
+＜[例9  Practitionerリソース処方（処方医情報）の記述例](Practitioner-JP-Practitioner-ePreData-author-Example.html)＞
 
 
 ### 処方指示情報
