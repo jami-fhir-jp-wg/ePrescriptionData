@@ -9,12 +9,12 @@ Usage: #inline
 * status = #final
 * type = $doc-typecodes#57833-6 "処方箋"
 * category = $prescription-category#03 "分割処方箋"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
-* encounter = Reference(urn:uuid:1af0a9a6-a91d-8aef-d14e-069795b89c9f)
+* subject = Reference(urn:uuid:461cad23-e9a8-027e-d344-a52d957a64c0) "患者リソースPatient"
+* encounter = Reference(urn:uuid:d1a238ee-5050-c23b-a930-307e12ee51ed) "受診Encounterリソース"
 * date = "2020-08-21T12:12:21+09:00"
-* author = Reference(urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc)
+* author = Reference(urn:uuid:37eab6c7-473a-aed1-3297-766839896d47) "処方作成者PractitionerRoleリソース"
 * title = "分割処方箋"
-* custodian = Reference(urn:uuid:92834f52-7e62-1840-5c10-771084179379)
+* custodian = Reference(urn:uuid:ef7892cc-fb3a-b951-9ac7-f8cd6c746f0a)
 * section[0].title = "分割処方箋セクション"
 * section[=].code = $prescription-section#11 "分割処方箋セクション"
 * section[=].text.status = #generated

@@ -13,7 +13,7 @@ Usage: #inline
 * extension[=].valueIdentifier.value = "1234567"
 * identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no"
 * identifier.value = "1311234567"
-* type.coding = $organization-type#prov
+* type = $organization-type#prov
 * name = "第一病院"
 * telecom[0].system = #phone
 * telecom[=].value = "0123-456-7890"

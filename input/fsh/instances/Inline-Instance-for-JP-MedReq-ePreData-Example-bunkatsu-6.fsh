@@ -1,6 +1,7 @@
-Instance: Inline-Instance-for-JP-Bundle-ePreData-Example03-2
+Instance: Inline-Instance-for-JP-MedReq-ePreData-Example-bunkatsu-6
 InstanceOf: Patient
 Usage: #inline
+* meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11311234567"
 * identifier.value = "00000010"
 * name[0].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"

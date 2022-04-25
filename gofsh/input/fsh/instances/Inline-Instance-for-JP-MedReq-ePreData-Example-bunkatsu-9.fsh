@@ -1,6 +1,8 @@
-Instance: Inline-Instance-for-JP-Bundle-ePreData-Example02-11
+Instance: Inline-Instance-for-JP-MedReq-ePreData-Example-bunkatsu-9
 InstanceOf: Practitioner
 Usage: #inline
+* meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
+* language = #ja
 * identifier.system = "urn:oid:1.2.392.100495.20.3.41.11311234567"
 * identifier.value = "123"
 * name[0].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
