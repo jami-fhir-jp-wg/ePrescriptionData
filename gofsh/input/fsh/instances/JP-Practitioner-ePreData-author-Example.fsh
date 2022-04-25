@@ -16,9 +16,7 @@ Usage: #example
 * name[=].given = "ハナコ"
 * qualification[0].identifier.system = "urn:oid:1.2.392.100495.20.3.31"
 * qualification[=].identifier.value = "123456"
-* qualification[=].code.Coding.system = "http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category"
-* qualification[=].code.Coding.code = "MedicalDoctorLicense"
+* qualification[=].code = $practitioner-certificate-category#MedicalDoctorLicense
 * qualification[+].identifier.system = "urn:oid:1.2.392.100495.20.3.32.113"
 * qualification[=].identifier.value = "4-321"
-* qualification[=].code.Coding.system = "http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category"
-* qualification[=].code.Coding.code = "NarcoticsPractitioner"
+* qualification[=].code = $practitioner-certificate-category#NarcoticsPractitioner

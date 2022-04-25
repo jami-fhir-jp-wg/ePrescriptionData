@@ -21,6 +21,7 @@ Alias: $organization-type = http://terminology.hl7.org/CodeSystem/organization-t
 Alias: $patient-birthPlace = http://hl7.org/fhir/StructureDefinition/patient-birthPlace
 Alias: $patient-religion = http://hl7.org/fhir/StructureDefinition/patient-religion
 Alias: $practitioner-certificate-category = http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category
+Alias: $practitioner-role-category = http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category
 Alias: $prescription-category = http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category
 Alias: $prescription-section = http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section
 Alias: $route-codes = http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes
