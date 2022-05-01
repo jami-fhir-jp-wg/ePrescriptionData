@@ -10,7 +10,8 @@ Usage: #example
 * period.start = "2018-04-01"
 * payor[0] = Reference(JP-Organization-ePreData-coveragePayer-Example)
 * costToBeneficiary.type = $coverage-copay-type#copaypct "負担率"
-* costToBeneficiary.valueQuantity = 30 '%' "%"* extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol"
+* costToBeneficiary.valueQuantity = 30 '%' "%"
+* extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol"
 * extension[=].valueString = "12345"
 * extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonNumber"
 * extension[=].valueString = "６７８９０"
