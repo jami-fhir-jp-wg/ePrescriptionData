@@ -5,8 +5,7 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
-* text.status = #generated (exactly)
-* text.status ^short = "generated"
+* text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * identifier ^short = "処方医ID"

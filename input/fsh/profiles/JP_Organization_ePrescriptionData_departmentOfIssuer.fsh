@@ -5,8 +5,6 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
-* text.status = #generated (exactly)
-* text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * extension ^slicing.discriminator.type = #value

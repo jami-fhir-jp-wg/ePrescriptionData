@@ -6,8 +6,7 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * ^status = #draft
 * text ^short = "読んで概略がわかるようにするためのテキスト情報"
 * text ^definition = "読んで概略がわかるようにするためのテキスト情報。\r\n以降の構想的な要素のデータからシステムが自動生成すること。\r\n本リソースをテキストで表現したもので、内容を省略しても構わない。 このデータは人がこのリソースの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。 この内容と以降の構造化されたデータとの内容が不一致の場合には、この要素の内容は無視される。（本文書のすべてのリソースで同様とする）。"
-* text.status = #generated (exactly)
-* text.status ^short = "| extensions | additional | emptgeneratedy"
+* text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "generated | extensions | additional | empty　のいずれかから選ぶことができるが、本仕様では、generatedに限定する。"
 * contained ..0
 * extension ^slicing.discriminator.type = #value

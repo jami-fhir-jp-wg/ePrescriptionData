@@ -4,8 +4,6 @@ Id: JP-PractitionerRole-ePrescriptionData-author
 * ^url = "http://jpfhir.jp/fhir/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
-* text.status = #generated (exactly)
-* text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * identifier ^definition = "Business Identifiers that are specific to a role/location.\r\n役割/場所に固有のビジネス識別子。\r\n特に必要としないかぎり、省略する。"

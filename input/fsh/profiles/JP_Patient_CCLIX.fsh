@@ -5,7 +5,6 @@ Description: "診療情報交換に共通の患者情報プロファイル　JP_
 * ^url = "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Patient_CCLIX"
 * ^status = #draft
 * text.id ..0
-* text.status = #generated (exactly)
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\r\nXHTML形式。\r\n例：田中一郎、男、1980/7/1生、東京都中央区日本橋１－１－１, 03_1234_5678"
 * contained ..0

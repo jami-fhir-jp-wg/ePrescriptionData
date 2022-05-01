@@ -2,7 +2,6 @@ Instance: JP-Coverage-ePreData-insurance-Example
 InstanceOf: Coverage
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
-* text.status = #generated
 * status = #active
 * type = urn:oid:1.2.392.100495.20.2.61#1
 * beneficiary = Reference(JP-Patient-ePreData-Example)

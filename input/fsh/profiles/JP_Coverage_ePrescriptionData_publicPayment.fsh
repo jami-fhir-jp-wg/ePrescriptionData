@@ -6,7 +6,6 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * ^status = #draft
 * text ^short = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
 * text ^definition = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
-* text.status = #generated (exactly)
 * text.status ^short = "\"テキスト内容の全てがリソースのコンテンツから生成されたことを示す。\r\ngenerated　固定値"
 * text.status ^definition = "\"テキスト内容の全てがリソースのコンテンツから生成されたことを示す。\r\ngenerated　固定値"
 * text.div ^short = "本リソースの構造化情報から生成したテキスト表現\\\\r\\\\nXHTML形式。"

@@ -4,8 +4,6 @@ Id: JP-MedicationRequest-ePrescriptionData
 Description: "処方オーダ情報　JP_MedicationRequestの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
 * ^status = #draft
-* text.status = #generated (exactly)
-* text.status ^short = "generated"
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\ｓ\\nXHTML形式。"
 * identifier[RpNumber] 1..1 MS
