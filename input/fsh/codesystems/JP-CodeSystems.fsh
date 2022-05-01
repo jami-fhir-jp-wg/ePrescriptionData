@@ -270,7 +270,7 @@ Description: "厚労省電子処方CDA規格別表10 診療科コード"
 // 別表１１	保険種別コード	OID: 1.2.392.100495.20.2.61
 CodeSystem:  MHLW_codeSystem_ePreCDA_insuranceCategory_tbl11
 Id:   mhlw-codeSystem-ePreCDA-insuranceCategory-tbl11
-Description: "厚労省電子処方CDA規格別表11 保険種別コード "
+Description: "厚労省電子処方CDA規格別表11 保険種別コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.61"
 * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory"
 * ^status = #active

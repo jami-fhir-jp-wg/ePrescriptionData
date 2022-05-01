@@ -10,10 +10,10 @@ Usage: #example
 * extension[=].valueString = "01"
 * status = #active
 * type = urn:oid:1.2.392.100495.20.2.61#1
-* beneficiary = Reference(urn:uuid:11f0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* beneficiary = Reference(JP_Patient_ePrescriptionData)
 * dependent = "01"
 * relationship = urn:oid:1.2.392.100495.20.2.62#1 "被保険者"
 * period.start = "2018-04-01"
-* payor = Reference(urn:uuid:7c9f9f7f-e546-0ac2-6828-a9e0b24e5750)
+* payor = Reference(JP_Organization_ePrescriptionData_coveragePayer)
 * costToBeneficiary.type = $coverage-copay-type#copaypct "負担率"
 * costToBeneficiary.valueQuantity = 30 '%' "%"
