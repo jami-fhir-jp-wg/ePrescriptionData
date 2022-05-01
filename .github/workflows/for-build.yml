@@ -61,7 +61,7 @@ jobs:
         cp ./packages/$PACKAGE.tgz /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz
         tar xzf /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz -C /home/runner/.fhir/packages/$PACKAGE/
         unset DISPLAY
-        java -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig . -tx https://tx.jpfhir.jp
+        java -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig  -ig ig.ini -tx https://tx.jpfhir.jp
 
     - name: Deploy Implementation Guide
       if: success()
