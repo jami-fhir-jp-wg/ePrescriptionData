@@ -10,7 +10,7 @@ Usage: #example
 * extension[=].valueString = "01"
 * status = #active
 * type = urn:oid:1.2.392.100495.20.2.61#1
-* beneficiary = Reference(JP_Patient_ePrescriptionData)
+* beneficiary = Reference(JP-Patient-ePreData-Example)
 * dependent = "01"
 * relationship = urn:oid:1.2.392.100495.20.2.62#1 "被保険者"
 * period.start = "2018-04-01"
