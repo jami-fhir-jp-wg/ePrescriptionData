@@ -53,7 +53,7 @@ jobs:
       run: | 
         mkdir input-cache
         mv ./publisherJPFHIR.jar ./input-cache
-        mv ./publisher.jar ./input-cache
+        : # mv ./publisher.jar ./input-cache
         : # this is a comment:  ls -la ./input-cache
         mkdir /home/runner/.fhir
         mkdir /home/runner/.fhir/packages
@@ -62,8 +62,8 @@ jobs:
         cp ./packages/$PACKAGE.tgz /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz
         tar xzf /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz -C /home/runner/.fhir/packages/$PACKAGE/
         unset DISPLAY
-        : # this is a comment:  java -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig ig.ini -tx https://tx.jpfhir.jp
-        java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
+        java -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig ig.ini -tx https://tx.jpfhir.jp
+        : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
         
     - name: Deploy Implementation Guide
       if: success()

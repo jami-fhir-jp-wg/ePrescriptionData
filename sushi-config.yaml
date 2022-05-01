@@ -8,7 +8,7 @@ canonical: http://jpfhir.jp/ePrescriptionData
 name: ePrescriptionData
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI　 
-status: draft # draft | active | retired | unknown 
+status: draft # draft | active | retired | unknown
 version: 0.9.3
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2022+
