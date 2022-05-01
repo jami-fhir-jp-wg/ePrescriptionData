@@ -14,7 +14,6 @@ Usage: #example
 * dependent = "01"
 * relationship = urn:oid:1.2.392.100495.20.2.62#1 "被保険者"
 * period.start = "2018-04-01"
-* payor contains insurer
-* payor[insurer] = Reference(JP-Organization-ePreData-coveragePayer-Example)
+* payor[0] = Reference(JP-Organization-ePreData-coveragePayer-Example)
 * costToBeneficiary.type = $coverage-copay-type#copaypct "負担率"
 * costToBeneficiary.valueQuantity = 30 '%' "%"
