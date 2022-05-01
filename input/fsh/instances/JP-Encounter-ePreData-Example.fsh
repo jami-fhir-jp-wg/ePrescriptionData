@@ -1,5 +1,5 @@
 Instance: JP-Encounter-ePreData-Example
-InstanceOf: Encounter
+InstanceOf:  Encounter
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Encounter_ePrescriptionData"
 * status = #finished
