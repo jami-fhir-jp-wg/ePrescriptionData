@@ -61,7 +61,7 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * payor ^short = "公費負担者情報"
 * payor ^definition = "公費負担者を表すOrganizationリソースへの参照"
 * class ..0
-* order ..0
+* order ..1
 * network ..0
 * costToBeneficiary ^short = "保険の自己負担率"
 * costToBeneficiary ^definition = "保険の自己負担率。記録が可能な場合にのみ記録する。\r\n\r\nポリシーに詳細が記載されており、ヘルスカードに含まれている可能性のあるコストカテゴリと関連する金額を示す一連のコード。"

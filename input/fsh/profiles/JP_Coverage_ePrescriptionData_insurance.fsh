@@ -41,7 +41,7 @@ Description: "処方の保険情報　Coverageリソースプロファイル　J
 * type.coding.system ^definition = "保険種別コード　厚生労働省電子処方箋 CDA 記述仕様第１版　別表１１のOID"
 * type.coding.code ^short = "保険種別コード"
 * type.coding.code ^definition = "保険種別コード　厚生労働省電子処方箋 CDA 記述仕様第１版　別表１１のコード表に従う。8以外を使用する。\r\n1 医保\r2 国保\r3 労災\r4 自賠責\r5 公害\r6 自費\r7 後期高齢者\r8 公費"
-* type.coding.code 1.. MS
+* type.coding.code #1.. MS
 * type.coding.userSelected ..0
 * type.text ..0
 * policyHolder ..0
