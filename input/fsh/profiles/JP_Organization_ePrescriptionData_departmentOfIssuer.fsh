@@ -18,7 +18,6 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
-* identifier[@default] ..0
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "coding.system"
 * type ^slicing.rules = #open
