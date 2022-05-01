@@ -7,7 +7,7 @@ Description: "処方に適用される保険の保険者または公費の公費
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status = #generated (exactly)
 * text.status ^short = "generated"
-* text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
+* text.status ^definition = "固定値.テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * extension[PrefectureNo] ..0
 * extension[OrganizationCategory] ..0
