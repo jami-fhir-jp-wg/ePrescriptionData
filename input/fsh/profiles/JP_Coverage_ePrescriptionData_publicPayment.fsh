@@ -89,7 +89,7 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * costToBeneficiary.value[x].value ^short = "自己負担割合"
 * costToBeneficiary.value[x].value ^definition = "自己負担割合を%で指定する。"
 * costToBeneficiary.value[x].unit 1..1 MS
-* costToBeneficiary.value[x].unit = "％" (exactly)
+* costToBeneficiary.value[x].unit = "%" (exactly)
 * costToBeneficiary.value[x].unit ^short = "単位"
 * costToBeneficiary.value[x].unit ^definition = "人が解釈可能な単位文字列。固定値"
 * costToBeneficiary.value[x].system = "http://unitsofmeasure.org" (exactly)
