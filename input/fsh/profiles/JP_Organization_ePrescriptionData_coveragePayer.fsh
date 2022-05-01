@@ -9,10 +9,6 @@ Description: "処方に適用される保険の保険者または公費の公費
 * text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension ^min = 0
 * extension[PrefectureNo] ..0
 * extension[OrganizationCategory] ..0
 * extension[OrganizationNo] ..0
