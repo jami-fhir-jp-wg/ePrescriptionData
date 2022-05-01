@@ -12,7 +12,6 @@ Description: "処方に適用される保険の保険者または公費の公費
 * extension[PrefectureNo] ..0
 * extension[OrganizationCategory] ..0
 * extension[OrganizationNo] ..0
-* identifier[@default].type = #organizationNo
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] 0..1 MS
 * identifier[InsurerNumber].id ..0
