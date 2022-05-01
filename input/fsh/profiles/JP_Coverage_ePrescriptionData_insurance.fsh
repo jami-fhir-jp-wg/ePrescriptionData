@@ -4,13 +4,6 @@ Id: JP-Coverage-ePrescriptionData-insurance
 Description: "処方の保険情報　Coverageリソースプロファイル　JP_Coverageの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
 * ^status = #draft
-* text ^short = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
-* text ^definition = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
-* text.status = #generated (exactly)
-* text.status ^short = "\"テキスト内容の全てがリソースのコンテンツから生成されたことを示す。\r\ngenerated　固定値"
-* text.status ^definition = "\"テキスト内容の全てがリソースのコンテンツから生成されたことを示す。\r\ngenerated　固定値"
-* text.div ^short = "本リソースの構造化情報から生成したテキスト表現\\\\r\\\\nXHTML形式。"
-* text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * contained ..0
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
