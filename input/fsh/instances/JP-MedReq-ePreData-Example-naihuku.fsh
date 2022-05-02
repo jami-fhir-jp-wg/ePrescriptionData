@@ -11,7 +11,7 @@ Usage: #example
 * medicationCodeableConcept.coding[0] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
 * medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.2.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
 * medicationCodeableConcept.text = "カルボシステイン２５０ｍｇ錠"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * note.text = "薬剤単位の備考"
 * dosageInstruction.extension.url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration"

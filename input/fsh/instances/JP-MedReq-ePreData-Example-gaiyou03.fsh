@@ -10,7 +10,7 @@ Usage: #example
 * intent = #order
 * medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#105638903 "ネリプロクト坐剤"
 * medicationCodeableConcept.text = "ネリプロクト坐剤"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * dosageInstruction.text = "外用・肛門挿入・１日２回朝夕　1回1個（1日2個）"
 * dosageInstruction.timing.code = urn:oid:1.2.392.200250.2.2.20.20#2R62090900000000 "外用・肛門挿入・１日２回朝夕"

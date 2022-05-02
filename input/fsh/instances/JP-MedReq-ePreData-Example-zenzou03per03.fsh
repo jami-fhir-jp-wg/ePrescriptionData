@@ -10,7 +10,7 @@ Usage: #example
 * intent = #order
 * medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#1012309020 "ペルマックス錠　５０μｇ"
 * medicationCodeableConcept.text = "ペルマックス５０μｇ錠"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * note.text = "最後の２日間　1日３錠（１日３回　朝昼夕食後　１回１錠）"
 * dosageInstruction.extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse"

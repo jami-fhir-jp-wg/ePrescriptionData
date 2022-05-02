@@ -10,7 +10,7 @@ Usage: #example
 * intent = #order
 * medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#106271807 "プレドニン　５ｍｇ"
 * medicationCodeableConcept.text = "プレドニン　５ｍｇ錠"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * dosageInstruction.extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse"
 * dosageInstruction.extension[=].valuePeriod.start = "2020-08-21"

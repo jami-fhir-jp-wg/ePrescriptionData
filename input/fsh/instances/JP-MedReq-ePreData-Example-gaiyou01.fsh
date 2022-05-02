@@ -10,7 +10,7 @@ Usage: #example
 * intent = #order
 * medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#102094601 "チモプトール点眼薬０．２５％　５ｍＬ"
 * medicationCodeableConcept.text = "チモプトール点眼薬０．２５％５ｍＬ"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * dosageInstruction[0].text = "外用・点眼・１日３回　１回１滴（右眼）"
 * dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#2H73000000000000 "外用・点眼・１日３回"

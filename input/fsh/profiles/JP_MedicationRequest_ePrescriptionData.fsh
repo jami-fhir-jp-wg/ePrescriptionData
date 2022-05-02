@@ -89,9 +89,9 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.additionalInstruction.coding.display MS
 * dosageInstruction.additionalInstruction.text ^definition = "dosageInstruction.additionalInstruction要素に、1 日の服用回数分だけ繰り返し、JAMI補足用法コードを使用し記述するが、その場合でも、またコード化できない場合は、明細単位の備考としてテキストで記述する。"
 * dosageInstruction.additionalInstruction.text MS
-* dosageInstruction.timing.event ^definition = "服⽤タイミングを具体的な⽇時で指定する場合に使⽤する。複数回の指定日で指示する場合には、本要素を繰り返す。"
+* dosageInstruction.timing.event ^definition = "服用タイミングを具体的な日時で指定する場合に使用する。複数回の指定日で指示する場合には、本要素を繰り返す。"
 * dosageInstruction.timing.event MS
-* dosageInstruction.timing.repeat.bounds[x].value ^definition = "投薬⽇数。"
+* dosageInstruction.timing.repeat.bounds[x].value ^definition = "投薬にｃｃうう。"
 * dosageInstruction.timing.repeat.bounds[x].value MS
 * dosageInstruction.timing.repeat.count ..0
 * dosageInstruction.timing.repeat.countMax ..0
@@ -124,13 +124,13 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.timing.code.text MS
 * dosageInstruction.doseAndRate ^definition = "薬剤が投与される量。"
 * dosageInstruction.doseAndRate MS
-* dosageInstruction.doseAndRate.type ^definition = "⼒価区分。⼒価区分コード。\r\n本要素は、安全性のため省略せずに必須とする。\r\n用量は製剤量で記述することを基本とするが、必要に応じて原薬量指定も可能とする。"
+* dosageInstruction.doseAndRate.type ^definition = "力価区分。力価区分コード。\r\n本要素は、安全性のため省略せずに必須とする。\r\n用量は製剤量で記述することを基本とするが、必要に応じて原薬量指定も可能とする。"
 * dosageInstruction.doseAndRate.type MS
-* dosageInstruction.doseAndRate.type.coding.system ^definition = "⼒価区分コードのコード体系を識別するURI。固定値。\r\n厚生労働省電子処方箋 CDA 記述仕様　第１版別表４を準用。"
+* dosageInstruction.doseAndRate.type.coding.system ^definition = "力価区分コードのコード体系を識別するURI。固定値。\r\n厚生労働省電子処方箋 CDA 記述仕様　第１版別表４を準用。"
 * dosageInstruction.doseAndRate.type.coding.system MS
-* dosageInstruction.doseAndRate.type.coding.code ^definition = "⼒価区分コード（1：製剤量　2：原薬量）"
+* dosageInstruction.doseAndRate.type.coding.code ^definition = "力価区分コード（1：製剤量　2：原薬量）"
 * dosageInstruction.doseAndRate.type.coding.code MS
-* dosageInstruction.doseAndRate.type.coding.display ^definition = "⼒価区分コードの表示名（1：製剤量　2：原薬量）"
+* dosageInstruction.doseAndRate.type.coding.display ^definition = "力価区分コードの表示名（1：製剤量　2：原薬量）"
 * dosageInstruction.doseAndRate.type.coding.display MS
 * dosageInstruction.doseAndRate.dose[x] ^definition = "1回投与量。\r\n用量は、1回投与量の記録を基本とし、MedicationRequestリソースの dosageInstruction.doseAndRate.doseQuantity要素 にSimpleQuantity型で記述する。"
 * dosageInstruction.doseAndRate.dose[x] MS
@@ -138,9 +138,9 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.doseAndRate.doseQuantity.system MS
 * dosageInstruction.doseAndRate.doseQuantity.code ^definition = "医薬品単位略号。\r\n例）"
 * dosageInstruction.doseAndRate.doseQuantity.code MS
-* dosageInstruction.doseAndRate.rateRatio ^definition = "単位時間内での薬剤量。JP Coreでは1 ⽇投与量を表す。\r\n例）１日３錠　の場合、 rateRatio.numerator.value=3  、 rateRatio.numerator.unit=\"錠\" 、　、 rateRatio.numerator.system=\"urn:oid:1.2.392.100495.20.2.101\" 、rateRatio.numerator.code=\"TAB\""
+* dosageInstruction.doseAndRate.rateRatio ^definition = "単位時間内での薬剤量。JP Coreでは1 日投与量を表す。\r\n例）１日３錠　の場合、 rateRatio.numerator.value=3  、 rateRatio.numerator.unit=\"錠\" 、　、 rateRatio.numerator.system=\"urn:oid:1.2.392.100495.20.2.101\" 、rateRatio.numerator.code=\"TAB\""
 * dosageInstruction.doseAndRate.rateRatio MS
-* dosageInstruction.doseAndRate.rateRatio.numerator.value ^definition = "1 ⽇投与量。"
+* dosageInstruction.doseAndRate.rateRatio.numerator.value ^definition = "1 日投与量。"
 * dosageInstruction.doseAndRate.rateRatio.numerator.value MS
 * dosageInstruction.doseAndRate.rateRatio.numerator.system ^definition = "医薬品単位略号を識別するOID。固定値。\r\n厚生労働省電子処方箋 CDA 記述仕様　別表２０ 医薬品単位略号　コード表を準用。拡張可能性あり。"
 * dosageInstruction.doseAndRate.rateRatio.numerator.system MS
@@ -160,7 +160,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dispenseRequest.quantity.code ^comment = "厚生労働省電子処方箋 CDA 記述仕様　別表２０ 医薬品単位略号　コード表を準用。拡張可能性あり。"
 * dispenseRequest.quantity.code ^requirements = "どのような形式であっても医薬品単位略号はひとつのリソース記述のなかで１種類のコード体系に統一すること。"
 * dispenseRequest.quantity.code MS
-* dispenseRequest.expectedSupplyDuration.value ^definition = "調剤⽇数。\r\n例）１日３錠で７日分の場合、この要素には 7が設定される。"
+* dispenseRequest.expectedSupplyDuration.value ^definition = "調剤日数。\r\n例）１日３錠で７日分の場合、この要素には 7が設定される。"
 * dispenseRequest.expectedSupplyDuration.value MS
 * substitution.allowed[x].coding.system ^definition = "後発品変更不可コードを識別するURI。固定値。\r\n厚生労働省電子処方箋CDA規格第１版　別表８ 後発品変更不可コード 　OID: 1.2.392.100495.20.2.41"
 * substitution.allowed[x].coding.system MS

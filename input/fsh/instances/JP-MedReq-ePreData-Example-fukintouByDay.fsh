@@ -10,7 +10,7 @@ Usage: #example
 * intent = #order
 * medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#105271807 "プレドニン錠５ｍｇ"
 * medicationCodeableConcept.text = "プレドニン５ｍｇ錠"
-* subject = Reference(urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f)
+* subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
 * dosageInstruction.additionalInstruction[0] = urn:oid:1.2.392.200250.2.2.20.22#V14NNNNN "不均等・１回目・４錠"
 * dosageInstruction.additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V22NNNNN "不均等・２回目・２錠"
