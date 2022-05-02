@@ -5,7 +5,7 @@ Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
 * type = #document
-* timestamp = "2020-08-21T12:12:2+09:00"
+* timestamp = "2020-08-21T12:12:02+09:00"
 * entry[0].fullUrl = "urn:uuid:954a5be8-8c83-49d7-9ce5-39ed9b20589a"
 * entry[=].resource = Composition-for-JP-MedReq-ePreData-Example-bunkatsu
 * entry[+].fullUrl = "urn:uuid:9495ef34-a77d-4f3e-8dce-5688e169d0fa"
