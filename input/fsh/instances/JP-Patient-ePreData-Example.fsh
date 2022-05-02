@@ -1,4 +1,4 @@
-Instance: c
+Instance: JP-Patient-ePreData-Example
 InstanceOf: Patient
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
