@@ -1,4 +1,4 @@
-Instance: Inline-Instance-for-JP-MedReq-ePreData-Example-bunkatsu-5
+Instance: OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Organization
 Usage: #inline
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"

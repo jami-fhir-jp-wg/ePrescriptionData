@@ -1,4 +1,4 @@
-Instance: Inline-Instance-for-JP-MedReq-ePreData-Example-bunkatsu-8
+Instance: PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: PractitionerRole
 Usage: #inline
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"

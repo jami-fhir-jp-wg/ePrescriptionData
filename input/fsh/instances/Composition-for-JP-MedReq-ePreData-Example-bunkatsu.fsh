@@ -1,4 +1,4 @@
-Instance: Inline-Instance-for-JP-MedReq-ePreData-Example-bunkatsu-1
+Instance: Composition-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Composition
 Usage: #inline
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
