@@ -27,10 +27,10 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * qualification[narcoticPrescriptionLicenseNumber].code MS
 * qualification[narcoticPrescriptionLicenseNumber].code.coding 1..1 MS
 * qualification[narcoticPrescriptionLicenseNumber].code.coding.system 1.. MS
-* qualification[narcoticPrescriptionLicenseNumber].code.coding.system = "http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category" (exactly)
+* qualification[narcoticPrescriptionLicenseNumber].code.coding[0].system = "http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category" (exactly)
 * qualification[narcoticPrescriptionLicenseNumber].code.coding.system ^definition = "コード体系 Certificateを識別するURI"
 * qualification[narcoticPrescriptionLicenseNumber].code.coding.code MS
-* qualification[narcoticPrescriptionLicenseNumber].code.coding.code = #NarcoticsPractitioner (exactly)
+* qualification[narcoticPrescriptionLicenseNumber].code.coding[0].code = #NarcoticsPractitioner (exactly)
 * qualification[narcoticPrescriptionLicenseNumber].code.coding.code ^definition = "麻薬施用者免許番号を表すコード。固定値。"
 * qualification[medicalRegistrationNumber] ..1 MS
 * qualification[medicalRegistrationNumber] ^short = "医師医籍登録番号情報"
@@ -40,9 +40,9 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * qualification[medicalRegistrationNumber].identifier.value ^definition = "医籍登録番号の文字列。"
 * qualification[medicalRegistrationNumber].code MS
 * qualification[medicalRegistrationNumber].code.coding 1..1 MS
-* qualification[medicalRegistrationNumber].code.coding.system = "http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category" (exactly)
+* qualification[medicalRegistrationNumber].code.coding[0].system = "http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category" (exactly)
 * qualification[medicalRegistrationNumber].code.coding.system MS
 * qualification[medicalRegistrationNumber].code.coding.system ^definition = "コード体系 Certificateを識別するURI。"
-* qualification[medicalRegistrationNumber].code.coding.code = #MedicalDoctorLicense (exactly)
+* qualification[medicalRegistrationNumber].code.coding[0].code = #MedicalDoctorLicense (exactly)
 * qualification[medicalRegistrationNumber].code.coding.code MS
 * qualification[medicalRegistrationNumber].code.coding.code ^definition = "医籍登録番号を表すコード。固定値。"
