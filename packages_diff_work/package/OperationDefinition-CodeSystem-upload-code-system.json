@@ -1,0 +1,64 @@
+{
+	"resourceType": "OperationDefinition",
+	"id": "CodeSystem-upload-code-system",
+	"meta": {
+		"lastUpdated": "2020-09-07T09:29:23.356+11:00"
+	},
+	"extension": [{
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+			"valueInteger": 5
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+			"valueCode": "normative"
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+			"valueCode": "4.0.1"
+		}
+	],
+	"url": "http://hl7.org/fhir/OperationDefinition/CodeSystem-upload-code-system",
+	"version": "0.0.1",
+	"name": "Code System upload",
+	"status": "draft",
+	"kind": "operation",
+	"date": "2020-09-07T09:29:23+11:00",
+	"code": "upload-code-system",
+	"resource": ["CodeSystem"],
+	"system": false,
+	"type": true,
+	"instance": false,
+	"parameter": [{
+			"name": "system",
+			"use": "in",
+			"min": 1,
+			"max": "1",
+			"documentation": "The system for the code that is to be located",
+			"type": "uri"
+		}, {
+			"name": "kind",
+			"use": "in",
+			"min": 1,
+			"max": "1",
+			"documentation": "0:（独自）CSV形式 / 1:（独自）ZIP形式(concepts.csv,hierarchy.csv) / 2:病名マスター(病名基本テーブル, 修飾語テーブル) / 3:医療品HOTコードマスター",
+			"type": "integer"
+		}, {
+			"name": "category",
+			"use": "in",
+			"min": 0,
+			"max": "1",
+			"documentation": "kind = 2 の場合は category を指定する必要あり 0:病名マスターの病名基本テーブル / 1:病名マスターの修飾語テーブル",
+			"type": "integer"
+		}, {
+			"name": "file",
+			"use": "in",
+			"min": 1,
+			"max": "*",
+			"type": "Attachment"
+		}, {
+			"name": "return",
+			"use": "out",
+			"min": 1,
+			"max": "1",
+			"type": "CodeSystem"
+		}
+	]
+}

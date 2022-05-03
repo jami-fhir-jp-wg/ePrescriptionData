@@ -1,0 +1,45 @@
+{
+	"resourceType": "OperationDefinition",
+	"id": "ConceptMap-export-concept-map",
+	"meta": {
+		"lastUpdated": "2020-08-31T09:29:23.356+11:00"
+	},
+	"extension": [{
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+			"valueInteger": 5
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+			"valueCode": "normative"
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+			"valueCode": "4.0.1"
+		}
+	],
+	"url": "http://hl7.org/fhir/OperationDefinition/ConceptMap-export-concept-map",
+	"version": "0.0.1",
+	"name": "Concept Map Export",
+	"status": "draft",
+	"kind": "operation",
+	"date": "2020-08-31T09:29:23+11:00",
+	"code": "export-concept-map",
+	"resource": ["ConceptMap"],
+	"system": false,
+	"type": true,
+	"instance": false,
+	"parameter": [{
+			"name": "url",
+			"use": "in",
+			"min": 1,
+			"max": "1",
+			"documentation": "A canonical URL for a concept map. The server must know the concept map (e.g. it is defined explicitly in the server's concept maps, or it is defined implicitly by some code system known to the server.",
+			"type": "uri"
+		}, {
+			"name": "return",
+			"use": "out",
+			"min": 1,
+			"max": "1",
+			"documentation": "The exported ConceptMap Content.",
+			"type": "Binary"
+		}
+	]
+}

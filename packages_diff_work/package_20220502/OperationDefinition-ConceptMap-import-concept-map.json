@@ -1,0 +1,66 @@
+{
+	"resourceType": "OperationDefinition",
+	"id": "ConceptMap-import-concept-map",
+	"meta": {
+		"lastUpdated": "2020-08-31T09:29:23.356+11:00"
+	},
+	"extension": [{
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+			"valueInteger": 5
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+			"valueCode": "normative"
+		}, {
+			"url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+			"valueCode": "4.0.1"
+		}
+	],
+	"url": "http://hl7.org/fhir/OperationDefinition/ConceptMap-import-concept-map",
+	"version": "0.0.1",
+	"name": "Concept Map Import",
+	"status": "draft",
+	"kind": "operation",
+	"date": "2020-08-31T09:29:23+11:00",
+	"affectsState": true,
+	"code": "import-concept-map",
+	"resource": ["ConceptMap"],
+	"system": false,
+	"type": true,
+	"instance": false,
+	"parameter": [{
+			"name": "url",
+			"use": "in",
+			"min": 1,
+			"max": "1",
+			"documentation": "A canonical URL for a concept map. The server must know the concept map (e.g. it is defined explicitly in the server's concept maps, or it is defined implicitly by some code system known to the server.",
+			"type": "uri"
+		}, {
+			"name": "source",
+			"use": "in",
+			"min": 0,
+			"max": "1",
+			"documentation": "Identifies the value set used when the concept (system/code pair) was chosen.",
+			"type": "uri"
+		}, {
+			"name": "target",
+			"use": "in",
+			"min": 0,
+			"max": "1",
+			"documentation": "Identifies the value set in which a translation is sought.",
+			"type": "uri"
+		}, {
+			"name": "file",
+			"use": "in",
+			"min": 1,
+			"max": "1",
+			"type": "Attachment"
+		}, {
+			"name": "return",
+			"use": "out",
+			"min": 1,
+			"max": "1",
+			"documentation": "The imported ConceptMap resource.",
+			"type": "ConceptMap"
+		}
+	]
+}
