@@ -59,7 +59,7 @@ jobs:
         mkdir /home/runner/.fhir/packages
         mkdir /home/runner/.fhir/packages/$PACKAGE
         : # local cache にpackage をcopyして展開する
-        cp ./packages/$PACKAGE.tgz /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz
+        cp ./packages_snapshot/$PACKAGE.tgz /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz
         tar xzf /home/runner/.fhir/packages/$PACKAGE/$PACKAGE.tgz -C /home/runner/.fhir/packages/$PACKAGE/
         unset DISPLAY
         java -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig ig.ini -tx https://tx.jpfhir.jp
