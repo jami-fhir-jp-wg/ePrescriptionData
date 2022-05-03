@@ -1,14 +1,10 @@
 Invariant: checkOrganizationType
 Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
 Severity: #error
-Expression: "type[0].exists()"
-XPath: "exists(f:type[0])"
-
-Invariant: checkOrganizationTypeElement
-Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
-Severity: #error
-Expression: "exists()"
-XPath: "exists(f)"
+Expression: "(type[0].exists() and type[0].coding[0].exists() and type[0].coding[0].where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept').exists())
+  or (type[1].exists() and type[1].coding[0].exists() and type[1].coding[0].where(system='urn:oid:1.2.392.100495.20.2.51').exists())"
+XPath: "(exists(f:type[0]) and exists(f:type[0]/f:coding[0]) and exists(f:type[1]/f:coding[0]/f:system/@value='http://terminology.hl7.org/CodeSystem/organization-type') and exists(f:type[0]/f:coding[0]/f:code/@value='dept'))
+ or (exists(f:type[1]) and exists(f:type[1]/f:coding[0]) and exists(f:type[1]/f:coding[0]/f:system/@value='urn:oid:1.2.392.100495.20.2.51'))"
 
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
@@ -29,7 +25,6 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
-* type obeys checkOrganizationTypeElement
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"
