@@ -24,10 +24,10 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
     departmentCode 0..1 MS
 * type[organizationType] ^short = "診療科部門を表すコード"
 * type[organizationType] ^definition = "バリューセットOrganizationType(http://hl7.org/fhir/ValueSet/organization-type) から、診療科を表すコードを指定。固定値。"
-* type[organizationType].coding = http://terminology.hl7.org/CodeSystem/organization-type#dept
+* type[organizationType].coding = http://terminology.hl7.org/CodeSystem/organization-type#dept  (exactly)
 * type[departmentCode] ^short = "診療科コード"
 * type[departmentCode] ^definition = "The kind(s) of o診療科コード。コードで記述できる場合に記録してもよい。"
-* type[departmentCode].coding.system = "urn:oid:1.2.392.100495.20.2.51"
+* type[departmentCode].coding.system = "urn:oid:1.2.392.100495.20.2.51" (exactly)
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"
