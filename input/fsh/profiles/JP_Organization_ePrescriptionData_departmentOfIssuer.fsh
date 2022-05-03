@@ -1,5 +1,5 @@
 Invariant: checkOrganizationType
-Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
+Description: "【診療部門コード(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept'))と、診療科コード(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51'))の両方が正しい】"
 Severity: #error
 Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists() and (type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
 
