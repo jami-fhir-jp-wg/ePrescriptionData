@@ -1,7 +1,7 @@
 Invariant: checkOrganizationType
 Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
 Severity: #error
-Expression: "type[0].coding[0].code='dept'"
+Expression: "(type[0].coding[0].code='dept') and (type[1].coding[0].system='urn:oid:1.2.392.100495.20.2.51') "
 
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
