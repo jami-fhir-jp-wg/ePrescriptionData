@@ -3,11 +3,23 @@ Description: "【診療部門コード(type[0].coding.where(system='http://termi
 Severity: #error
 Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists() and (type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
 
+Invariant: checkOrganizationType0
+Description: "【診療部門コード(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept'))が正しい】"
+Severity: #error
+Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists()"
+
+Invariant: checkOrganizationType1
+Description: "【診療科コード(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51'))が存在する】"
+Severity: #error
+Expression: "(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
+
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
 Id: JP-Organization-ePrescriptionData-departmentOfIssuer
 Description: "処方を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル"
 * obeys checkOrganizationType
+* type obeys checkOrganizationType0
+* type obeys checkOrganizationType1
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
