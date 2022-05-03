@@ -17,7 +17,7 @@ Usage: #example
 * dosageInstruction.extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration"
 * dosageInstruction.extension[=].valueDuration = 7 'd' "日"
 * dosageInstruction.text = "１日３回　朝昼夕食後　１回１錠　７日分（隔日投与）"
-* dosageInstruction.additionalInstruction = urn:oid:1.2.392.100495.20.2.32#I1100000 "隔日投与"
+* dosageInstruction.additionalInstruction = urn:oid:1.2.392.200250.2.2.20.22#I1100000 "隔日投与"
 * dosageInstruction.timing.repeat.boundsDuration = 13 'd' "日"
 * dosageInstruction.timing.code = urn:oid:1.2.392.200250.2.2.20.20#1013044400000000 "内服・経口・１日３回朝昼夕食後"
 * dosageInstruction.route = $route-codes#PO "口"
