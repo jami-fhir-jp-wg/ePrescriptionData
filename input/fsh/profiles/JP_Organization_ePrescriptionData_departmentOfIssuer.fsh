@@ -1,13 +1,13 @@
 Invariant: checkOrganizationType
 Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
 Severity: #error
-Expression: "(Organization.type[1].coding[0].system='urn:oid:1.2.392.100495.20.2.51').exists() "
+Expression: "(coding[0].where(system='urn:oid:1.2.392.100495.20.2.51')).exists().not()"
 
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
 Id: JP-Organization-ePrescriptionData-departmentOfIssuer
 Description: "処方を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル"
-* obeys checkOrganizationType
+* type obeys checkOrganizationType
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
