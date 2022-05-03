@@ -26,7 +26,7 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * identifier[MedicalInstitutionCode].value ^definition = "保険医療機関番号10桁。\r\n都道府県番号２桁、医科１または歯科３の種別コード１桁、保険医療機関番号７桁を連結した半角数字１０桁固定長の文字列。"
 * identifier[MedicalInstitutionCode].value MS
 * identifier[InsurerNumber] ..0
-* identifier[InsurerNumber].system "urn:oid:1.2.392.100495.20.3.61" (exactly)
+* identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * type 1..1 MS
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type" (exactly)
 * type.coding.system MS

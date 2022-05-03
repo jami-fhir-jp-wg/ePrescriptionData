@@ -19,7 +19,7 @@ Description: "処方に適用される保険の保険者または公費の公費
 * identifier[InsurerNumber].system ^short = "保険者番号の名前空間を示すURIを指定"
 * identifier[InsurerNumber].system ^definition = "保険者番号の名前空間を示すURIを指定。固定値"
 * identifier[InsurerNumber].system MS
-* identifier[InsurerNumber].system "urn:oid:1.2.392.100495.20.3.61" (exactly)
+* identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * identifier[InsurerNumber].value ^short = "保険者番号"
 * identifier[InsurerNumber].value ^definition = "保険者番号を半角数字で８ケタ以内の文字列で記述する。"
 * identifier[InsurerNumber].value MS
