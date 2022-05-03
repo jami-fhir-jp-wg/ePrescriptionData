@@ -15,29 +15,23 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationCategory] ..0
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
 * identifier[InsurerNumber] ..0
-* identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "coding.system"
 * type ^slicing.rules = #open
 * type contains
     organizationType 1..1 MS and
     departmentCode 0..1 MS
-* type[organizationType] ^fixedCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
 * type[organizationType].coding 1..1 MS
-* type[organizationType].coding.system = "http://terminology.hl7.org/CodeSystem/organization-type" (exactly)
+* type[organizationType].coding = http://terminology.hl7.org/CodeSystem/organization-type#dept (exactly)
 * type[organizationType].coding.system ^short = "施設種別を表すコード体系を識別するURI"
 * type[organizationType].coding.system ^definition = "施設種別を表すコード体系を識別するURI。固定値。"
 * type[organizationType].coding.system MS
-* type[organizationType].coding.code = #dept (exactly)
-* type[organizationType].coding.code from OrganizationType (required)
 * type[organizationType].coding.code ^short = "診療科部門を表すコード"
 * type[organizationType].coding.code ^definition = "バリューセットOrganizationType(http://hl7.org/fhir/ValueSet/organization-type) から、診療科を表すコードを指定。固定値。"
 * type[organizationType].coding.code MS
 * type[departmentCode] ^short = "診療科コード"
 * type[departmentCode] ^definition = "The kind(s) of o診療科コード。コードで記述できる場合に記録してもよい。"
-* type[departmentCode] ^fixedCodeableConcept.coding.system = "urn:oid:1.2.392.100495.20.2.51"
 * type[departmentCode].coding 1..1 MS
 * type[departmentCode].coding.system = "urn:oid:1.2.392.100495.20.2.51" (exactly)
 * type[departmentCode].coding.system ^short = "診療科コード表のsystem値"
