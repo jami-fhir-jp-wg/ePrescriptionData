@@ -4,14 +4,14 @@ Severity: #error
 Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists() and (type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
 
 Invariant: checkOrganizationType0
-Description: "【診療部門コード(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept'))が正しい】"
+Description: "【診療部門コード(coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept'))が正しい】"
 Severity: #error
-Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists()"
+Expression: "(coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists()"
 
 Invariant: checkOrganizationType1
-Description: "【診療科コード(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51'))が存在する】"
+Description: "【診療科コード(coding.where(system='urn:oid:1.2.392.100495.20.2.51'))が存在する】"
 Severity: #error
-Expression: "(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
+Expression: "(coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
 
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
