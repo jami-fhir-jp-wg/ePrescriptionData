@@ -30,7 +30,7 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * qualification[narcoticLicense].identifier.value ^short = "麻薬施用者免許番号"
 * qualification[narcoticLicense].identifier.value ^definition = "麻薬施用者免許番号"
 * qualification[narcoticLicense].code MS
-* qualification[narcoticLicense].code = http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category#NarcoticsPractitioner
+* qualification[narcoticLicense].code = http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category#NarcoticsPractitioner  (exactly)
 * qualification[narcoticLicense].code.coding 1..1 MS
 * qualification[narcoticLicense].code.coding.system 1.. MS
 * qualification[narcoticLicense].code.coding.system ^definition = "コード体系 Certificateを識別するURI"
@@ -42,7 +42,7 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * qualification[medicalLicense].identifier.system ^definition = "医籍登録番号を識別する名前空間のURI。"
 * qualification[medicalLicense].identifier.value ^definition = "医籍登録番号の文字列。"
 * qualification[medicalLicense].code MS
-* qualification[medicalLicense].code = http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category#MedicalDoctorLicense
+* qualification[medicalLicense].code = http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category#MedicalDoctorLicense  (exactly)
 * qualification[medicalLicense].code.coding 1..1 MS
 * qualification[medicalLicense].code.coding.system 1.. MS
 * qualification[medicalLicense].code.coding.system ^definition = "コード体系 Certificateを識別するURI。"

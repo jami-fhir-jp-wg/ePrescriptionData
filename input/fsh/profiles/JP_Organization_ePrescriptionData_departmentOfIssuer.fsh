@@ -17,7 +17,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
 * type ^slicing.discriminator.type = #pattern
-* type ^slicing.discriminator.path = "coding.system"
+* type ^slicing.discriminator.path = "coding"
 * type ^slicing.rules = #open
 * type contains
     organizationType 1..1 MS and
