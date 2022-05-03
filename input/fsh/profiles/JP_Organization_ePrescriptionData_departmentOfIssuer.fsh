@@ -17,7 +17,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
 * type ^slicing.discriminator.type = #pattern
-* type ^slicing.discriminator.path = "."
+* type ^slicing.discriminator.path = "coding.system"
 * type ^slicing.rules = #open
 * type contains
     organizationType 1..1 MS and
@@ -27,7 +27,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * type[organizationType] = http://terminology.hl7.org/CodeSystem/organization-type#dept  (exactly)
 * type[departmentCode] ^short = "診療科コード"
 * type[departmentCode] ^definition = "The kind(s) of o診療科コード。コードで記述できる場合に記録してもよい。"
-* type[departmentCode] = "urn:oid:1.2.392.100495.20.2.51" (exactly)
+* type[departmentCode].coding.system = "urn:oid:1.2.392.100495.20.2.51" (exactly)
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"
