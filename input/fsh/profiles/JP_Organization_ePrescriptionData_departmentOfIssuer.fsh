@@ -1,3 +1,12 @@
+Invariant: checkOrganizationType
+Description: "(type[0].exists() and  type[0].coding.system = 'http://terminology.hl7.org/CodeSystem/organization-type') 
+  and (type[1].exists() and  type[1].coding.system = urn:oid:1.2.392.100495.20.2.51) "
+Expression: "(type[0].exists() and type[0].coding[0].exists() and type[0].coding[0].where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept').exists())
+  and (type[1].exists() and type[1].coding[0].exists() and type[1].coding[0].where(system='urn:oid:1.2.392.100495.20.2.51').exists())"
+Severity: #error
+XPath: "exists(f:type[0]) and exists(f:type[0]/f:coding[0]) and exists(f:type[1]/f:coding[0]/f:system/@value='http://terminology.hl7.org/CodeSystem/organization-type') and exists(f:type[0]/f:coding[0]/f:code/@value='dept')
+ and exists(f:type[1]) and exists(f:type[1]/f:coding[0]) and exists(f:type[1]/f:coding[0]/f:system/@value='urn:oid:1.2.392.100495.20.2.51')"
+
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
 Id: JP-Organization-ePrescriptionData-departmentOfIssuer
@@ -16,18 +25,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
-* type ^slicing.discriminator.type = #value
-* type ^slicing.discriminator.path = "coding.system"
-* type ^slicing.rules = #open
-* type contains
-    organizationType 1..1 MS and
-    departmentCode 0..1 MS
-* type[organizationType] ^short = "診療科部門を表すコード"
-* type[organizationType] ^definition = "バリューセットOrganizationType(http://hl7.org/fhir/ValueSet/organization-type) から、診療科を表すコードを指定。固定値。"
-* type[organizationType] = http://terminology.hl7.org/CodeSystem/organization-type#dept  (exactly)
-* type[departmentCode] ^short = "診療科コード"
-* type[departmentCode] ^definition = "The kind(s) of o診療科コード。コードで記述できる場合に記録してもよい。"
-* type[departmentCode].coding.system = "urn:oid:1.2.392.100495.20.2.51" (exactly)
+* type obeys checkOrganizationType
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"
