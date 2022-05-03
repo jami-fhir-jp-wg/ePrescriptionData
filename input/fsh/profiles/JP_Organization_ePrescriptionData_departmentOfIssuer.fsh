@@ -15,7 +15,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationCategory] ..0
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/CodeSystem/insurance-medical-institution-no" (exactly)
+* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
 * identifier[InsurerNumber] ..0
 * identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * type ^slicing.discriminator.type = #value

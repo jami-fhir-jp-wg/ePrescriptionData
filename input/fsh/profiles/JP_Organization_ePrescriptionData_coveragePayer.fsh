@@ -11,7 +11,7 @@ Description: "処方に適用される保険の保険者または公費の公費
 * extension[OrganizationCategory] ..0
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/CodeSystem/insurance-medical-institution-no" (exactly)
+* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
 * identifier[InsurerNumber] 0..1 MS
 * identifier[InsurerNumber].id ..0
 * identifier[InsurerNumber].use ..0

@@ -19,7 +19,7 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * extension[OrganizationNo].value[x] 1.. MS
 * identifier[MedicalInstitutionCode] 1..1 MS
 * identifier[MedicalInstitutionCode].system 1.. MS
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/CodeSystem/insurance-medical-institution-no" (exactly)
+* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
 * identifier[MedicalInstitutionCode].system ^short = "保険医療機関番号10桁の名前空間を識別するURL"
 * identifier[MedicalInstitutionCode].system ^definition = "保険医療機関番号10桁の名前空間を識別するURL。固定値。"
 * identifier[MedicalInstitutionCode].value ^short = "保険医療機関番号10桁"
