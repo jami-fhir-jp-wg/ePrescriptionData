@@ -4,6 +4,12 @@ Severity: #error
 Expression: "type[0].exists()"
 XPath: "exists(f:type[0])"
 
+Invariant: checkOrganizationTypeElement
+Description: "診療部門コードと診療科コードが存在していてcodeing情報が正しい"
+Severity: #error
+Expression: "exists()"
+XPath: "exists(f)"
+
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
 Id: JP-Organization-ePrescriptionData-departmentOfIssuer
@@ -23,6 +29,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension[OrganizationNo] ..0
 * identifier[MedicalInstitutionCode] ..0
 * identifier[InsurerNumber] ..0
+* type obeys checkOrganizationTypeElement
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"
