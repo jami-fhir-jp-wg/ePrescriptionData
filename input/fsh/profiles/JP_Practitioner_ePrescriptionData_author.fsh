@@ -1,8 +1,7 @@
 Invariant: checkQualification_DoctorLicenseExists
 Description: "【医師または歯科医師免許番号が存在し、system=urn:oid:1.2.392.100495.20.3.31で記述されている】"
 Severity: #error
-Expression: "
-（identifier.where(system='urn:oid:1.2.392.100495.20.3.31').exists() and (code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and (code='MedicalDoctorLicense' or code='DentalDoctorLicense'))).exists()"
+Expression: "(identifier.where(system='urn:oid:1.2.392.100495.20.3.31').exists() and (code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and (code='MedicalDoctorLicense' or code='DentalDoctorLicense'))).exists()"
 
 Invariant: checkQualification_approapriateLicense
 Description: "【資格番号は医師または歯科医師免許番号、麻薬施用者番号のいずれでかである】"
@@ -12,8 +11,7 @@ Expression: "(code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/pr
 Invariant: checkQualification_NarcoticPractitioner
 Description: "【麻薬施用者番号が存在する場合はコードNarcoticPractitioner、identifier.system=urn:oid:1.2.392.100495.20.3.41.1XXXである】"
 Severity: #error
-Expression: "(code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and code='NarcoticsPractitioner') ).exists()
- and identifier.where((system.startsWith('urn:oid:1.2.392.100495.20.3.41.1')).not()).exists() "
+Expression: "(code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and code='NarcoticsPractitioner') ).exists() and identifier.where((system.startsWith('urn:oid:1.2.392.100495.20.3.41.1')).not()).exists()"
 
 Invariant: checkQualification_category
 Description: "【資格コードシステムはpractioner_certificate_categoryだけである】"
