@@ -38,7 +38,7 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * identifier.value ^definition = "処方医を識別するIDや番号として、処方医療機関における処方医ID（たとえば端末利用者アカウント、あるいは職員番号など）をPractitionerリソースのidentifier要素に記録する。"
 * identifier.value MS
 * name ^short = "処方医氏名"
-* qualification obeys
+* obeys
     checkQualification-DoctorLicenseExists and 
     checkQualification-approapriateLicense and 
     checkQualification-NarcoticPractitioner and 
