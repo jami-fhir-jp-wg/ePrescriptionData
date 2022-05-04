@@ -1,4 +1,4 @@
-Instance: JP-Practitioner-ePreData-author-Example
+Instance: JP-Practitioner-ePreData-author-ExampleType2
 InstanceOf: Practitioner
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
