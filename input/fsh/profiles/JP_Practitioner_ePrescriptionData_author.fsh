@@ -1,19 +1,19 @@
-Invariant: checkQualification_DoctorLicenseExists
+Invariant: checkQualification-DoctorLicenseExists
 Description: "【医師または歯科医師免許番号が存在し、system=urn:oid:1.2.392.100495.20.3.31で記述されている】"
 Severity: #error
 Expression: "(qualification[0].identifier.where(system='urn:oid:1.2.392.100495.20.3.31').exists() and (qualification[0].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and (code='MedicalDoctorLicense' or code='DentalDoctorLicense'))).exists()"
 
-Invariant: checkQualification_approapriateLicense
+Invariant: checkQualification-approapriateLicense
 Description: "【資格番号は医師または歯科医師免許番号、麻薬施用者番号のいずれでかである】"
 Severity: #error
 Expression: "(qualification[1].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and code!='MedicalDoctorLicense' and code!='DentalDoctorLicense' and code!='NarcoticsPractitioner') ).exists().not()"
 
-Invariant: checkQualification_NarcoticPractitioner
+Invariant: checkQualification-NarcoticPractitioner
 Description: "【麻薬施用者番号が存在する場合はコードNarcoticPractitioner、identifier.system=urn:oid:1.2.392.100495.20.3.41.1XXXである】"
 Severity: #error
 Expression: "(qualification[1].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and code='NarcoticsPractitioner') ).exists() and qualification[1].identifier.where((system.startsWith('urn:oid:1.2.392.100495.20.3.41.1')).not()).exists()"
 
-Invariant: checkQualification_category
+Invariant: checkQualification-category
 Description: "【資格コードシステムはpractioner_certificate_categoryだけである】"
 Severity: #error
 Expression: "(qualification[1].code.coding.where(system!='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category')).exists().not()"
@@ -37,11 +37,11 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * identifier.value ^definition = "処方医を識別するIDや番号として、処方医療機関における処方医ID（たとえば端末利用者アカウント、あるいは職員番号など）をPractitionerリソースのidentifier要素に記録する。"
 * identifier.value MS
 * name ^short = "処方医氏名"
-* qualification obey 
-    checkQualification_DoctorLicenseExists,
-    checkQualification_approapriateLicense,
-    checkQualification_NarcoticPractitioner,
-    checkQualification_category
+* qualification obeys
+    checkQualification-DoctorLicenseExists and 
+    checkQualification-approapriateLicense and 
+    checkQualification-NarcoticPractitioner and 
+    checkQualification-category
 * qualification.identifier 1..1 MS
 * qualification.identifier.system 1.. MS
 * qualification.identifier.system ^definition = "医籍登録番号（歯科医籍登録番号を含む、以下同じ）の場合、識別する名前空間のURI urn:oid:1.2.392.100495.20.3.31。\r\n麻薬施用免許番号の場合：都道府県番号を２桁（１桁の都道府県では０をつけた２桁）を末尾につけた\r\nurn:oid:1.2.392.100495.20.3.32.1[都道府県番号2桁]　形式。"
@@ -52,6 +52,5 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * qualification.code.coding 1..1 MS
 * qualification.code.coding.system 1.. MS
 * qualification.code.coding.system ^definition = "コード体系 Certificateの種類を識別するURI http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category"
-* qualification.code.coding.system = http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category
 * qualification.code.coding.code 1.. MS
 * qualification.code.coding.code ^definition = "Certificateの種類コード　'MedicalDoctorLicense'、'DentalDoctorLicense'、または'NarcoticsPractitioner'の固定値。"
