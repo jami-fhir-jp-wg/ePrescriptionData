@@ -3,7 +3,6 @@ Alias: $JP_Encounter_ePrescription = http://jpfhir.jp/fhir/StructureDefinition/J
 Alias: $JP_Organization_ePrescriptionData = http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData
 Alias: $JP_PractionerRole_RoleCode = http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category
 Alias: $JP_PractitionerRole_RoleCode = http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category
-Alias: $Practitioner-certificate-category = http://jpfhir.jp/fhir/core/CodeSystem/Practitioner-certificate-category
 Alias: $bodyMeasurement-category = http://jpfhir.jp/fhir/Common/ValueSet/bodyMeasurement-category
 Alias: $bodyMeasurement-code = http://jpfhir.jp/fhir/Common/ValueSet/bodyMeasurement-code
 Alias: $communication-category = http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category

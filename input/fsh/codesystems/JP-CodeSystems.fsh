@@ -666,7 +666,7 @@ Description: "処方セクション区分コード"
 
 // 医療従事者資格種別
 CodeSystem:  JP_codeSystem_practitioner_certificate_category
-Id:   jp-codeSystem-ractitioner-certificate-category
+Id:   jp-codeSystem-practitioner-certificate-category
 Description: "医療従事者資格種別"
 * ^url = "http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category"
 * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/practitioner-certificate-category"

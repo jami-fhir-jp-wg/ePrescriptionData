@@ -20,4 +20,4 @@ Usage: #inline
 * qualification[=].code = $practitioner-certificate-category#MedicalDoctorLicense
 * qualification[+].identifier.system = "urn:oid:1.2.392.100495.20.3.32.113"
 * qualification[=].identifier.value = "4-321"
-* qualification[=].code = $Practitioner-certificate-category#NarcoticsPractitioner
+* qualification[=].code = $practitioner-certificate-category#NarcoticsPractitioner

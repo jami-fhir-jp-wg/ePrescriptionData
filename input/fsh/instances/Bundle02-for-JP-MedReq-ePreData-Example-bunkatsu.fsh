@@ -190,7 +190,7 @@ Usage: #inline
 * entry[=].resource.qualification[=].code = $practitioner-certificate-category#MedicalDoctorLicense
 * entry[=].resource.qualification[+].identifier.system = "urn:oid:1.2.392.100495.20.3.32.113"
 * entry[=].resource.qualification[=].identifier.value = "4-321"
-* entry[=].resource.qualification[=].code = $Practitioner-certificate-category#NarcoticsPractitioner
+* entry[=].resource.qualification[=].code = $practitioner-certificate-category#NarcoticsPractitioner
 * entry[+].fullUrl = "urn:uuid:398bd608-dd06-76ed-54e0-fd72eb503b40"
 * entry[=].resource.resourceType = "MedicationRequest"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example02-12"
