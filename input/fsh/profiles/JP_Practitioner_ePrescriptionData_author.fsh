@@ -31,7 +31,7 @@ Description: "【資格コードシステムはpractioner_certificate_category�
 Severity: #error
 Expression: "(qualification.code.coding.where(system!='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category')).exists().not()"
 
-Invariant: checkQualification-category
+Invariant: checkQualification-categoryTest
 Description: "test rule【資格コードシステムはpractioner_certificate_categoryだけである】"
 Severity: #error
 Expression: "(qualification.code.coding.where(system!='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category')).exists()"
@@ -61,6 +61,7 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
     checkQualification-approapriateLicense and 
     checkQualification-approapriateLicense1 and 
     checkQualification-NarcoticPractitioner and 
+    checkQualification-categoryTest and 
     checkQualification-category
 * qualification.identifier 1..1 MS
 * qualification.identifier.system 1.. MS
