@@ -12,7 +12,12 @@ Expression: "(qualification[1].code.coding.where(system='http://jpfhir.jp/fhir/c
 Invariant: checkQualification-NarcoticPractitioner
 Description: "【麻薬施用者番号が存在する場合はコードNarcoticPractitioner、identifier.system=urn:oid:1.2.392.100495.20.3.32.1XXXである】"
 Severity: #error
-Expression: "(qualification[1].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category' and code='NarcoticsPractitioner') ).exists() and qualification[1].identifier.where((system.startsWith('urn:oid:1.2.392.100495.20.3.32.1')).not()).exists()"
+Expression: "(qualification[1].code.coding.where(
+    system='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category'
+    and code='NarcoticsPractitioner') ).exists()
+ and qualification[1].identifier.where(
+     system.startsWith('urn:oid:1.2.392.100495.20.3.32.1')
+     ).exists()"
 
 Invariant: checkQualification-category
 Description: "【資格コードシステムはpractioner_certificate_categoryだけである】"
