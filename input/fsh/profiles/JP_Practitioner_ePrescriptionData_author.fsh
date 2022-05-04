@@ -18,11 +18,6 @@ Description: "【資格コードシステムはpractioner_certificate_category�
 Severity: #error
 Expression: "(code.coding.where(system!='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category')).exists().not()"
 
-Invariant: checkQualification_category
-Description: "practioner_certificate_category以外の資格コードシステムは存在しない"
-Severity: #error
-Expression: "(code.coding.where(system!='http://jpfhir.jp/fhir/core/CodeSystem/practioner_certificate_category')).exists().not()"
-
 Profile: JP_Practitioner_ePrescriptionData_author
 Parent: JP_Practitioner
 Id: JP-Practitioner-ePrescriptionData-author
