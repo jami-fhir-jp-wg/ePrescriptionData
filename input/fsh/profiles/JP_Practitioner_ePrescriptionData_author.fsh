@@ -48,7 +48,6 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * obeys
     checkQualification-DoctorLicenseExists and 
     checkQualification-approapriateLicense and 
-    checkQualification-approapriateLicense1 and 
     checkQualification-NarcoticPractitioner and 
     checkQualification-category
 * qualification.identifier 1..1 MS
