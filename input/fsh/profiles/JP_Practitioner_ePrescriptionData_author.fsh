@@ -2,7 +2,7 @@ Invariant: checkQualification-DoctorLicenseExists
 Description: "【医師または歯科医師免許番号が存在し、system=urn:oid:1.2.392.100495.20.3.31で記述されている】"
 Severity: #error
 Expression: "(qualification[0].identifier.where(system='urn:oid:1.2.392.100495.20.3.31').exists()
-     and (qualification[0].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practitioner_certificate_category'
+    and (qualification[0].code.coding.where(system='http://jpfhir.jp/fhir/core/CodeSystem/practitioner_certificate_category'
       and (code='MedicalDoctorLicense' or code='DentalDoctorLicense'))).exists())"
 
 Invariant: checkQualification-approapriateLicense
@@ -16,7 +16,6 @@ Severity: #error
 Expression: "((qualification[1]).exists().not())
  or ((qualification[1].code.coding.where(
     system='http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category'
-            http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category
     and code='NarcoticsPractitioner') ).exists()
  and qualification[1].identifier.where(
      system.startsWith('urn:oid:1.2.392.100495.20.3.32.1')
