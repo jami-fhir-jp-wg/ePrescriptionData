@@ -6,7 +6,7 @@ Expression: "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem
 Invariant: checkOrganizationType1
 Description: "【診療科コード(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51'))が存在する】"
 Severity: #error
-Expression: "(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists()"
+Expression: "(type[1].exists().not()) or ((type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists())"
 
 Profile: JP_Organization_ePrescriptionData_departmentOfIssuer
 Parent: JP_Organization
