@@ -17,3 +17,4 @@ Usage: #example
 * qualification[0].identifier.system = "urn:oid:1.2.392.100495.20.3.31"
 * qualification[=].identifier.value = "123456"
 * qualification[=].code = $practitioner-certificate-category#MedicalDoctorLicense
+    
