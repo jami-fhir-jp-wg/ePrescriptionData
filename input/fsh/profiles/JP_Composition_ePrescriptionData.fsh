@@ -10,7 +10,7 @@ Invariant: checkValidSections
 Description: "【セクション構成は処方箋のとき01:処方情報セクションのみ、分割処方箋のとき11:分割処方箋セクションと12:別紙セクションの両方が存在する。】"
 Severity: #error
 Expression: "((category.coding.code='01' or category.coding.code='02') and (section.code.coding.where(code = #01)).exists())
-or (category.coding.code='03' and (section.code.coding.where(code = #11)).exists() and (section.code.coding.where(code = #12)).exists())
+or (category.coding.code='03' and (section.code.coding.where(code = #11)).exists() and (section.code.coding.where(code = #12)).exists())"
 
 Profile: JP_Composition_ePrescriptionData
 Parent: Composition

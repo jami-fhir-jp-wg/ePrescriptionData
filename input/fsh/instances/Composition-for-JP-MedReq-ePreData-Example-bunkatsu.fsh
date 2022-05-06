@@ -17,7 +17,6 @@ Usage: #inline
 * title = "分割処方箋"
 * custodian = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu)
 * event.code.text = "処方箋交付「" (exactly)
-* event.period.start 1.. MS
 * event.period.start = "2020-08-21"
 * event.period.end  = "2020-08-24"
 * section[0].title = "分割処方箋セクション"
