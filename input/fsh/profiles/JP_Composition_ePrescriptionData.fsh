@@ -142,7 +142,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * event.period.end ^definition = "処方箋の有効期限。\r\n省略された場合は、法律で定められた処方箋の有効期限と解釈する。"
 * event.period.end MS
 * event.detail ..0
-* section ..1 
+* section ..2 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
@@ -192,8 +192,8 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuInformation].entry.reference ^definition = "分割処方箋に含まれる個々の処方箋に対応するBundleリソースへの参照。"
 * section[bunkatsuInformation].entry.reference MS
 
-* section[bunkatsuBesshiInformation] ^short = "分割処方箋別紙セクション。"
-* section[bunkatsuBesshiInformation] ^definition = "分割処方箋別紙セクション。分割処方箋に含まれる別紙に対応したOrganizationリソースが本セクションに含まれる。"
+* section[bunkatsuBesshiInformation] ^short = "分割処方箋の別紙セクション。"
+* section[bunkatsuBesshiInformation] ^definition = "分割処方箋の別紙セクション。分割処方箋に含まれる別紙に対応したOrganizationリソースが本セクションに含まれる。"
 * section[bunkatsuBesshiInformation].title 1.. MS
 * section[bunkatsuBesshiInformation].title = "別紙セクション" (exactly)
 * section[bunkatsuBesshiInformation].title ^short = "セクションタイトル"

@@ -1,7 +1,15 @@
+
+Invariant: checkPhoneNumberExists
+Description: "【telecomに電話番号が最低ひとつ記述されている】"
+Severity: #error
+Expression: "(telecom.where(system='phone' and value.exists())).exists()"
+
+
 Profile: JP_Organization_ePrescriptionData_issuer
 Parent: JP_Organization
 Id: JP-Organization-ePrescriptionData-issuer
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
+* obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
@@ -40,12 +48,11 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * name 1.. MS
 * name ^short = "医療機関の名称"
 * name ^definition = "処方箋などに印刷する際に用いられる医療機関名称の文字列。"
-* telecom 1..1 MS
-* telecom ^short = "医療機関電話番号"
+* telecom 1.. MS
+* telecom ^short = "医療機関電話番号。電話番号は最低１件必ず記述されること。"
 * telecom ^definition = "医療機関電話番号"
-* telecom.system = #phone (exactly)
 * telecom.system MS
-* telecom.system ^definition = "機器種別。　phone　の固定値。"
+* telecom.system ^definition = "機器種別。　電話番号の場合にはphone　の固定値。"
 * telecom.value ^short = "電話番号"
 * telecom.value MS
 * telecom.value ^definition = "電話番号。半角数字列で、適宜、ハイフンや括弧を含んでもよいが、使用時間帯などの説明は含めない。\r\n\"0123_456_7890\""

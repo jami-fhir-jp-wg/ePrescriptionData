@@ -11,7 +11,7 @@ Usage: #inline
 * category = $prescription-category#03 "分割一般処方"
 * subject = Reference(Patient-for-JP-MedReq-ePreData-Example-bunkatsu) "患者リソースPatient"
 * encounter = Reference(Encounter-for-JP-MedReq-ePreData-Example-bunkatsu) "受診Encounterリソース"
-* date = "2020-08-21T12:12:21+09:00"
+* date = "2020-08-21T12:12:22+09:00"
 * author = Reference(PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成者PractitionerRoleリソース"
 * author = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成機関Organizationリソース"
 * title = "分割処方箋"
@@ -27,7 +27,7 @@ Usage: #inline
 * section[=].entry[+] = Reference(Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu)
 * section[=].entry[+] = Reference(Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu)
 * section[+].title = "別紙セクション"
-* section[=].code = $prescription-section#12 "分割処方箋別紙セクション"
+* section[=].code = $prescription-section#12 "別紙セクション"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
 * section[=].entry = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu)

@@ -21,3 +21,6 @@ Usage: #inline
 * telecom[=].value = "0123-456-7891"
 * telecom[+].system = #other
 * telecom[=].value = "090-9999-9999"
+* address.text = "神奈川県横浜市港区１−２−３"
+* address.postalCode  = "123-4567"
+* address.country = "JP"
