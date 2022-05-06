@@ -1,7 +1,22 @@
+Invariant: checkValidCategoryTitle
+Description: "【categoryコードとtitleは\"01:一般処方箋\"　または\"01:処方箋\"　\"02:麻薬処方箋\"　または\"03:分割処方箋\"のいずれかである。】"
+Severity: #error
+Expression: "(title='一般処方箋' and category.coding.code='01')
+     or (title='処方箋' and category.coding.code='01')
+     or (title='麻薬処方箋' and category.coding.code='02')
+     or (title='分割処方箋' and category.coding.code='03'))"
+
+Invariant: checkValidSections
+Description: "【セクション構成は処方箋のとき01:処方情報セクションのみ、分割処方箋のとき11:分割処方箋セクションと12:別紙セクションの両方が存在する。】"
+Severity: #error
+Expression: "((category.coding.code='01' or category.coding.code='02') and (section.code.coding.where(code = #01)).exists())
+or (category.coding.code='03' and (section.code.coding.where(code = #11)).exists() and (section.code.coding.where(code = #12)).exists())
+
 Profile: JP_Composition_ePrescriptionData
 Parent: Composition
 Id: JP-Composition-ePrescriptionData
 Description: "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
+* obeys checkValidCategoryTitle
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
 * ^status = #draft
 * text ^short = "読んで概略がわかるようにするためのテキスト情報"
@@ -58,9 +73,9 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * category.coding.system ^definition = "処方箋区分コードのコード体系を識別するURI。固定値。"
 * category.coding.code 1.. MS
 * category.coding.code ^short = "処方箋区分コード"
-* category.coding.code ^definition = "処方箋区分コード。\"01：処方箋\"、\"02：麻薬処方箋\"\r\n麻薬を一剤でも含む場合には、麻薬処方箋コードを設定する。"
+* category.coding.code ^definition = "処方箋区分コード。\"01：処方箋\"、\"02：麻薬処方箋\"\r\n麻薬を一剤でも含む場合には、麻薬処方箋コードを設定する。03:一般分割処方箋は"
 * category.coding.display ^short = "コードの表示名"
-* category.coding.display ^definition = "コードの表示名。省略可能。\r\n\"一般処方箋\"　または　\"麻薬処方箋\""
+* category.coding.display ^definition = "コードの表示名。省略可能。\r\n\"処方箋\"　または　\"麻薬処方箋\"　または\"分割処方箋\""
 * category.coding.display MS
 * category.coding.userSelected ..0
 * category.text ..0
@@ -102,9 +117,6 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * author[prescriberOrganization].reference ^short = "OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
 * author[prescriberOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関を表すOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
 * title MS
-* title = "処方箋" (exactly)
-* title ^short = "この文書の（人が読める）タイトル"
-* title ^definition = "固定値　”処方箋”"
 * confidentiality ..0
 * attester ..0
 * custodian 1.. MS
@@ -119,7 +131,7 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * event ^definition = "処方箋としての交付日とその有効期限。"
 * event.code 1..1 MS
 * event.code.text 1.. MS
-* event.code.text = "処方箋交付「" (exactly)
+* event.code.text = "処方箋交付" (exactly)
 * event.period 1.. MS
 * event.period ^short = "有効期間"
 * event.period ^definition = "有効期間を開始日と終了日で記述する。"
@@ -134,7 +146,94 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
-* section contains prescriptionInformation 1..1 MS
+* section contains prescriptionInformation 0..1 MS
+    and bunkatsuInformation  0..1 MS
+    and bunkatsuBesshiInformation   0..1 MS
+
+* section[bunkatsuInformation] ^short = "分割処方箋セクション。"
+* section[bunkatsuInformation] ^definition = "分割処方箋セクション。各分割処方箋を記述したBundleリソースへの参照をその分割数分だけ含む。"
+* section[bunkatsuInformation].title 1.. MS
+* section[bunkatsuInformation].title = "分割処方箋セクション" (exactly)
+* section[bunkatsuInformation].title ^short = "セクションタイトル"
+* section[bunkatsuInformation].title ^definition = "セクションタイトル。固定値。"
+* section[bunkatsuInformation].code 1.. MS
+* section[bunkatsuInformation].code ^short = "セクション区分コード"
+* section[bunkatsuInformation].code ^definition = "セクション区分コード"
+* section[bunkatsuInformation].code.coding 1..1 MS
+* section[bunkatsuInformation].code.coding.system 1.. MS
+* section[bunkatsuInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
+* section[bunkatsuInformation].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[bunkatsuInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[bunkatsuInformation].code.coding.code 1.. MS
+* section[bunkatsuInformation].code.coding.code = #11 (exactly)
+* section[bunkatsuInformation].code.coding.code ^short = "セクション区分のコード値"
+* section[bunkatsuInformation].code.coding.code ^definition = "処方情報セクションを表すセクション区分のコード値。\r\n固定値。"
+* section[bunkatsuInformation].code.coding.display = "分割処方箋セクション" (exactly)
+* section[bunkatsuInformation].code.coding.display ^short = "セクション区分コードの表示名"
+* section[bunkatsuInformation].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[bunkatsuInformation].code.coding.display MS
+* section[bunkatsuInformation].code.coding.userSelected ..0
+* section[bunkatsuInformation].code.text ..0
+* section[bunkatsuInformation].text ^short = "セクションの内容を表す文字列"
+* section[bunkatsuInformation].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
+* section[bunkatsuInformation].text MS
+* section[bunkatsuInformation].text.status MS
+* section[bunkatsuInformation].text.status = #generated (exactly)
+* section[bunkatsuInformation].text.status ^short = "セクションの内容作成状態コード"
+* section[bunkatsuInformation].text.status ^definition = "generated | extensions | additional | empty　から　\"generated\" の固定値。"
+* section[bunkatsuInformation].text.div ^short = "xhtml 形式のテキスト"
+* section[bunkatsuInformation].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
+* section[bunkatsuInformation].mode ..0
+* section[bunkatsuInformation].orderedBy ..0
+* section[bunkatsuInformation].entry only Reference(JP_Bundle_ePrescriptionData)
+* section[bunkatsuInformation].entry ^short = "分割処方の各Bundleリソース"
+* section[bunkatsuInformation].entry ^definition = "分割処方の各Bundleリソース"
+* section[bunkatsuInformation].entry.reference ^short = "分割処方の各Bundleリソースへの参照"
+* section[bunkatsuInformation].entry.reference ^definition = "分割処方箋に含まれる個々の処方箋に対応するBundleリソースへの参照。"
+* section[bunkatsuInformation].entry.reference MS
+
+* section[bunkastuBesshiInformation] ^short = "分割処方箋別紙セクション。"
+* section[bunkatsuBesshiInformation] ^definition = "分割処方箋別紙セクション。分割処方箋に含まれる別紙に対応したOrganizationリソースが本セクションに含まれる。"
+* section[bunkatsuBesshiInformation].title 1.. MS
+* section[bunkatsuBesshiInformation].title = "別紙セクション" (exactly)
+* section[bunkatsuBesshiInformation].title ^short = "セクションタイトル"
+* section[bunkatsuBesshiInformation].title ^definition = "セクションタイトル。固定値。"
+* section[bunkatsuBesshiInformation].code 1.. MS
+* section[bunkatsuBesshiInformation].code ^short = "セクション区分コード"
+* section[bunkatsuBesshiInformation].code ^definition = "セクション区分コード"
+* section[bunkatsuBesshiInformation].code.coding 1..1 MS
+* section[bunkatsuBesshiInformation].code.coding.system 1.. MS
+* section[bunkatsuBesshiInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
+* section[bunkatsuBesshiInformation].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[bunkatsuBesshiInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[bunkatsuBesshiInformation].code.coding.code 1.. MS
+* section[bunkatsuBesshiInformation].code.coding.code = #12 (exactly)
+* section[bunkatsuBesshiInformation].code.coding.code ^short = "セクション区分のコード値"
+* section[bunkatsuBesshiInformation].code.coding.code ^definition = "処方情報セクションを表すセクション区分のコード値。\r\n固定値。"
+* section[bunkatsuBesshiInformation].code.coding.display = "別紙セクション" (exactly)
+* section[bunkatsuBesshiInformation].code.coding.display ^short = "セクション区分コードの表示名"
+* section[bunkatsuBesshiInformation].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[bunkatsuBesshiInformation].code.coding.display MS
+* section[bunkatsuBesshiInformation].code.coding.userSelected ..0
+* section[bunkatsuBesshiInformation].code.text ..0
+* section[bunkatsuBesshiInformation].text ^short = "セクションの内容を表す文字列"
+* section[bunkatsuBesshiInformation].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
+* section[bunkatsuBesshiInformation].text MS
+* section[bunkatsuBesshiInformation].text.status MS
+* section[bunkatsuBesshiInformation].text.status = #generated (exactly)
+* section[bunkatsuBesshiInformation].text.status ^short = "セクションの内容作成状態コード"
+* section[bunkatsuBesshiInformation].text.status ^definition = "generated | extensions | additional | empty　から　\"generated\" の固定値。"
+* section[bunkatsuBesshiInformation].text.div ^short = "xhtml 形式のテキスト"
+* section[bunkatsuBesshiInformation].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
+* section[bunkatsuBesshiInformation].mode ..0
+* section[bunkatsuBesshiInformation].orderedBy ..0
+* section[bunkatsuBesshiInformation].entry only Reference(JP_Organization_ePrescriptionData_issuer)
+* section[bunkatsuBesshiInformation].entry ^short = "別紙に含まれる処方医療機関情報に対応するOrganizationリソース"
+* section[bunkatsuBesshiInformation].entry ^definition = "別紙に含まれる処方医療機関情報に対応するOrganizationリソース"
+* section[bunkatsuBesshiInformation].entry.reference ^short = "別紙に含まれる処方医療機関情報に対応するOrganizationリソースへの参照"
+* section[bunkatsuBesshiInformation].entry.reference ^definition = "別紙に含まれる処方医療機関情報に対応するOrganizationリソースへの参照"
+* section[bunkatsuBesshiInformation].entry.reference MS
+
 * section[prescriptionInformation] ^short = "処方情報セクション。"
 * section[prescriptionInformation] ^definition = "処方情報セクション。\r\n処方箋に含まれる処方情報に関連するリソースが全て本セクションに含まれる。"
 * section[prescriptionInformation].title 1.. MS
