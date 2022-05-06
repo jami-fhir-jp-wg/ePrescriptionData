@@ -1,7 +1,7 @@
 Invariant: checkValidCategoryTitle
 Description: "【categoryコードとtitleは\"01:一般処方箋\"　または\"01:処方箋\"　\"02:麻薬処方箋\"　または\"03:分割処方箋\"のいずれかである。】"
 Severity: #error
-Expression: "(title='一般処方箋' and category.coding.code='01')
+Expression: "((title='一般処方箋' and category.coding.code='01')
      or (title='処方箋' and category.coding.code='01')
      or (title='麻薬処方箋' and category.coding.code='02')
      or (title='分割処方箋' and category.coding.code='03'))"
@@ -55,8 +55,8 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * type.coding.system MS
 * type.coding.version
 * type.coding.code 1.. MS
-* type.coding.code = #57833_6 (exactly)
-* type.coding.code ^definition = "処方箋を表す文書区分コード。\"57833_6：処方箋\"を指定。固定値。"
+* type.coding.code = #57833-6 (exactly)
+* type.coding.code ^definition = "処方箋を表す文書区分コード。\"57833-6：処方箋\"を指定。固定値。"
 * type.coding.display = "処方箋" (exactly)
 * type.coding.display ^short = "文書区分コードの表示名。"
 * type.coding.display ^definition = "文書区分コードの表示名。"
