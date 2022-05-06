@@ -1,6 +1,6 @@
 Instance: Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Bundle
-Usage: #example
+Usage: #inline
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
 * language = #ja
 * identifier.system = "urn:ietf:rfc:3986"
