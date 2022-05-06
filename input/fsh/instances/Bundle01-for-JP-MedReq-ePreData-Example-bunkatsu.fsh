@@ -162,6 +162,7 @@ Usage: #inline
 * entry[+].fullUrl = "urn:uuid:2e61a47b-a7fa-1d23-ebbf-eade736e9b00"
 * entry[=].resource.resourceType = "PractitionerRole"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-10"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
 * entry[=].resource.identifier.system = "http://exapmleHospital.jp/IdSystem/hisUserRoleId"
 * entry[=].resource.identifier.value = "702"
 * entry[=].resource.practitioner.reference = "urn:uuid:a871437d-03eb-edfb-9ac7-f3313c54f31a"
