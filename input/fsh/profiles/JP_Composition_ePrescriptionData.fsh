@@ -15,7 +15,7 @@ or (category.coding.code='03' and (section.code.coding.where(code = #11)).exists
 Profile: JP_Composition_ePrescriptionData
 Parent: Composition
 Id: JP-Composition-ePrescriptionData
-Description: "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
+Description:  "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
 * obeys checkValidCategoryTitle
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
 * ^status = #draft
@@ -192,7 +192,7 @@ Description: "処方情報のリソース構成情報と文書日付に関する
 * section[bunkatsuInformation].entry.reference ^definition = "分割処方箋に含まれる個々の処方箋に対応するBundleリソースへの参照。"
 * section[bunkatsuInformation].entry.reference MS
 
-* section[bunkastuBesshiInformation] ^short = "分割処方箋別紙セクション。"
+* section[bunkatsuBesshiInformation] ^short = "分割処方箋別紙セクション。"
 * section[bunkatsuBesshiInformation] ^definition = "分割処方箋別紙セクション。分割処方箋に含まれる別紙に対応したOrganizationリソースが本セクションに含まれる。"
 * section[bunkatsuBesshiInformation].title 1.. MS
 * section[bunkatsuBesshiInformation].title = "別紙セクション" (exactly)
