@@ -23,9 +23,9 @@ Description: """医療情報交換のために使用される診療関連の文�
     composition 1..1 MS and
     patient 1..1 MS and
     encounterOnDocument 0..1 MS and
-    healthInsurancePublic 0..1 MS and
+    healthInsurancePublic 0.. MS and
     insurerOrganization 0..1 MS and
-    publicPayment 0..1 and
+    publicPayment 0.. and
     publicPayerOrganization 0..1 MS and
     custodianOrganization 1..1 MS and
     custodianDepartmentOfOrganization 0..1 MS and
@@ -37,7 +37,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[composition].fullUrl ^short = "埋め込まれているCompositionリソースを一意に識別するためのUUID"
 * entry[composition].fullUrl ^definition = "埋め込まれているCompositionリソースを一意に識別するためのUUID。"
 * entry[composition].resource 1.. MS
-* entry[composition].resource only http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData
+* entry[composition].resource only JP_Composition
 * entry[composition].resource ^short = "Compositionリソースのインスタンス本体"
 * entry[composition].resource ^definition = "Compositionリソースのインスタンス本体。"
 * entry[composition].search ..0
