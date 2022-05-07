@@ -162,7 +162,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:2e61a47b-a7fa-1d23-ebbf-eade736e9b00"
 * entry[=].resource.resourceType = "PractitionerRole"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-10"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 * entry[=].resource.identifier.system = "http://exapmleHospital.jp/IdSystem/hisUserRoleId"
 * entry[=].resource.identifier.value = "702"
 * entry[=].resource.practitioner.reference = "urn:uuid:a871437d-03eb-edfb-9ac7-f3313c54f31a"
@@ -204,6 +204,7 @@ Usage: #example
 * entry[=].resource.intent = #order
 * entry[=].resource.medicationCodeableConcept.coding[0] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.2.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
+* entry[=].resource.medicationCodeableConcept.text = "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.subject.reference = "urn:uuid:e22017ff-4c65-649c-2dfe-c6676b654be5"
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"
@@ -234,6 +235,7 @@ Usage: #example
 * entry[=].resource.status = #active
 * entry[=].resource.intent = #order
 * entry[=].resource.medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#106062101 "リンデロンＶＧクリーム ５ｇ"
+* entry[=].resource.medicationCodeableConcept.text = "リンデロンＶＧクリーム ５ｇ"
 * entry[=].resource.subject.reference = "urn:uuid:e22017ff-4c65-649c-2dfe-c6676b654be5"
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"

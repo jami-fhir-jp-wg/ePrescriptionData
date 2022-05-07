@@ -276,27 +276,22 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[prescriptionInformation].entry ^slicing.rules = #open
 * section[prescriptionInformation].entry contains
     healthInsurancePublic 0..1 MS and
-    insurerOrganization 0..1 MS and
+    commonPayerOrganization 0.. MS and
     publicPayment 0..1 MS and
-    publicPayerOrganization 0..1 MS and
-    medicationRequest 0..1 MS and
-    communication 0..1 MS and
-    custodianOrganization 1..1 MS and
-    custodianDepartmentOfOrganization 0..1 MS and
-    authorisedAuthorRole 0..1 MS and
-    authorisedAuthor 0..1 MS
+    medicationRequest 0.. MS and
+    communication 0.. MS and
 * section[prescriptionInformation].entry[healthInsurancePublic] only Reference(JP_Coverage_ePrescriptionData_insurance)
 * section[prescriptionInformation].entry[healthInsurancePublic] ^short = "文書が作成された診療の健康保険に関するCoverageリソース"
 * section[prescriptionInformation].entry[healthInsurancePublic] ^definition = "文書が作成された診療の健康保険に関するCoverageリソース。"
 * section[prescriptionInformation].entry[healthInsurancePublic].reference ^short = "リソースへの参照"
 * section[prescriptionInformation].entry[healthInsurancePublic].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
 * section[prescriptionInformation].entry[healthInsurancePublic].reference MS
-* section[prescriptionInformation].entry[insurerOrganization] only Reference(JP_Organization_ePrescriptionData_coveragePayer)
-* section[prescriptionInformation].entry[insurerOrganization] ^short = "医療保険者組織に関するOrganizationリソースへの情報"
-* section[prescriptionInformation].entry[insurerOrganization] ^definition = "医療保険者組織に関するOrganizationリソースへの情報。"
-* section[prescriptionInformation].entry[insurerOrganization].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[insurerOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[insurerOrganization].reference MS
+* section[prescriptionInformation].entry[commonPayerOrganization] only Reference(JP_Organization_ePrescriptionData_coveragePayer)
+* section[prescriptionInformation].entry[commonPayerOrganization] ^short = "医療保険者組織またはublicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報"
+* section[prescriptionInformation].entry[commonPayerOrganization] ^definition = "医療保険者組織またはublicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報。"
+* section[prescriptionInformation].entry[commonPayerOrganization].reference ^short = "リソースへの参照"
+* section[prescriptionInformation].entry[commonPayerOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
+* section[prescriptionInformation].entry[commonPayerOrganization].reference MS
 * section[prescriptionInformation].entry[publicPayment] only Reference(JP_Coverage_ePrescriptionData_publicPayment)
 * section[prescriptionInformation].entry[publicPayment] ^sliceName = "publicPayment"
 * section[prescriptionInformation].entry[publicPayment] ^short = "公費負担に関する情報に関するCovegareリソースへの情報"
@@ -304,37 +299,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[prescriptionInformation].entry[publicPayment].reference ^short = "リソースへの参照"
 * section[prescriptionInformation].entry[publicPayment].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
 * section[prescriptionInformation].entry[publicPayment].reference MS
-* section[prescriptionInformation].entry[publicPayerOrganization] only Reference(JP_Organization_ePrescriptionData_coveragePayer)
-* section[prescriptionInformation].entry[publicPayerOrganization] ^sliceName = "publicPayerOrganization"
-* section[prescriptionInformation].entry[publicPayerOrganization] ^short = "publicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報"
-* section[prescriptionInformation].entry[publicPayerOrganization] ^definition = "publicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報。"
-* section[prescriptionInformation].entry[publicPayerOrganization].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[publicPayerOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[publicPayerOrganization].reference MS
-* section[prescriptionInformation].entry[custodianOrganization] only Reference(JP_Organization_ePrescriptionData_issuer)
-* section[prescriptionInformation].entry[custodianOrganization] ^short = "文書の作成と管理に責任を有する組織のOrganizationリソースへの情報"
-* section[prescriptionInformation].entry[custodianOrganization] ^definition = "文書の作成と管理に責任を有する組織のOrganizationリソースへの情報。"
-* section[prescriptionInformation].entry[custodianOrganization].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[custodianOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[custodianOrganization].reference MS
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization] only Reference(JP_Organization_ePrescriptionData_departmentOfIssuer)
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization] ^short = "文書を作成した組織（医療機関等）の部門や診療科情報のOrganizationリソースへの情報"
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization] ^definition = "文書を作成した組織（医療機関等）の部門や診療科情報のOrganizationリソースへの情報。"
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[custodianDepartmentOfOrganization].reference MS
-* section[prescriptionInformation].entry[authorisedAuthorRole] only Reference(JP_PractitionerRole_ePrescriptionData_author)
-* section[prescriptionInformation].entry[authorisedAuthorRole] ^short = "正当な権限があって文書を作成した個人の役割に関するPatientRoleリソースへの情報"
-* section[prescriptionInformation].entry[authorisedAuthorRole] ^definition = "正当な権限があって文書を作成した個人の役割に関するPatientRoleリソースへの情報。"
-* section[prescriptionInformation].entry[authorisedAuthorRole].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[authorisedAuthorRole].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[authorisedAuthorRole].reference MS
-* section[prescriptionInformation].entry[authorisedAuthor] only Reference(JP_Practitioner_ePrescriptionData_author)
-* section[prescriptionInformation].entry[authorisedAuthor] ^short = "正当な権限があって文書を作成した個人のPractitionerリソースへの情報"
-* section[prescriptionInformation].entry[authorisedAuthor] ^definition = "正当な権限があって文書を作成した個人のPractitionerリソースへの情報。"
-* section[prescriptionInformation].entry[authorisedAuthor].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[authorisedAuthor].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[authorisedAuthor].reference MS
 * section[prescriptionInformation].entry[medicationRequest] only Reference(JP_MedicationRequest_ePrescriptionData)
 * section[prescriptionInformation].entry[medicationRequest] ^sliceName = "medicationRequest"
 * section[prescriptionInformation].entry[medicationRequest] ^short = "ひとつの医薬品の処方指示に関するMedicationRequestリソースへの情報"
