@@ -279,7 +279,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
     commonPayerOrganization 0.. MS and
     publicPayment 0..1 MS and
     medicationRequest 0.. MS and
-    communication 0.. MS and
+    communication 0.. MS
 * section[prescriptionInformation].entry[healthInsurancePublic] only Reference(JP_Coverage_ePrescriptionData_insurance)
 * section[prescriptionInformation].entry[healthInsurancePublic] ^short = "文書が作成された診療の健康保険に関するCoverageリソース"
 * section[prescriptionInformation].entry[healthInsurancePublic] ^definition = "文書が作成された診療の健康保険に関するCoverageリソース。"
