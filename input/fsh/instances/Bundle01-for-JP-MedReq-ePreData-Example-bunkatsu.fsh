@@ -150,15 +150,6 @@ Usage: #example
 * entry[=].resource.telecom.system = #phone
 * entry[=].resource.telecom.value = "0123-456-7890"
 * entry[=].resource.address.text = "〒100-0001 東京都千代田区千代田９－９－９"
-* entry[+].fullUrl = "urn:uuid:a9cd2276-8329-7a4a-49ef-f9324ac56c53"
-* entry[=].resource.resourceType = "Organization"
-* entry[=].resource.id = "JP-Organization-ePrescriptionData-departmentOfIssuer-Example"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
-* entry[=].resource.identifier.system = "urn:oid:1.2.392.100495.20.2.51"
-* entry[=].resource.identifier.value = "01"
-* entry[=].resource.type = $organization-type#dept
-* entry[=].resource.name = "内科"
-* entry[=].resource.partOf.reference = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
 * entry[+].fullUrl = "urn:uuid:2e61a47b-a7fa-1d23-ebbf-eade736e9b00"
 * entry[=].resource.resourceType = "PractitionerRole"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-10"
