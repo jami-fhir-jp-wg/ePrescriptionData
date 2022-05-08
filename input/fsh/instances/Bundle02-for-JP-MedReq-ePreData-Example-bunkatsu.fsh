@@ -230,7 +230,7 @@ Usage: #example
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"
 * entry[=].resource.dosageInstruction[0].text = "１日３回患部に塗布（膝）"
-* entry[=].resource.dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#2B73000000000000 "外用・塗布・１日３回"
+* entry[=].resource.dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#2B73000000000000 "塗布 １日３回"
 * entry[=].resource.dosageInstruction[=].site = urn:oid:1.2.392.200250.2.2.20.32#950 "膝"
 * entry[=].resource.dosageInstruction[=].route = $route-codes#AP "外用"
 * entry[=].resource.dosageInstruction[=].method = urn:oid:1.2.392.200250.2.2.20.40#2B "塗布"

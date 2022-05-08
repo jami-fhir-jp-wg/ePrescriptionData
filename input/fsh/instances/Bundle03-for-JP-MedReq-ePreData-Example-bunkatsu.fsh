@@ -132,7 +132,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:9f1993bc-753f-479e-9e01-f0a53929a6fc"
 * entry[=].resource.resourceType = "Organization"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example03-8"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_coveragePayer"
 * entry[=].resource.extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo"
 * entry[=].resource.extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.21"
 * entry[=].resource.extension[=].valueIdentifier.value = "13"
