@@ -1,4 +1,4 @@
-Instance: Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu
+Instance: Bundle-for-JP-MedReq-ePreData-Example03
 InstanceOf: Bundle
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
