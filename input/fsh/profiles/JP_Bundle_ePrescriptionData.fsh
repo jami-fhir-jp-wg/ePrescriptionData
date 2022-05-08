@@ -6,6 +6,15 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * ^status = #draft
 * . ^short = "処方データFHIR仕様のBundle"
 * . ^definition = "処方データFHIR仕様のBundleのプロファイル。\r\n診療情報交換のための文書形式のバンドルの共通プロファイルからの派生プロファイル。"
+* entry[patient].resource only JP_Patient_ePrescriptionData
+* entry[encounterOnDocument].resource only JP_Encounter_ePrescriptionData
+* entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
+* entry[commonPayerOrganization].resource only JP_Organization_ePrescriptionData_coveragePayer
+* entry[publicPayment].resource only JP_Coverage_ePrescriptionData_publicPayment
+* entry[custodianOrganization].resource only JP_Organization_ePrescriptionData_issuer
+* entry[custodianDepartmentOfOrganization].resource only JP_Organization_ePrescriptionData_departmentOfIssuer
+* entry[authorisedAuthorRole].resource only JP_PractitionerRole_ePrescriptionData_author
+* entry[authorisedAuthor].resource only JP_Practitioner_ePrescriptionData_author
 * entry contains
     medicationRequest 1..*  MS and
     communication 0..* MS

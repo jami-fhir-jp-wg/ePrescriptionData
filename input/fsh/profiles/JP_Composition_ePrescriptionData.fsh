@@ -101,7 +101,8 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * author ^definition = "処方医を表すPractitionerRoleリソースへの参照、および,処方医療機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
 * author contains
     prescriberInformation 1..1 MS and
-    prescriberOrganization 1..1 MS
+    prescriberOrganization 0..1 MS and
+    prescriberDepartmentOrganization 0..1 MS
 * author[prescriberInformation] only Reference(JP_PractitionerRole_ePrescriptionData_author)
 * author[prescriberInformation] ^short = "処方医役割を表すPractitionerRoleリソースへの参照"
 * author[prescriberInformation] ^definition = "処方医役割を表すPractitionerRoleリソースへの参照。"
@@ -112,10 +113,17 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * author[prescriberOrganization] only Reference(JP_Organization_ePrescriptionData_issuer)
 * author[prescriberOrganization] ^short = "処方医療機関を表すOrganizationリソースへの参照"
 * author[prescriberOrganization] ^definition = "処方医療機関を表すOrganizationリソースへの参照"
-* author[prescriberOrganization] ^comment = "処方医が所属する医療機関と同一の場合には、そのOrganizationリソースを参照する。"
+* author[prescriberOrganization] ^comment = "処方医が所属する医療機関と同一の場合には、その医療機関Organizationリソースを参照する。"
 * author[prescriberOrganization].reference 1.. MS
-* author[prescriberOrganization].reference ^short = "OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
-* author[prescriberOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関を表すOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
+* author[prescriberOrganization].reference ^short = "医療機関OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
+* author[prescriberOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関を表す医療機関OrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
+* author[prescriberDepartmentOrganization] only Reference(JP_Organization_ePrescriptionData_departmentOfIssuer)
+* author[prescriberDepartmentOrganization] ^short = "処方医療機関の診療科を表すOrganizationリソースへの参照"
+* author[prescriberDepartmentOrganization] ^definition = "処方医療機関の診療科を表すOrganizationリソースへの参照"
+* author[prescriberDepartmentOrganization] ^comment = "処方医が所属する医療機関およびその診療科）と同一の場合には、その診療科Organizationリソースを参照する。"
+* author[prescriberDepartmentOrganization].reference 1.. MS
+* author[prescriberDepartmentOrganization].reference ^short = "診療科OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
+* author[prescriberDepartmentOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関の診療科を表す診療科OrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
 * title MS
 * confidentiality ..0
 * attester ..0

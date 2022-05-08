@@ -24,9 +24,8 @@ Description: """医療情報交換のために使用される診療関連の文�
     patient 1..1 MS and
     encounterOnDocument 0..1 MS and
     healthInsurancePublic 0.. MS and
-    insurerOrganization 0..1 MS and
     publicPayment 0.. and
-    publicPayerOrganization 0..1 MS and
+    commonPayerOrganization 0..2 MS and
     custodianOrganization 1..1 MS and
     custodianDepartmentOfOrganization 0..1 MS and
     authorisedAuthorRole 0..1 MS and
@@ -80,18 +79,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[healthInsurancePublic].search ..0
 * entry[healthInsurancePublic].request ..0
 * entry[healthInsurancePublic].response ..0
-* entry[insurerOrganization] ^short = "医療保険者組織に関する情報"
-* entry[insurerOrganization] ^definition = "healthInsurancePublic要素に関係する支払側保険者の情報をOrganaizationリソースで記述する。\r\n詳細情報を必要とする場合に記述する。"
-* entry[insurerOrganization].fullUrl 1.. MS
-* entry[insurerOrganization].fullUrl ^short = "埋め込まれているOrganizationリソースを一意に識別するためのUUID"
-* entry[insurerOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
-* entry[insurerOrganization].resource 1.. MS
-* entry[insurerOrganization].resource only JP_Organization
-* entry[insurerOrganization].resource ^short = "Organizationリソースのインスタンス本体"
-* entry[insurerOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
-* entry[insurerOrganization].search ..0
-* entry[insurerOrganization].request ..0
-* entry[insurerOrganization].response ..0
 * entry[publicPayment] ^short = "公費負担に関する情報"
 * entry[publicPayment] ^definition = "公費負担に関する情報をCovarageリソースで記述する。\r\nこの文書の作成、あるいはこの文書の内容が実施される場合に適用される（された）医療保険の情報。\r\n公費負担によらず作成された文書や、文書内容が公費負担により実施されるのではない場合、文書の用途の観点から公費負担情報が必須でない場合には、省略できる。複数の公費負担情報を必要とする場合には、繰り返しで記述する。"
 * entry[publicPayment].fullUrl 1.. MS
@@ -104,18 +91,18 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[publicPayment].search ..0
 * entry[publicPayment].request ..0
 * entry[publicPayment].response ..0
-* entry[publicPayerOrganization] ^short = "公費負担者情報"
-* entry[publicPayerOrganization] ^definition = "publicPayment要素に関係する費用負担者に関する詳細情報を必要とする場合にOrganaizationリソースで記述する。"
-* entry[publicPayerOrganization].fullUrl 1.. MS
-* entry[publicPayerOrganization].fullUrl ^short = "埋め込まれているOrganizationリソースを一意に識別するためのUUID"
-* entry[publicPayerOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
-* entry[publicPayerOrganization].resource 1.. MS
-* entry[publicPayerOrganization].resource only JP_Organization
-* entry[publicPayerOrganization].resource ^short = "Organizationリソースのインスタンス本体"
-* entry[publicPayerOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
-* entry[publicPayerOrganization].search ..0
-* entry[publicPayerOrganization].request ..0
-* entry[publicPayerOrganization].response ..0
+* entry[commonPayerOrganization] ^short = "医療保険者組織または公費負担者に関する情報"
+* entry[commonPayerOrganization] ^definition = "healthInsurancePublic要素またはpublicPayment要素に関係する詳細情報をOrganaizationリソースで記述する。\r\n詳細情報を必要とする場合に記述する。"
+* entry[commonPayerOrganization].fullUrl 1.. MS
+* entry[commonPayerOrganization].fullUrl ^short = "埋め込まれているOrganizationリソースを一意に識別するためのUUID"
+* entry[commonPayerOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
+* entry[commonPayerOrganization].resource 1.. MS
+* entry[commonPayerOrganization].resource only JP_Organization
+* entry[commonPayerOrganization].resource ^short = "Organizationリソースのインスタンス本体"
+* entry[commonPayerOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
+* entry[commonPayerOrganization].search ..0
+* entry[commonPayerOrganization].request ..0
+* entry[commonPayerOrganization].response ..0
 * entry[custodianOrganization] ^short = "文書の作成と管理に責任を有する組織の情報"
 * entry[custodianOrganization] ^definition = "文書を作成した組織（医療機関等）の情報をOrganaizationリソースで記述する。"
 * entry[custodianOrganization].fullUrl 1.. MS
