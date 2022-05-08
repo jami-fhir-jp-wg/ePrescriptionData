@@ -6,6 +6,7 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * ^status = #draft
 * . ^short = "処方データFHIR仕様のBundle"
 * . ^definition = "処方データFHIR仕様のBundleのプロファイル。\r\n診療情報交換のための文書形式のバンドルの共通プロファイルからの派生プロファイル。"
+* entry[composition].resource only JP_Composition_ePrescriptionData
 * entry[patient].resource only JP_Patient_ePrescriptionData
 * entry[encounterOnDocument].resource only JP_Encounter_ePrescriptionData
 * entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
