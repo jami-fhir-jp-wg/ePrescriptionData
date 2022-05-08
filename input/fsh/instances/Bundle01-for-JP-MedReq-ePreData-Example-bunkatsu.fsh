@@ -124,7 +124,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:73e9e96a-3c8b-1125-937b-06639ed865c1"
 * entry[=].resource.resourceType = "Organization"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-7"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_coveragePayer"
 * entry[=].resource.identifier.system = "urn:oid:1.2.392.100495.20.3.71"
 * entry[=].resource.identifier.value = "94733"
 * entry[=].resource.type = $organization-type#other
@@ -132,7 +132,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
 * entry[=].resource.resourceType = "Organization"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-8"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
 * entry[=].resource.extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo"
 * entry[=].resource.extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.21"
 * entry[=].resource.extension[=].valueIdentifier.value = "13"
