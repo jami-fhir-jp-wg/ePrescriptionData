@@ -1,4 +1,4 @@
-# 一般処方サンプル０１
+// 一般処方サンプル０１
 Instance: Bundle-for-JP-MedReq-ePreData-Example01
 InstanceOf: Bundle
 Usage: #example
