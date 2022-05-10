@@ -110,7 +110,6 @@ Description: "JAMI補足用法コード8桁"
 * ^content = #complete
 * ^caseSensitive = false
 */
-
 // JAMI部位コード3桁
 CodeSystem:  JAMI_codeSystem_ePreSiteCode
 Id:   jami-codeSystem-ePreSiteCode
