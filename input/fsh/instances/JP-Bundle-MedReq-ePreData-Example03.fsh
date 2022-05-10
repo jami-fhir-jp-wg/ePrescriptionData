@@ -193,7 +193,7 @@ Usage: #example
 * entry[=].resource.status = #active
 * entry[=].resource.intent = #order
 * entry[=].resource.medicationCodeableConcept.coding[0] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
-* entry[=].resource.medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.2.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
+* entry[=].resource.medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.text = "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.subject.reference = "urn:uuid:2162023b-fbd4-4424-9aca-a11ea6f48ab4"
 * entry[=].resource.subject.display = "患者Patientリソース"

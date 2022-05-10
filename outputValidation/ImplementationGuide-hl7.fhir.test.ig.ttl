@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "hl7.fhir.test.ig"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Implementation Guide Template</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig</pre></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig"];
+  fhir:ImplementationGuide.name [ fhir:value "Implementation Guide Template"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ImplementationGuide.date [ fhir:value "2022-05-10T09:04:59+09:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.publisher [ fhir:value "FHIR Project"];
+  fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.test.ig"];
+  fhir:ImplementationGuide.license [ fhir:value "not-open-source"];
+  fhir:ImplementationGuide.fhirVersion [
+     fhir:value "5.0.0-snapshot1";
+     fhir:index 0
+  ];
+  fhir:ImplementationGuide.definition [
+     fhir:ImplementationGuide.definition.page [
+       fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ];
+       fhir:ImplementationGuide.definition.page.title [ fhir:value "Home Page" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ig/ImplementationGuide/hl7.fhir.test.ig.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,25 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.test.ig",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Implementation Guide Template</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig</pre></div>"
+  },
+  "url": "http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig",
+  "name": "Implementation Guide Template",
+  "status": "draft",
+  "experimental": true,
+  "date": "2022-05-10T09:04:59+09:00",
+  "publisher": "FHIR Project",
+  "packageId": "hl7.fhir.test.ig",
+  "license": "not-open-source",
+  "fhirVersion": [
+    "5.0.0-snapshot1"
+  ],
+  "definition": {
+    "page": {
+      "nameUrl": "index.html",
+      "title": "Home Page"
+    }
+  }
+}

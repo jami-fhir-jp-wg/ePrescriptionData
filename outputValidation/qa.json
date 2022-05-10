@@ -1,0 +1,11 @@
+{
+  "url": "http://hl7.org/fhir/ig",
+  "name": "Implementation Guide Template",
+  "package-id": "hl7.fhir.test.ig",
+  "date": "Tue, 10 May, 2022 09:04:59 +0900",
+  "errs": 4,
+  "warnings": 2,
+  "hints": 0,
+  "version": "5.0.0-snapshot1",
+  "tool": "5.0.0-snapshot1 (3)"
+}

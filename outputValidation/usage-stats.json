@@ -1,0 +1,7 @@
+{
+  "package": "hl7.fhir.test.ig",
+  "fhirVersion": "5.0.0-snapshot1",
+  "extensions": [],
+  "profiles": {},
+  "usage": {}
+}
