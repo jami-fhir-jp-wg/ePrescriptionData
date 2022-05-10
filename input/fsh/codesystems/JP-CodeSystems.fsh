@@ -764,6 +764,21 @@ Description: "医薬品コード（YJコード）"
 * ^caseSensitive = false
 */
 
+// 医薬品コード（YJコード）
+// = YJ コード（個別医薬品コード）　OID: 1.2.392.100495.20.2.73
+// コードリスト準備中
+
+CodeSystem:  JP_codeSystem_drugCode_yj
+Id:   jp-codeSystem-drugCode-yj
+Description: "医薬品コード（YJコード）"
+* ^url = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* ^valueSet = "http://terminology.hl7.org/ValueSet/v3-ActCode"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* #AMB  "外来"
+* #IMP  "入院"
+
 // 厚労省HOTコード（9桁） OID:1.2.392.100495.20.2.74
 // = MEDIS HOTコード（9桁）"urn:oid:1.2.392.200119.4.403.1"
 // コードリスト準備中
