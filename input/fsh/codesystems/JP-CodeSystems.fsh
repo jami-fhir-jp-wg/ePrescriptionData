@@ -764,15 +764,13 @@ Description: "医薬品コード（YJコード）"
 * ^caseSensitive = false
 */
 
-// 医薬品コード（YJコード）
-// = YJ コード（個別医薬品コード）　OID: 1.2.392.100495.20.2.73
-// コードリスト準備中
-
-CodeSystem:  JP_codeSystem_drugCode_yj
-Id:   jp-codeSystem-drugCode-yj
-Description: "医薬品コード（YJコード）"
+// http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
+// EncounterActコード
+CodeSystem:  v3-ActEncounterCode
+Id:   v3-ActEncounterCode
+Description: "EncounterActコード"
 * ^url = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* ^valueSet = "http://terminology.hl7.org/ValueSet/v3-ActCode"
+* ^valueSet = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
