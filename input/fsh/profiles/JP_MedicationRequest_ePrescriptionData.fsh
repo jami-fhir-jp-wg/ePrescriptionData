@@ -27,8 +27,8 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * medication[x].coding[codingHOT9].display 1.. MS
 * medication[x].coding[codingHOT9].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"
 * medication[x].coding[codingYJ].system 1.. MS
-* medication[x].coding[codingYJ].system = "urn:oid:1.2.392.100495.20.2.73" (exactly)
-* medication[x].coding[codingYJ].system ^definition = "YJコードを識別するIsystem値"
+* medication[x].coding[codingYJ].system = "urn:oid:1.2.392.100495.20.1.73" (exactly)
+* medication[x].coding[codingYJ].system ^definition = "YJコードを識別するsystem値"
 * medication[x].coding[codingYJ].code 1.. MS
 * medication[x].coding[codingYJ].display 1.. MS
 * medication[x].coding[codingYJ].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"

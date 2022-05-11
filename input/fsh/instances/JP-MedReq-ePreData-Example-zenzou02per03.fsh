@@ -8,7 +8,7 @@ Usage: #example
 * identifier[=].value = "1"
 * status = #active
 * intent = #order
-* medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#1012309020 "ペルマックス錠　５０μｇ"
+* medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#101230901 "ペルマックス錠　５０μｇ"
 * medicationCodeableConcept.text = "ペルマックス５０μｇ錠"
 * subject = Reference(JP-Patient-ePreData-Example)
 * authoredOn = "2020-08-21T12:28:17+09:00"
