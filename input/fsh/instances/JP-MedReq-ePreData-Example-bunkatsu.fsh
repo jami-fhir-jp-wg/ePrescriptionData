@@ -1,6 +1,7 @@
 Instance: JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Bundle
 Usage: #example
+Description: "3回分分割処方Bundleリソースのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"

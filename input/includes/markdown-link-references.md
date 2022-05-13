@@ -68,7 +68,7 @@
 [MHLW_codeSystem_ePreCDA_insuredRelationship_tbl12]: CodeSystem-mhlw-codeSystem-ePreCDA-insuredRelationship-tbl12.html
 [MHLW_codeSystem_ePreCDA_sectionCategory_tbl02]: CodeSystem-mhlw-codeSystem-ePreCDA-sectionCategory-tbl02.html
 [MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08]: CodeSystem-mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08.html
-[HL7V3-ActEncounterCode]: CodeSystem-v3-ActEncounterCode.html
+[HL7V3_ActEncounterCode]: CodeSystem-v3-ActEncounterCode.html
 
 <!-- ValueSet -->
 
@@ -76,9 +76,7 @@
 [Bundle-for-JP-MedReq-ePreData-Example01]: Bundle-Bundle-for-JP-MedReq-ePreData-Example01.html
 [Bundle-for-JP-MedReq-ePreData-Example02]: Bundle-Bundle-for-JP-MedReq-ePreData-Example02.html
 [Bundle-for-JP-MedReq-ePreData-Example03]: Bundle-Bundle-for-JP-MedReq-ePreData-Example03.html
-[Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu]: Bundle-Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu.html
-[Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu]: Bundle-Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu.html
-[Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu]: Bundle-Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu.html
+[JP-MedReq-ePreData-Example-bunkatsu]: Bundle-JP-MedReq-ePreData-Example-bunkatsu.html
 [JP-Coverage-ePreData-insurance-Example]: Coverage-JP-Coverage-ePreData-insurance-Example.html
 [JP-Coverage-ePreData-publicPayment-Example]: Coverage-JP-Coverage-ePreData-publicPayment-Example.html
 [JP-Encounter-ePreData-Example]: Encounter-JP-Encounter-ePreData-Example.html

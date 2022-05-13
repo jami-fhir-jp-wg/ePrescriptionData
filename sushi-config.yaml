@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ePrescriptionData
-canonical: http://jpfhir.jp/ePrescriptionData
+canonical: http://jpfhir.jp/fhir/ePrescriptionData
 name: ePrescriptionData
 # title: Example Title
 # description: Example  Implementation Guide for getting started with SUSHI 
