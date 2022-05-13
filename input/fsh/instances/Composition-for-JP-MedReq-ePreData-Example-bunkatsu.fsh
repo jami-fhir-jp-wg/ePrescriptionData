@@ -25,8 +25,8 @@ Description: "分割処方のCompositionリソースのインスタンス例"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
 * section[=].entry[0] = Reference(Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu)
-* section[=].entry[+] = Reference(Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu)
-* section[=].entry[+] = Reference(Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu)
+// * section[=].entry[+] = Reference(Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu)
+// * section[=].entry[+] = Reference(Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu)
 * section[+].title = "別紙セクション"
 * section[=].code = $prescription-section#12 "別紙セクション"
 * section[=].text.status = #generated
