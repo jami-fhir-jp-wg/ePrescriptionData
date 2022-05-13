@@ -19,6 +19,7 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * entry contains
     medicationRequest 1..*  MS and
     communication 0..* MS
+    bundleForBunkatsu 0..* MS
 * entry[medicationRequest] ^short = "処方情報エントリ"
 * entry[medicationRequest] ^definition = "処方情報エントリ。医薬品の数だけ出現する。"
 * entry[medicationRequest].fullUrl 1.. MS
@@ -28,6 +29,7 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * entry[medicationRequest].resource only JP_MedicationRequest_ePrescriptionData
 * entry[medicationRequest].resource ^short = "MedicationRequestリソースのインスタンス本体"
 * entry[medicationRequest].resource ^definition = "MedicationRequestリソースのインスタンス本体。"
+
 * entry[communication] ^short = "備考情報エントリ"
 * entry[communication] ^definition = "備考情報エントリで処方箋全体の指示、明細単位での備考を記述するリソースへの参照。"
 * entry[communication].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
@@ -40,3 +42,13 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * entry[communication].search ..0
 * entry[communication].request ..0
 * entry[communication].response ..0
+
+* entry[bundleForBunkatsu] ^short = "分割処方のためのBundleエントリ"
+* entry[bundleForBunkatsu] ^definition = "分割処方のためのBundleエントリ。分割処方箋を構成する各処方Bundleを格納する。"
+* entry[bundleForBunkatsu].fullUrl 1.. MS
+* entry[bundleForBunkatsu].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
+* entry[bundleForBunkatsu].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
+* entry[bundleForBunkatsu].resource 1.. MS
+* entry[bundleForBunkatsu].resource only JP_Bundle_ePrescriptionData
+* entry[bundleForBunkatsu].resource ^short = "Bundletリソースのインスタンス本体"
+* entry[bundleForBunkatsu].resource ^definition = "Bundletリソースのインスタンス本体。"
