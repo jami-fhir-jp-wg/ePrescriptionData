@@ -91,7 +91,7 @@ pages:
 #  Artifacts: artifacts.html
 
 menu:
-  処方情報FHIR(ePrescriptionData): index.html
+  Home: index.html
   Artifacts: artifacts.html
 
 #-----------------------------------------
@@ -123,11 +123,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   excludeexample: 'false'
   generate: #what does this do - todo: remove and see
     - json
-  special-url:
-
-
-
-
+ 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
 # │  resource. These properties are less commonly needed than those above.                         │
