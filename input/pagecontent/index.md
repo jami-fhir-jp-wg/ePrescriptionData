@@ -177,7 +177,7 @@ FHIR Documentの仕様では、Bundleリソースのentry要素内にresource要
 
 Bundleリソースの要素記述仕様を表1に示す。
 
-＜[Bundleリソース処方](StructureDefinition-JP-Bundle-ePrescription.html)＞
+＜[Bundleリソース処方][JP_Bundle_ePrescriptionData]＞
 ＜[仕様表1](ePreTables.html#tbl-01)＞
  
 この表で示すように、documentタイプのBundleリソースでは、管理的な情報を格納する要素としてtimestamp、 signature などがあり、文書自体の内容情報を格納する要素として、ひとつのentry要素（エントリリスト）がある。このentry要素の値には、複数のresource要素を含むブロックが繰り返される。
@@ -229,7 +229,7 @@ Patientリソースでは、患者の氏名（漢字等）、性別、生年月�
 #### 保険情報
 自費など保険のない診療における処方であってもこのCoverageリソースは必須とし、適切な保険種別を指定する。
 
-＜[Coverageリソース処方（保険・自費情報）](StructureDefinition-JP-Coverage-ePreData-insurance.html)＞
+＜[Coverageリソース処方（保険・自費情報）][JP_Coverage_ePrescriptionData_insurance]＞
 ＜[仕様表5](ePreTables.html#tbl-05)＞
 ＜[例3  Coverageリソース処方（保険・自費情報）の記述例](Coverage-JP-Coverage-ePreData-insurance-Example.html)＞
 
@@ -875,15 +875,15 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 朝食後に4錠、昼食後2錠、夕食後1錠、合計1日投与量7錠であることを1回用法で３つの剤グループで表現したインスタンスの例である。それぞれの剤グループの表現方法は「6.9.4.1 定時用法」に従う。
 <p>[例14 1)不均等投与インスタンス例（１回ごと記述）</p>
 
-* ＜[1)1回目](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTime01.html)＞
-* ＜[2)2回目](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes02.html)＞
-* ＜[3)3回目](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes03.html)＞
+* ＜[1)1回目][JP-MedReq-ePreData-Example-fukintouByTimes01]＞
+* ＜[2)2回目][JP-MedReq-ePreData-Example-fukintouByTimes02]＞
+* ＜[3)3回目][JP-MedReq-ePreData-Example-fukintouByTimes03]＞
 
 #####   １日用法の例
 朝食後に4錠、昼食後2錠、夕食後1錠、合計1日投与量7錠であることを1日用法で表現したインスタンスの例である。
 １つのMedicationRequestリソースの1つのdosageInstruction要素を使用し、dosageInstruction.doseAndRate.rateRatio要素に、1日投与量のみを記載する。1回の投与量の情報をコードとして記述できる場合は、dosageInstruction.additionalInstruction要素に、1 日の服用回数分だけ繰り返し、JAMI補足用法コードを使用し記述する。コード化できない場合は、明細単位の備考としてテキストで記述する。
 
-＜[例15　 2)不均等投与インスタンス例（１日用法で記述）](MedicationRequest-JP-MedReq-ePreData-Example-fukintouByDay.html)＞
+＜[例15　 2)不均等投与インスタンス例（１日用法で記述）][JP-MedReq-ePreData-Example-fukintouByDay]＞
 
 ####     毎日と不定期（隔日、曜日、期間指定、指定日）
 #####     隔日投与
@@ -892,7 +892,7 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 MedicationRequestリソースのdosageInstruction.timing.code 要素に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。さらに、dosageInstruction.timing.additionalInstrunction要素に、CodeableConcept型で、JAMI標準「処方・注射オーダ標準用法規格」 8桁補足用法コード（urn:oid:1.2.392.200250.2.2.20.22）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の 「8.1　日数間隔指定」 を参照のこと。
 用法「1日3回 朝昼夕食後 1回1錠 7日分（隔日投与）」をJAMI標準用法コード、及び、補足用法コードで表現した記述例を示す。
 
-＜[例16　隔日投与のインスタンス例](MedicationRequest-JP-MedReq-ePreData-Example-kakujitsu.html)＞
+＜[例16　隔日投与のインスタンス例][JP-MedReq-ePreData-Example-kakujitsu]＞
 
 #####    曜日指定
 「火曜日と金曜日に服用」など、服用する曜日を指定する指示。
@@ -900,7 +900,7 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 MedicationRequestリソースのdosageInstruction.timing.code 要素に CodeableConcept型でJAMI標準用法コード（urn:oid:1.2.392.200250.2.2.20.20）を指定する。さらに、dosageInstruction.timing.additionalInstrunction要素に、CodeableConcept型で、JAMI標準「処方・注射オーダ標準用法規格」 8桁補足用法コード（urn:oid:1.2.392.200250.2.2.20.22）を指定する。詳細は、JAMI標準「処方・注射オーダ標準用法規格」の 「8.2　曜日指定」 を参照のこと。
 曜日指定投与「1日1回 朝食後 1回1錠 （月曜日、木曜日）」を、JAMI標準用法コードで記録した記述例を示す。
 
-＜[例17　曜日指定のインスタンス例](MedicationRequest-JP-MedReq-ePreData-Example-kyoubishitei.html)＞
+＜[例17　曜日指定のインスタンス例][JP-MedReq-ePreData-Example-youbiShiitei]＞
 
 #####    期間指定
 期間指定がある指示。MedicationRequestリソースに、投与開始日と実投与日数を記録する。投与開始日は、「6.9.3.2 内服薬 ４)投与開始日」 で説明した拡張「JP_MedicationRequest_PeriodOfUse」を使用する。実投与日数を指定する場合は、「6.9.3.2 内服薬 ３)投与日数」で説明した拡張「JP_MedicationRequest_DosageInstruction_UsageDuration」を使用する。
@@ -928,9 +928,9 @@ MedicationRequestリソースのdosageInstruction.timing.code 要素に Codeable
 漸増、漸減用法は、投与量ごとに剤グループを分けて、複数のMedicationRequestリソースを使用して記録する。各剤グループの表現は、上記に述べた仕様に準じる。
 漸増・漸減用法の例として「1日1回夕食後2日分、1日2回朝夕食後３日分、1日3回朝昼夕食後2日分 1回1錠」を表す記述例を示す。
 <p>＜例18　　漸増処方の記述例＞</p>
-* [最初の2日分](MedicationRequest-JP-MedReq-ePreData-Example-zensou01.html)＞
-* [次の3日分](MedicationRequest-JP-MedReq-ePreData-Example-zensou02.html)＞
-* [最後の2日分](MedicationRequest-JP-MedReq-ePreData-Example-zensou03.html)＞
+* [最初の2日分][JP-MedReq-ePreData-Example-zenzou01per03]＞
+* [次の3日分][JP-MedReq-ePreData-Example-zenzou02per03]＞
+* [最後の2日分][JP-MedReq-ePreData-Example-zenzou03per03]＞
 
 ####     調剤補足情報
 調剤者への指示は、薬剤単位の指示と、処方箋全体の指示の２つの場合がある。それぞれについて、本文書で定義した、テキストによる指示とコードによる指示を並記するための拡張「InstructionForDispense拡張」および「CommunicationContent拡張」を使用する。

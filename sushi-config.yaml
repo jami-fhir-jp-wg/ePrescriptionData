@@ -51,7 +51,13 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
+
+pages:
+  index.md:
+    title: HL7 FHIR 処方情報FHIR v0.9.3
+  ePretables.md:
+    title: 各表一覧
+
 #   index.md:
 #     title: Example Home
 #   implementation.xml:
@@ -83,6 +89,8 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+
+special-url:
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
