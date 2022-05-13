@@ -1,3 +1,0 @@
-JP_Bundle_ePrescriptionData
-# JP_Bundle_ePrescriptionData の趣旨
-Bundle文書タイプの構造を説明する
