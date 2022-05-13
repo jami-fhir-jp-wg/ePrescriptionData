@@ -1,6 +1,6 @@
 Instance: Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Bundle
-Usage: #example
+Usage: #inline
 Description: "分割処方Bundleリソースの３回目処方のインスタンス例（resource.event.period.startが９月４日から１週間分）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
 * identifier.system = "urn:ietf:rfc:3986"

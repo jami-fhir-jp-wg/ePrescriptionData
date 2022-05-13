@@ -765,7 +765,7 @@ Description: "医薬品コード（YJコード）"
 
 // http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
 // EncounterActコード
-CodeSystem:  HL7V3-ActEncounterCode
+CodeSystem:  HL7V3_ActEncounterCode
 Id:   v3-ActEncounterCode
 Description: "EncounterActコード"
 * ^url = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
