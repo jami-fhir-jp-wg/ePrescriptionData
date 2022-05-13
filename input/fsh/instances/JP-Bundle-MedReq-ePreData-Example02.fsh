@@ -1,6 +1,7 @@
 Instance: Bundle-for-JP-MedReq-ePreData-Example02
 InstanceOf: Bundle
 Usage: #example
+Description: "処方Bundleのインスタンス例２"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"

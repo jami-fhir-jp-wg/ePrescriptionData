@@ -11,9 +11,7 @@ table td {
 }
 table th {
   border: solid 1px black;
-
-}
-    h1 {
+   h1 {
       counter-reset: chapter;
     }
 

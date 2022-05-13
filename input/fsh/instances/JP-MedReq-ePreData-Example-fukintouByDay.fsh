@@ -1,6 +1,7 @@
 Instance: JP-MedReq-ePreData-Example-fukintouByDay
 InstanceOf: MedicationRequest
 Usage: #example
+Description: "不均等投与1日用法の医薬品処方１件　MedicationRequestリソースのインスタンス例（プレドニン錠５ｍｇ１日３回　毎食後　７錠（４錠－２錠－１錠））"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
 * identifier[0].system = "urn:oid:1.2.392.100495.20.3.81"
 * identifier[=].value = "9"

@@ -1,6 +1,8 @@
 Instance: OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Organization
 Usage: #inline
+Description: "処方医療機関 Organizationリソースのインスタンス例（分割処方から参照される）"
+
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
 * extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo"
 * extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.21"

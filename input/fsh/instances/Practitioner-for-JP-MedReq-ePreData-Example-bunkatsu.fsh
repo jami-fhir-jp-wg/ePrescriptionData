@@ -1,6 +1,7 @@
 Instance: Practitioner-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Practitioner
 Usage: #inline
+Description: "処方医師 Practitionerリソースのインスタンス例（分割処方から参照される）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"
 * language = #ja
 * identifier.system = "urn:oid:1.2.392.100495.20.3.41.11311234567"

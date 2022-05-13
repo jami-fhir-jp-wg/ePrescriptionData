@@ -1,6 +1,7 @@
 Instance: Composition-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Composition
 Usage: #inline
+Description: "分割処方のCompositionリソースのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * extension.valueString = "1.0"

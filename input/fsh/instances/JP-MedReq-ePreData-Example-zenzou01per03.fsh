@@ -1,6 +1,8 @@
 Instance: JP-MedReq-ePreData-Example-zenzou01per03
 InstanceOf: MedicationRequest
 Usage: #example
+Description: "漸増内服処方最初の２日間　処方例１件　MedicationRequestリソースのインスタンス例"
+
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
 * identifier[0].system = "urn:oid:1.2.392.100495.20.3.81"
 * identifier[=].value = "13"

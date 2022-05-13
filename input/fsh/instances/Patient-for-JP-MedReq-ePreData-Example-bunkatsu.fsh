@@ -1,6 +1,8 @@
 Instance: Patient-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: Patient
 Usage: #inline
+Description: "処方対象患者 Patientリソースのインスタンス例（分割処方から参照される）"
+
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11311234567"
 * identifier.value = "00000010"

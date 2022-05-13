@@ -1,6 +1,7 @@
 Instance: PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu
 InstanceOf: PractitionerRole
 Usage: #inline
+Description: "処方医師役割 PractitionerRoleリソースのインスタンス例（分割処方から参照される）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 * language = #ja
 * identifier.system = "http://exapmleHospital.jp/IdSystem/hisUserRoleId"

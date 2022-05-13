@@ -1,6 +1,7 @@
 Instance: JP-Patient-ePreData-Example
 InstanceOf: Patient
 Usage: #example
+Description: "処方対象の患者 Patientリソースのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11311234567"
 * identifier.value = "00000010"

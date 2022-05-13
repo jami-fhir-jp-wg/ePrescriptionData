@@ -1,6 +1,8 @@
 Instance: JP-MedReq-ePreData-Example-fukintouByTimes02
 InstanceOf: MedicationRequest
 Usage: #example
+Description: "不均等投与の各回処方例　医薬品処方１件　MedicationRequestリソースのインスタンス例（２回目）"
+
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
 * identifier[0].system = "urn:oid:1.2.392.100495.20.3.81"
 * identifier[=].value = "7"
