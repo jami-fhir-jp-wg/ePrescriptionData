@@ -17,7 +17,7 @@ Description: "処方情報のBundle情報　JP_Bundleリソースの派生プロ
 * entry[authorisedAuthorRole].resource only JP_PractitionerRole_ePrescriptionData_author
 * entry[authorisedAuthor].resource only JP_Practitioner_ePrescriptionData_author
 * entry contains
-    medicationRequest 1..*  MS and
+    medicationRequest ０..*  MS and
     communication 0..* MS and
     bundleForBunkatsu 0..* MS
 * entry[medicationRequest] ^short = "処方情報エントリ"
