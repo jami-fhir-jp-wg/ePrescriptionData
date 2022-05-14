@@ -9,16 +9,13 @@ Expression: "((title='一般処方箋' and category.coding.code='01')
 Invariant: checkValidCategory
 Description: "【categoryコードは\"01:処方箋\"　\"02:麻薬処方箋\"　または\"03:分割処方箋\"のいずれかである。】"
 Severity: #error
-Expression: "((category.coding.code='01')
-     or (category.coding.code='02')
-     or (category.coding.code='03'))"
-
+Expression: "((category.coding.code='01') or (category.coding.code='02') or (category.coding.code='03'))"
 
 Invariant: checkValidSections
 Description: "【セクション構成は処方箋のとき01:処方情報セクションのみ、分割処方箋のとき11:分割処方箋セクションと12:別紙セクションの両方が存在する。】"
 Severity: #error
-Expression: "((category.coding.code='01' or category.coding.code='02') and (section.code.coding.where(code = #01)).exists())
-or (category.coding.code='03' and (section.code.coding.where(code = #11)).exists() and (section.code.coding.where(code = #12)).exists())"
+Expression: "((category.coding.code='01' or category.coding.code='02') and (section.code.coding.where(code = '01')).exists())
+or (category.coding.code='03' and (section.code.coding.where(code = '11')).exists() and (section.code.coding.where(code = '12')).exists())"
 
 Profile: JP_Composition_ePrescriptionData
 Parent: Composition
