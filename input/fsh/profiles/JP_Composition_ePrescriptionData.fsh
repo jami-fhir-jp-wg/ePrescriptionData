@@ -6,6 +6,14 @@ Expression: "((title='一般処方箋' and category.coding.code='01')
      or (title='麻薬処方箋' and category.coding.code='02')
      or (title='分割処方箋' and category.coding.code='03'))"
 
+Invariant: checkValidCategory
+Description: "【categoryコードは\"01:処方箋\"　\"02:麻薬処方箋\"　または\"03:分割処方箋\"のいずれかである。】"
+Severity: #error
+Expression: "((category.coding.code='01')
+     or (category.coding.code='02')
+     or (category.coding.code='03'))"
+
+
 Invariant: checkValidSections
 Description: "【セクション構成は処方箋のとき01:処方情報セクションのみ、分割処方箋のとき11:分割処方箋セクションと12:別紙セクションの両方が存在する。】"
 Severity: #error
@@ -17,6 +25,8 @@ Parent: Composition
 Id: JP-Composition-ePrescriptionData
 Description:  "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
 * obeys checkValidCategoryTitle
+* obeys checkValidCategory
+* obeys checkValidSections
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
 * ^status = #draft
 * text ^short = "読んで概略がわかるようにするためのテキスト情報"
