@@ -13,8 +13,8 @@ Description: "分割処方のCompositionリソースのインスタンス例"
 * subject = Reference(Patient-for-JP-MedReq-ePreData-Example-bunkatsu) "患者リソースPatient"
 * encounter = Reference(Encounter-for-JP-MedReq-ePreData-Example-bunkatsu) "受診Encounterリソース"
 * date = "2020-08-21T12:12:22+09:00"
-* author = Reference(PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成者PractitionerRoleリソース"
-* author = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成機関Organizationリソース"
+* author[0] = Reference(PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成者PractitionerRoleリソース"
+* author[+] = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu) "処方作成機関Organizationリソース"
 * title = "分割処方箋"
 * custodian = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu)
 * event.code.text = "処方箋交付" (exactly)

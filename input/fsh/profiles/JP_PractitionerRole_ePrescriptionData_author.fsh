@@ -2,7 +2,6 @@ Profile: JP_PractitionerRole_ePrescriptionData_author
 Parent: JP_PractitionerRole
 Id: JP-PractitionerRole-ePrescriptionData-author
 Description: "処方を発行した医療者の資格情報　JP_PractitionerRole の派生プロファイル"
-
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
