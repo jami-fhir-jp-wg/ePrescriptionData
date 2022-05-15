@@ -20,14 +20,14 @@ Expression: "((category.coding.code='01' or category.coding.code='02') and (sect
 or (category.coding.code='03' and (section.code.coding.where(code = '11')).exists() and (section.code.coding.where(code = '12')).exists())"
 */
 
-Profile: JP_Composition_ePrescriptionData
+Profile: EP_Composition
 Parent: Composition
-Id: JP-Composition-ePrescriptionData
+Id: EP-Composition
 Description:  "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
 // * obeys checkValidCategoryTitle
 // * obeys checkValidCategory
 // * obeys checkValidSections
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
+* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/EP_Composition"
 * ^status = #draft
 * text ^short = "読んで概略がわかるようにするためのテキスト情報"
 * text ^definition = "読んで概略がわかるようにするためのテキスト情報。\r\n以降の構想的な要素のデータからシステムが自動生成すること。\r\n本リソースをテキストで表現したもので、内容を省略しても構わない。 このデータは人がこのリソースの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。 この内容と以降の構造化されたデータとの内容が不一致の場合には、この要素の内容は無視される。（本文書のすべてのリソースで同様とする）。"
@@ -201,7 +201,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuInformation].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[bunkatsuInformation].mode ..0
 * section[bunkatsuInformation].orderedBy ..0
-* section[bunkatsuInformation].entry only Reference(JP_Bundle_ePrescriptionDataBunkatsuInline)
+* section[bunkatsuInformation].entry only Reference(EP_Bundle_inline)
 * section[bunkatsuInformation].entry ^short = "分割処方の各Bundleリソース"
 * section[bunkatsuInformation].entry ^definition = "分割処方の各Bundleリソース"
 * section[bunkatsuInformation].entry.reference ^short = "分割処方の各Bundleリソースへの参照"

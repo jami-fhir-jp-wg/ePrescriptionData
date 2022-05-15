@@ -29,7 +29,7 @@ Description: "分割処方を構成する１処方"
     custodianDepartmentOfOrganization 0..1 MS and
     authorisedAuthorRole 0..1 MS and
     authorisedAuthor 0..1 MS and
-    medicationRequest 0..*  MS and
+    medicationRequest 1..*  MS and
     communication 0..* 
 
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
