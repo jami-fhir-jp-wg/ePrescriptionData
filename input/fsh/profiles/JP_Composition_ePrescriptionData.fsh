@@ -60,6 +60,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * type ^definition = "documentタイプのうち文書種別（処方、検査結果報告などの文書区分を識別する\r\nコード。\r\nLOINCコード表から適切なものを採用した本仕様のコード表を用いる。"
 * type MS
 * type.coding 1..1 MS
+* type from http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes
 * type.coding.system = "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes" (exactly)
 * type.coding.system ^definition = "文書区分コードのコード体系を識別するURI。固定値"
 * type.coding.system MS

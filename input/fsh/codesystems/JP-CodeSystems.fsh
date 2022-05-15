@@ -811,7 +811,7 @@ Description: "MEDIS 医薬品コードHOTコード（9桁）"
 CodeSystem:  MHLW_codeSystem_drugCode_generalNameCode
 Id:   mhlw-codeSystem-drugCode-generalNameCode
 Description: "厚労省一般処方名マスター(厚労省保険局コード)"
-* ^url = "urn:oid:1.2.392.100495.20.2.81"
+* ^url = "urn:oid:1.2.392.100495.20.1.81"
 * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-drugCode-generalNameCode"
 * ^status = #active
 * ^content = #complete

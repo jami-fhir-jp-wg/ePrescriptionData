@@ -34,6 +34,7 @@ Description: "処方の保険情報　Coverageリソースプロファイル　J
 * status ^definition = "リソースインスタンスのステータス。固定値active。処方箋発行時に真に有効な保険かどうかは意味しない。"
 * type ^short = "保険種別コード"
 * type 1.. MS
+* type from http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory
 * type.coding 1..1 MS
 * type.coding.system 1.. MS
 * type.coding.system = "urn:oid:1.2.392.100495.20.2.61" (exactly)
