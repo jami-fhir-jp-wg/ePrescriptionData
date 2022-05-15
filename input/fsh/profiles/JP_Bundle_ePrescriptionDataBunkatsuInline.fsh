@@ -1,9 +1,8 @@
-Profile: JP_Bundle_ePrescriptionData
+Profile: JP_Bundle_ePrescriptionDataBunkatsuInline
 Parent: Bundle
-Id: JP-Bundle-ePrescriptionData
-Description: """医療情報交換のために使用される診療関連の文書形式の情報を記述するためのBundleリソースの共通プロファイル。
-このリソースのインスタンスだけで、必要な参照情報はすべて包含され、外部のリソースインスタンスへの外部参照を持たないため作成した医療機関を超えた情報交換に使用できる。"""
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
+Id: JP-Bundle-ePrescriptionDataBunkatsuInline
+Description: "分割処方を構成する１処方"
+* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionDataBunkatsuInline"
 * ^status = #draft
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"
@@ -31,8 +30,7 @@ Description: """医療情報交換のために使用される診療関連の文�
     authorisedAuthorRole 0..1 MS and
     authorisedAuthor 0..1 MS and
     medicationRequest 0..*  MS and
-    communication 0..* MS and
-    bundleForBunkatsu 0..* MS
+    communication 0..* 
 
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
 * entry[composition] ^definition = "compositionリソースのエントリー。"
@@ -82,7 +80,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[healthInsurancePublic].fullUrl ^definition = "埋め込まれているCoverageリソースを一意に識別するためのUUID。"
 * entry[healthInsurancePublic].resource 1.. MS
 * entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
-
 * entry[healthInsurancePublic].resource ^short = "Coverageリソースのインスタンス本体"
 * entry[healthInsurancePublic].resource ^definition = "Coverageリソースのインスタンス本体。"
 * entry[healthInsurancePublic].search ..0
@@ -187,15 +184,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[communication].search ..0
 * entry[communication].request ..0
 * entry[communication].response ..0
-
-* entry[bundleForBunkatsu] ^short = "分割処方のためのBundleエントリ"
-* entry[bundleForBunkatsu] ^definition = "分割処方のためのBundleエントリ。分割処方箋を構成する各処方Bundleを格納する。"
-* entry[bundleForBunkatsu].fullUrl 1.. MS
-* entry[bundleForBunkatsu].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
-* entry[bundleForBunkatsu].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
-* entry[bundleForBunkatsu].resource only JP_Bundle_ePrescriptionDataBunkatsuInline
-* entry[bundleForBunkatsu].resource ^short = "Bundletリソースのインスタンス本体"
-* entry[bundleForBunkatsu].resource ^definition = "Bundletリソースのインスタンス本体。"
 
 * signature ^definition = "base64でエンコードされた電子署名。JWT仕様。"
 * signature ^comment = "文書情報全体（signature要素以外の部分）に対する電子署名を送受信間で合意にもとづき運用したい場合に使用できる。各要素は参考仕様であり、今後JWT（JSON Web Token）にもとづく仕様が関係団体で策定された場合には、それに置き換える。"
