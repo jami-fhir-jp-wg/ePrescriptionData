@@ -13,6 +13,15 @@ Description: "FHIR文書の文書区分（医療文書全般）"
 * #57833-6 "処方箋"
 */
 
+// EncounterActコード
+ValueSet:  HL7V3_ActEncounterCode
+Id:   v3-ActEncounterCode
+Description: "EncounterActコード"
+* ^url = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
+* ^status = #active
+* include codes from system http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
+
+
 ValueSet:  MHLW_valueSet_ePreCDA_insuranceCategory_tbl11
 Id:   mhlw-valueSet-ePreCDA-insuranceCategory-tbl11
 Description: "厚労省電子処方CDA規格別表11 保険種別コード"
