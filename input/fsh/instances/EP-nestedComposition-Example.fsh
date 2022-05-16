@@ -11,6 +11,7 @@ Description: "分割処方のCompositionリソースのインスタンス例"
 * type = $doc-typecodes#57833-6 "処方箋"
 * category = $prescription-category#03 "分割一般処方"
 * date = "2020-08-21T12:12:22+09:00"
+* author = Reference(PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu)
 * title = "分割処方箋"
 * section[0].title = "分割処方箋セクション"
 * section[=].code = $prescription-section#11 "分割処方箋セクション"
