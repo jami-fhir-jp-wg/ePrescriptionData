@@ -20,7 +20,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-/*
+
 * entry contains
     composition 1..1 MS and
     bundleForBunkatsu 0..* MS
@@ -32,6 +32,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[composition].fullUrl ^definition = "埋め込まれているCompositionリソースを一意に識別するためのUUID。"
 * entry[composition].resource 1.. MS
 * entry[composition].resource only EP_Composition
+* entry[composition].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/EP_Composition"
 * entry[composition].resource ^short = "Compositionリソースのインスタンス本体"
 * entry[composition].resource ^definition = "Compositionリソースのインスタンス本体。"
 * entry[composition].search ..0
@@ -43,8 +44,9 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[bundleForBunkatsu].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
 * entry[bundleForBunkatsu].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
 * entry[bundleForBunkatsu].resource only EP_Bundle_inline
+* entry[bundleForBunkatsu].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/EP_Bundle_inline"
 * entry[bundleForBunkatsu].resource ^short = "Bundletリソースのインスタンス本体"
 * entry[bundleForBunkatsu].resource ^definition = "Bundletリソースのインスタンス本体。"
 
-*/
+
 
