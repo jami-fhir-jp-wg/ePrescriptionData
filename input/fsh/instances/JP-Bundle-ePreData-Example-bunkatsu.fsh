@@ -9,9 +9,9 @@ Description: "3回分分割処方Bundleリソースのインスタンス例"
 * timestamp = "2020-08-21T12:12:02+09:00"
 * entry[0].fullUrl = "urn:uuid:954a5be8-8c83-49d7-9ce5-39ed9b20589a"
 * entry[=].resource = Composition-for-JP-MedReq-ePreData-Example-bunkatsu
-/* entry[+].fullUrl = "urn:uuid:9495ef34-a77d-4f3e-8dce-5688e169d0fa"
+* entry[+].fullUrl = "urn:uuid:9495ef34-a77d-4f3e-8dce-5688e169d0fa"
 * entry[=].resource = Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu
- * entry[+].fullUrl = "urn:uuid:b0025d4d-3002-4f5e-fb4e-abead28aee35"
+/* * entry[+].fullUrl = "urn:uuid:b0025d4d-3002-4f5e-fb4e-abead28aee35"
 * entry[=].resource = Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu
 * entry[+].fullUrl = "urn:uuid:df8b4e6a-5d45-f4ce-a1af-ff0ca94242b8"
 * entry[=].resource = Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu

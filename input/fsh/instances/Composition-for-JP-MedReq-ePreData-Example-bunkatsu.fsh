@@ -24,11 +24,11 @@ Description: "分割処方のCompositionリソースのインスタンス例"
 * section[=].code = $prescription-section#11 "分割処方箋セクション"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
-//* section[=].entry[0] = Reference(Bundle01-for-JP-MedReq-ePreData-Example-bunkatsu)
+* section[=].entry[0].reference = "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796"
 // * section[=].entry[+] = Reference(Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu)
 // * section[=].entry[+] = Reference(Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu)
 * section[+].title = "別紙セクション"
 * section[=].code = $prescription-section#12 "別紙セクション"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
-* section[=].entry[0] = Reference(OrgIssuer-for-JP-MedReq-ePreData-Example-bunkatsu)
+* section[=].entry[0].reference =  "urn:uuid:ef7892cc-fb3a-b951-9ac7-f8cd6c746f0a"
