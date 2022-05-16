@@ -50,7 +50,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[bundleForBunkatsu].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
 * entry[bundleForBunkatsu].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
 * entry[bundleForBunkatsu].resource only JP_Bundle_ePrescriptionDataBunkatsuInline
-* entry[bundleForBunkatsu].resource.meta.profile =  "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionDataBunkatsuInline"
+//* entry[bundleForBunkatsu].resource.meta.profile =  "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionDataBunkatsuInline"
 * entry[bundleForBunkatsu].resource ^short = "Bundletリソースのインスタンス本体"
 * entry[bundleForBunkatsu].resource ^definition = "Bundletリソースのインスタンス本体。"
 
