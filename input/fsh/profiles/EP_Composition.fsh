@@ -92,13 +92,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * category.text ..0
 * date ^definition = "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。\r\n午前0時を\"24:00\"と記録することはできないため\"00:00\"と記録すること。　\r\n例：\"2020_08_21T12:28:21+09:00\""
 * date MS
-* author ..2 MS
-* author ^slicing.discriminator.type = #profile
-* author ^slicing.discriminator.path = "resolve()"
-* author ^slicing.rules = #open
-* author ^short = "処方医と処方医療機関とへの参照。"
-* author ^definition = "処方医を表すPractitionerRoleリソースへの参照、および,処方医療機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
-* author only Reference(JP_PractitionerRole_ePrescriptionData_author)
 * title MS
 * section ..2 
 * section ^slicing.discriminator.type = #value

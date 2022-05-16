@@ -16,5 +16,3 @@ Description: "3回分分割処方Bundleリソースのインスタンス例"
 * entry[+].fullUrl = "urn:uuid:df8b4e6a-5d45-f4ce-a1af-ff0ca94242b8"
 * entry[=].resource = Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu
 */
-* entry[+].fullUrl = "urn:uuid:461cad23-e9a8-027e-d344-a52d957a64c0"
-* entry[=].resource = Patient-for-JP-MedReq-ePreData-Example-bunkatsu
