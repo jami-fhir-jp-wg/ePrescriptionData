@@ -19,6 +19,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
+/*
 * entry contains
     composition 1..1 MS and
     patient 1..1 MS
@@ -47,3 +48,5 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[patient].search ..0
 * entry[patient].request ..0
 * entry[patient].response ..0
+
+*/
