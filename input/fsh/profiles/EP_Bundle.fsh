@@ -16,12 +16,13 @@ Description: """医療情報交換のために使用される診療関連の文�
 * total ..0
 * link ^definition = "A series of links that provide context to this bundle.\r\nこのBundleへ文脈情報を付与するための一連のリンク情報。"
 * link ^comment = "使用予定はない。　\r\n\r\nBoth Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. [HATEOAS](http://en.wikipedia.org/wiki/HATEOAS)). \n\nBundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.\n\nThis specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction _ the meaning is implementation specific."
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource.resolve()"
+/* * entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
     composition 1..1 MS and
     bundleForBunkatsu 0..* MS
+
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
 * entry[composition] ^definition = "compositionリソースのエントリー。"
 * entry[composition].fullUrl 1.. MS
@@ -42,3 +43,25 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[bundleForBunkatsu].resource only EP_Bundle_inline
 * entry[bundleForBunkatsu].resource ^short = "Bundletリソースのインスタンス本体"
 * entry[bundleForBunkatsu].resource ^definition = "Bundletリソースのインスタンス本体。"
+*/
+
+* entry[0] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
+* entry[=] ^definition = "compositionリソースのエントリー。"
+* entry[=].fullUrl 1.. MS
+* entry[=].fullUrl ^short = "埋め込まれているCompositionリソースを一意に識別するためのUUID"
+* entry[=].fullUrl ^definition = "埋め込まれているCompositionリソースを一意に識別するためのUUID。"
+* entry[=].resource 1.. MS
+* entry[=].resource only EP_Composition
+* entry[=].resource ^short = "Compositionリソースのインスタンス本体"
+* entry[=].resource ^definition = "Compositionリソースのインスタンス本体。"
+* entry[=].search ..0
+* entry[=].request ..0
+* entry[=].response ..0
+* entry[+] ^short = "分割処方のためのBundleエントリ"
+* entry[=]^definition = "分割処方のためのBundleエントリ。分割処方箋を構成する各処方Bundleを格納する。"
+* entry[=].fullUrl 1.. MS
+* entry[=].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
+* entry[=].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
+* entry[=].resource only EP_Bundle_inline
+* entry[=].resource ^short = "Bundletリソースのインスタンス本体"
+* entry[=].resource ^definition = "Bundletリソースのインスタンス本体。"
