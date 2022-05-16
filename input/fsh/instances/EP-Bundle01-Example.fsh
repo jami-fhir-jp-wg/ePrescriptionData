@@ -1,4 +1,4 @@
-Instance: EP-Bundle01-Example
+Instance: EP-Bundle01Inline-Example
 InstanceOf: Bundle
 Usage: #inline
 Description: "分割処方Bundleリソースの1回目処方のインスタンス例（resource.event.period.startが8月21日から１週間分）"
