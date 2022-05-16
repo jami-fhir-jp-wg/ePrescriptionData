@@ -96,7 +96,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[healthInsurancePublic].fullUrl ^definition = "埋め込まれているCoverageリソースを一意に識別するためのUUID。"
 * entry[healthInsurancePublic].resource 1.. MS
 //* entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
-* entry[encounterOnDocument].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
+* entry[healthInsurancePublic].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
 * entry[healthInsurancePublic].resource ^short = "Coverageリソースのインスタンス本体"
 * entry[healthInsurancePublic].resource ^definition = "Coverageリソースのインスタンス本体。"
 * entry[healthInsurancePublic].search ..0
@@ -139,7 +139,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[custodianOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
 * entry[custodianOrganization].resource 1.. MS
 //* entry[custodianOrganization].resource only JP_Organization_ePrescriptionData_issuer
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
+* entry[custodianOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
 * entry[custodianOrganization].resource ^short = "Organizationリソースのインスタンス本体"
 * entry[custodianOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
 * entry[custodianOrganization].search ..0
@@ -153,7 +153,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[custodianDepartmentOfOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
 * entry[custodianDepartmentOfOrganization].resource 1.. MS
 //* entry[custodianDepartmentOfOrganization].resource only JP_Organization_ePrescriptionData_departmentOfIssuer
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
+* entry[custodianDepartmentOfOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
 * entry[custodianDepartmentOfOrganization].resource ^short = "Organizationリソースのインスタンス本体"
 * entry[custodianDepartmentOfOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
 * entry[custodianDepartmentOfOrganization].search ..0
@@ -167,7 +167,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[authorisedAuthorRole].fullUrl ^definition = "埋め込まれているPractitionerRoleリソースを一意に識別するためのUUID。"
 * entry[authorisedAuthorRole].resource 1.. MS
 //* entry[authorisedAuthorRole].resource only JP_PractitionerRole_ePrescriptionData_author
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
+* entry[authorisedAuthorRole].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 
 * entry[authorisedAuthorRole].resource ^short = "PractitionerRoleリソースのインスタンス本体"
 * entry[authorisedAuthorRole].resource ^definition = "PractitionerRoleリソースのインスタンス本体。"

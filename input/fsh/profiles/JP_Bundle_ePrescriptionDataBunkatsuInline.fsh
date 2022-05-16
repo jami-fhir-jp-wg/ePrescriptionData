@@ -15,8 +15,8 @@ Description: "分割処方を構成する１処方"
 * total ..0
 * link ^definition = "A series of links that provide context to this bundle.\r\nこのBundleへ文脈情報を付与するための一連のリンク情報。"
 * link ^comment = "使用予定はない。　\r\n\r\nBoth Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. [HATEOAS](http://en.wikipedia.org/wiki/HATEOAS)). \n\nBundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.\n\nThis specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction _ the meaning is implementation specific."
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.discriminator.type = #value
+* entry ^slicing.discriminator.path = "resource.meta.profile"
 * entry ^slicing.rules = #open
 * entry contains
     composition 1..1 MS and
@@ -84,7 +84,7 @@ Description: "分割処方を構成する１処方"
 * entry[healthInsurancePublic].fullUrl ^definition = "埋め込まれているCoverageリソースを一意に識別するためのUUID。"
 * entry[healthInsurancePublic].resource 1.. MS
 //* entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
-* entry[encounterOnDocument].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
+* entry[healthInsurancePublic].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"
 * entry[healthInsurancePublic].resource ^short = "Coverageリソースのインスタンス本体"
 * entry[healthInsurancePublic].resource ^definition = "Coverageリソースのインスタンス本体。"
 * entry[healthInsurancePublic].search ..0
@@ -127,7 +127,7 @@ Description: "分割処方を構成する１処方"
 * entry[custodianOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
 * entry[custodianOrganization].resource 1.. MS
 //* entry[custodianOrganization].resource only JP_Organization_ePrescriptionData_issuer
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
+* entry[custodianOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_issuer"
 * entry[custodianOrganization].resource ^short = "Organizationリソースのインスタンス本体"
 * entry[custodianOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
 * entry[custodianOrganization].search ..0
@@ -141,7 +141,7 @@ Description: "分割処方を構成する１処方"
 * entry[custodianDepartmentOfOrganization].fullUrl ^definition = "埋め込まれているOrganizationリソースを一意に識別するためのUUID。"
 * entry[custodianDepartmentOfOrganization].resource 1.. MS
 //* entry[custodianDepartmentOfOrganization].resource only JP_Organization_ePrescriptionData_departmentOfIssuer
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
+* entry[custodianDepartmentOfOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
 * entry[custodianDepartmentOfOrganization].resource ^short = "Organizationリソースのインスタンス本体"
 * entry[custodianDepartmentOfOrganization].resource ^definition = "Organizationリソースのインスタンス本体。"
 * entry[custodianDepartmentOfOrganization].search ..0
@@ -155,7 +155,7 @@ Description: "分割処方を構成する１処方"
 * entry[authorisedAuthorRole].fullUrl ^definition = "埋め込まれているPractitionerRoleリソースを一意に識別するためのUUID。"
 * entry[authorisedAuthorRole].resource 1.. MS
 //* entry[authorisedAuthorRole].resource only JP_PractitionerRole_ePrescriptionData_author
-* entry[commonPayerOrganization].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
+* entry[authorisedAuthorRole].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 
 * entry[authorisedAuthorRole].resource ^short = "PractitionerRoleリソースのインスタンス本体"
 * entry[authorisedAuthorRole].resource ^definition = "PractitionerRoleリソースのインスタンス本体。"
