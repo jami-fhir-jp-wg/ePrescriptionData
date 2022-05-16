@@ -10,7 +10,7 @@ Description: "分割処方Bundleリソースの３回目処方のインスタン
 * entry[0].fullUrl = "urn:uuid:e555a9a4-e60a-4825-8388-19a4f63ad18b"
 * entry[=].resource.resourceType = "Composition"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle03-ePreData-Example03-1"
-* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
+* entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_CompositionInline_ePrescriptionData"
 * entry[=].resource.extension.url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * entry[=].resource.extension.valueString = "1"
 * entry[=].resource.identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier"

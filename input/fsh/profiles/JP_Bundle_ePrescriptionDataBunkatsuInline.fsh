@@ -17,7 +17,7 @@ Description: "分割処方を構成する１処方"
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    composition 1..1 MS and
+    compositionInline 1..1 MS and
     patient 1..1 MS and
     encounterOnDocument 0..1 MS and
     healthInsurancePublic 0.. MS and
@@ -29,19 +29,19 @@ Description: "分割処方を構成する１処方"
     authorisedAuthor 0..1 MS and
     medicationRequest 1..*  MS and
     communication 0..* 
-* entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
-* entry[composition] ^definition = "compositionリソースのエントリー。"
-* entry[composition].fullUrl 1.. MS
-* entry[composition].fullUrl ^short = "埋め込まれているCompositionリソースを一意に識別するためのUUID"
-* entry[composition].fullUrl ^definition = "埋め込まれているCompositionリソースを一意に識別するためのUUID。"
-* entry[composition].resource 1.. MS
-* entry[composition].resource only JP_Composition_ePrescriptionData
+* entry[compositionInline] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
+* entry[compositionInline] ^definition = "compositionリソースのエントリー。"
+* entry[compositionInline].fullUrl 1.. MS
+* entry[compositionInline].fullUrl ^short = "埋め込まれているCompositionリソースを一意に識別するためのUUID"
+* entry[compositionInline].fullUrl ^definition = "埋め込まれているCompositionリソースを一意に識別するためのUUID。"
+* entry[compositionInline].resource 1.. MS
+* entry[compositionInline].resource only JP_CompositionInline_ePrescriptionData
 //entry[composition].resource.meta.profile =  "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
-* entry[composition].resource ^short = "Compositionリソースのインスタンス本体"
-* entry[composition].resource ^definition = "Compositionリソースのインスタンス本体。"
-* entry[composition].search ..0
-* entry[composition].request ..0
-* entry[composition].response ..0
+* entry[compositionInline].resource ^short = "Compositionリソースのインスタンス本体"
+* entry[compositionInline].resource ^definition = "Compositionリソースのインスタンス本体。"
+* entry[compositionInline].search ..0
+* entry[compositionInline].request ..0
+* entry[compositionInline].response ..0
 
 * entry[patient] ^short = "Patientリソース"
 * entry[patient] ^definition = "Patientリソースのエントリー。"
