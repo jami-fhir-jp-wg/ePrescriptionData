@@ -46,7 +46,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 
 * entry[bundleForBunkatsu] ^short = "分割処方のためのBundleエントリ"
 * entry[bundleForBunkatsu] ^definition = "分割処方のためのBundleエントリ。分割処方箋を構成する各処方Bundleを格納する。"
-* entry[bundleForBunkatsu].fullUrl 1.. MS
 * entry[bundleForBunkatsu].fullUrl ^short = "埋め込まれているBundleリソースを一意に識別するためのUUID"
 * entry[bundleForBunkatsu].fullUrl ^definition = "埋め込まれているBundleリソースを一意に識別するためのUUID。"
 * entry[bundleForBunkatsu].resource only JP_Bundle_ePrescriptionDataBunkatsuInline
