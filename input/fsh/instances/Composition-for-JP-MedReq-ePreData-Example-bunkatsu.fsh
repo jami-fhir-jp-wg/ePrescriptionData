@@ -24,7 +24,7 @@ Description: "分割処方のCompositionリソースのインスタンス例"
 * section[=].code = $prescription-section#11 "分割処方箋セクション"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
-* section[=].entry[0].reference = "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796"
+* section[=].entry[0].reference = "urn:uuid:9495ef34-a77d-4f3e-8dce-5688e169d0fa"
 // * section[=].entry[+] = Reference(Bundle02-for-JP-MedReq-ePreData-Example-bunkatsu)
 // * section[=].entry[+] = Reference(Bundle03-for-JP-MedReq-ePreData-Example-bunkatsu)
 * section[+].title = "別紙セクション"
