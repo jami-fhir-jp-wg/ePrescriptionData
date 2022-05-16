@@ -21,7 +21,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry ^slicing.rules = #open
 * entry contains
     composition 1..1 MS and
-    bundleForBunkatsu 0..* MS
+    bundleForBunkatsu 0..* MS and
     patient 1..1 MS and
     encounterOnDocument 0..1 MS and
     healthInsurancePublic 0.. MS and
