@@ -8,3 +8,4 @@
 %None of the codings provided are in the value set%
 %v3-Act% 
 %Found code (from%
+Display Name for http://terminology.hl7.org/CodeSystem/coverage-copay-type#copaypct should be one of 'Copay Percentage' instead of '負担率'%
