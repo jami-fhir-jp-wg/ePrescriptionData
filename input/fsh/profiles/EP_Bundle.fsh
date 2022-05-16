@@ -21,7 +21,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry ^slicing.rules = #open
 * entry contains
     composition 1..1 MS and
-    patient 1..1 MS and
     bundleForBunkatsu 0..* MS
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
 * entry[composition] ^definition = "compositionリソースのエントリー。"
@@ -35,20 +34,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[composition].search ..0
 * entry[composition].request ..0
 * entry[composition].response ..0
-
-* entry[patient] ^short = "Patientリソース"
-* entry[patient] ^definition = "Patientリソースのエントリー。"
-* entry[patient].fullUrl 1.. MS
-* entry[patient].fullUrl ^short = "埋め込まれているPatientリソースを一意に識別するためのUUID"
-* entry[patient].fullUrl ^definition = "埋め込まれているPatientリソースを一意に識別するためのUUID。"
-* entry[patient].resource 1.. MS
-* entry[patient].resource only JP_Patient_ePrescriptionData
-* entry[patient].resource ^short = "Patientリソースのインスタンス本体"
-* entry[patient].resource ^definition = "Patientリソースのインスタンス本体。"
-* entry[patient].search ..0
-* entry[patient].request ..0
-* entry[patient].response ..0
-
 * entry[bundleForBunkatsu] ^short = "分割処方のためのBundleエントリ"
 * entry[bundleForBunkatsu] ^definition = "分割処方のためのBundleエントリ。分割処方箋を構成する各処方Bundleを格納する。"
 * entry[bundleForBunkatsu].fullUrl 1.. MS

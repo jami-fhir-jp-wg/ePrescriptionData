@@ -90,18 +90,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * category.coding.display MS
 * category.coding.userSelected ..0
 * category.text ..0
-* subject 1.. MS
-* subject ^short = "患者情報を表すPatientリソースへの参照。"
-* subject ^definition = "患者情報を表すPatientリソースへの参照。"
-* subject.reference 1.. MS
-* subject.reference ^short = "PatientリソースのfullUrl要素に指定されるUUIDを指定。"
-* subject.reference ^definition = "Bundleリソースに記述されるPatientリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:11f0a9a6_a91d_3aef_fc4e_069995b89c4f\""
-* encounter ^short = "処方箋が出された受診時状況情報を表すEncounterリソースへの参照"
-* encounter ^definition = "処方箋が出された受診時状況情報を表すEncounterリソースへの参照"
-* encounter MS
-* encounter.reference ^short = "EncounterリソースのfullUrl要素に指定されるUUIDを指定。"
-* encounter.reference ^definition = "Bundleリソースに記述されるEncounterリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:12f0a9a6_a91d_8aef_d14e_069795b89c9f\""
-* encounter.reference MS
 * date ^definition = "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。\r\n午前0時を\"24:00\"と記録することはできないため\"00:00\"と記録すること。　\r\n例：\"2020_08_21T12:28:21+09:00\""
 * date MS
 * author ..2 MS
@@ -110,61 +98,14 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * author ^slicing.rules = #open
 * author ^short = "処方医と処方医療機関とへの参照。"
 * author ^definition = "処方医を表すPractitionerRoleリソースへの参照、および,処方医療機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
-* author contains
-    prescriberInformation 1..1 MS and
-    prescriberOrganization 0..1 MS and
-    prescriberDepartmentOrganization 0..1 MS
-* author[prescriberInformation] only Reference(JP_PractitionerRole_ePrescriptionData_author)
-* author[prescriberInformation] ^short = "処方医役割を表すPractitionerRoleリソースへの参照"
-* author[prescriberInformation] ^definition = "処方医役割を表すPractitionerRoleリソースへの参照。"
-* author[prescriberInformation] ^comment = "処方医役割を表すPractitionerRoleリソースは、処方医を表すPractitionerリソースを参照している。\r\nPractitionerRoleリソースは、組織Oraganizationリソースを参照しているが、この組織は処方医の所属組織であって、必ずしも常に処方医療機関と同一ではない場合がある。"
-* author[prescriberInformation].reference ^short = "PractitionerRoleリソースのfullUrl要素に指定されるUUIDを指定。"
-* author[prescriberInformation].reference ^definition = "Bundleリソースに記述される処方医役割を表すPractitionerRoleリソースのfullUrl要素に指定されるUUIDを指定。\r\n処方医役割を表すPractitionerRoleリソースからPractionerリソースが参照されている。"
-* author[prescriberOrganization] only Reference(JP_Organization_ePrescriptionData_issuer)
-* author[prescriberOrganization] ^short = "処方医療機関を表すOrganizationリソースへの参照"
-* author[prescriberOrganization] ^definition = "処方医療機関を表すOrganizationリソースへの参照"
-* author[prescriberOrganization] ^comment = "処方医が所属する医療機関と同一の場合には、その医療機関Organizationリソースを参照する。"
-* author[prescriberOrganization].reference ^short = "医療機関OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
-* author[prescriberOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関を表す医療機関OrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
-* author[prescriberDepartmentOrganization] only Reference(JP_Organization_ePrescriptionData_departmentOfIssuer)
-* author[prescriberDepartmentOrganization] ^short = "処方医療機関の診療科を表すOrganizationリソースへの参照"
-* author[prescriberDepartmentOrganization] ^definition = "処方医療機関の診療科を表すOrganizationリソースへの参照"
-* author[prescriberDepartmentOrganization] ^comment = "処方医が所属する医療機関およびその診療科）と同一の場合には、その診療科Organizationリソースを参照する。"
-* author[prescriberDepartmentOrganization].reference ^short = "診療科OrganizationリソースのfullUrl要素に指定されるUUIDを指定"
-* author[prescriberDepartmentOrganization].reference ^definition = "Bundleリソースに記述される処方医療機関の診療科を表す診療科OrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
+* author only Reference(JP_PractitionerRole_ePrescriptionData_author)
 * title MS
-* confidentiality ..0
-* attester ..0
-* custodian 1.. MS
-* custodian ^short = "処方箋の作成・修正を行い、処方箋の管理責任を持つ医療機関（Organizationリソース）への参照"
-* custodian ^definition = "処方箋の作成・修正を行い、処方箋の管理責任を持つ医療機関（Organizationリソース）への参照。\r\n処方医療機関と同一の組織の場合、custodian要素からは処方医療機関を表すOrganizationリソースへの参照となる。\r\n処方医療機関とは異なる組織である場合は、処方医療機関とは別のOrganizationリソースで表現し、custodian要素からはそのOrganizationリソースを参照する。"
-* custodian.reference 1..
-* custodian.reference ^short = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
-* custodian.reference ^definition = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\""
-* relatesTo ..0
-* event 1..1 MS
-* event ^short = "処方箋としての交付日とその有効期限。"
-* event ^definition = "処方箋としての交付日とその有効期限。"
-* event.code 1..1 MS
-* event.code.text 1.. MS
-* event.code.text = "処方箋交付" (exactly)
-* event.period 1.. MS
-* event.period ^short = "有効期間"
-* event.period ^definition = "有効期間を開始日と終了日で記述する。"
-* event.period.start 1.. MS
-* event.period.start ^short = "有効期間開始日（交付日）"
-* event.period.start ^definition = "処方箋交付日。ISO8601に準拠yyyy_mm_dd形式で記述する。\r\n有効期間の開始日付となる。"
-* event.period.end ^short = "処方箋の有効期限"
-* event.period.end ^definition = "処方箋の有効期限。\r\n省略された場合は、法律で定められた処方箋の有効期限と解釈する。"
-* event.period.end MS
-* event.detail ..0
 * section ..2 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
 * section contains prescriptionInformation 0..1 MS
     and bunkatsuInformation  0..1 MS
-    and bunkatsuBesshiInformation   0..1 MS
 
 * section[bunkatsuInformation] ^short = "分割処方箋セクション。"
 * section[bunkatsuInformation] ^definition = "分割処方箋セクション。各分割処方箋を記述したBundleリソースへの参照をその分割数分だけ含む。"
@@ -208,48 +149,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuInformation].entry.reference ^definition = "分割処方箋に含まれる個々の処方箋に対応するBundleリソースへの参照。"
 * section[bunkatsuInformation].entry.reference MS
 
-* section[bunkatsuBesshiInformation] ^short = "分割処方箋の別紙セクション。"
-* section[bunkatsuBesshiInformation] ^definition = "分割処方箋の別紙セクション。分割処方箋に含まれる別紙に対応したOrganizationリソースが本セクションに含まれる。"
-* section[bunkatsuBesshiInformation].title 1.. MS
-* section[bunkatsuBesshiInformation].title = "別紙セクション" (exactly)
-* section[bunkatsuBesshiInformation].title ^short = "セクションタイトル"
-* section[bunkatsuBesshiInformation].title ^definition = "セクションタイトル。固定値。"
-* section[bunkatsuBesshiInformation].code 1.. MS
-* section[bunkatsuBesshiInformation].code ^short = "セクション区分コード"
-* section[bunkatsuBesshiInformation].code ^definition = "セクション区分コード"
-* section[bunkatsuBesshiInformation].code.coding 1..1 MS
-* section[bunkatsuBesshiInformation].code.coding.system 1.. MS
-* section[bunkatsuBesshiInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
-* section[bunkatsuBesshiInformation].code.coding.system ^short = "セクション区分コードのコード体系"
-* section[bunkatsuBesshiInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
-* section[bunkatsuBesshiInformation].code.coding.code 1.. MS
-* section[bunkatsuBesshiInformation].code.coding.code = #12 (exactly)
-* section[bunkatsuBesshiInformation].code.coding.code ^short = "セクション区分のコード値"
-* section[bunkatsuBesshiInformation].code.coding.code ^definition = "処方情報セクションを表すセクション区分のコード値。\r\n固定値。"
-* section[bunkatsuBesshiInformation].code.coding.display = "別紙セクション" (exactly)
-* section[bunkatsuBesshiInformation].code.coding.display ^short = "セクション区分コードの表示名"
-* section[bunkatsuBesshiInformation].code.coding.display ^definition = "セクション区分コードの表示名。"
-* section[bunkatsuBesshiInformation].code.coding.display MS
-* section[bunkatsuBesshiInformation].code.coding.userSelected ..0
-* section[bunkatsuBesshiInformation].code.text ..0
-* section[bunkatsuBesshiInformation].text ^short = "セクションの内容を表す文字列"
-* section[bunkatsuBesshiInformation].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
-* section[bunkatsuBesshiInformation].text MS
-* section[bunkatsuBesshiInformation].text.status MS
-* section[bunkatsuBesshiInformation].text.status = #generated (exactly)
-* section[bunkatsuBesshiInformation].text.status ^short = "セクションの内容作成状態コード"
-* section[bunkatsuBesshiInformation].text.status ^definition = "generated | extensions | additional | empty　から　\"generated\" の固定値。"
-* section[bunkatsuBesshiInformation].text.div ^short = "xhtml 形式のテキスト"
-* section[bunkatsuBesshiInformation].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
-* section[bunkatsuBesshiInformation].mode ..0
-* section[bunkatsuBesshiInformation].orderedBy ..0
-* section[bunkatsuBesshiInformation].entry only Reference(JP_Organization_ePrescriptionData_issuer)
-* section[bunkatsuBesshiInformation].entry ^short = "別紙に含まれる処方医療機関情報に対応するOrganizationリソース"
-* section[bunkatsuBesshiInformation].entry ^definition = "別紙に含まれる処方医療機関情報に対応するOrganizationリソース"
-* section[bunkatsuBesshiInformation].entry.reference ^short = "別紙に含まれる処方医療機関情報に対応するOrganizationリソースへの参照"
-* section[bunkatsuBesshiInformation].entry.reference ^definition = "別紙に含まれる処方医療機関情報に対応するOrganizationリソースへの参照"
-* section[bunkatsuBesshiInformation].entry.reference MS
-
 * section[prescriptionInformation] ^short = "処方情報セクション。"
 * section[prescriptionInformation] ^definition = "処方情報セクション。\r\n処方箋に含まれる処方情報に関連するリソースが全て本セクションに含まれる。"
 * section[prescriptionInformation].title 1.. MS
@@ -291,30 +190,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[prescriptionInformation].entry ^slicing.discriminator.path = "resolve()"
 * section[prescriptionInformation].entry ^slicing.rules = #open
 * section[prescriptionInformation].entry contains
-    healthInsurancePublic 0..1 MS and
-    commonPayerOrganization 0.. MS and
-    publicPayment 0..1 MS and
-    medicationRequest 0.. MS and
-    communication 0.. MS
-* section[prescriptionInformation].entry[healthInsurancePublic] only Reference(JP_Coverage_ePrescriptionData_insurance)
-* section[prescriptionInformation].entry[healthInsurancePublic] ^short = "文書が作成された診療の健康保険に関するCoverageリソース"
-* section[prescriptionInformation].entry[healthInsurancePublic] ^definition = "文書が作成された診療の健康保険に関するCoverageリソース。"
-* section[prescriptionInformation].entry[healthInsurancePublic].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[healthInsurancePublic].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[healthInsurancePublic].reference MS
-* section[prescriptionInformation].entry[commonPayerOrganization] only Reference(JP_Organization_ePrescriptionData_coveragePayer)
-* section[prescriptionInformation].entry[commonPayerOrganization] ^short = "医療保険者組織またはublicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報"
-* section[prescriptionInformation].entry[commonPayerOrganization] ^definition = "医療保険者組織またはublicPayment要素に関係する費用負担者に関するOrganizationリソースへの情報。"
-* section[prescriptionInformation].entry[commonPayerOrganization].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[commonPayerOrganization].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[commonPayerOrganization].reference MS
-* section[prescriptionInformation].entry[publicPayment] only Reference(JP_Coverage_ePrescriptionData_publicPayment)
-* section[prescriptionInformation].entry[publicPayment] ^sliceName = "publicPayment"
-* section[prescriptionInformation].entry[publicPayment] ^short = "公費負担に関する情報に関するCovegareリソースへの情報"
-* section[prescriptionInformation].entry[publicPayment] ^definition = "公費負担に関する情報に関するCovegareリソースへの情報。"
-* section[prescriptionInformation].entry[publicPayment].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[publicPayment].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[publicPayment].reference MS
+    medicationRequest 0.. MS 
 * section[prescriptionInformation].entry[medicationRequest] only Reference(JP_MedicationRequest_ePrescriptionData)
 * section[prescriptionInformation].entry[medicationRequest] ^sliceName = "medicationRequest"
 * section[prescriptionInformation].entry[medicationRequest] ^short = "ひとつの医薬品の処方指示に関するMedicationRequestリソースへの情報"
@@ -322,12 +198,5 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[prescriptionInformation].entry[medicationRequest].reference ^short = "リソースへの参照"
 * section[prescriptionInformation].entry[medicationRequest].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
 * section[prescriptionInformation].entry[medicationRequest].reference MS
-* section[prescriptionInformation].entry[communication] only Reference(JP_Communication_ePrescriptionData)
-* section[prescriptionInformation].entry[communication] ^sliceName = "communication"
-* section[prescriptionInformation].entry[communication] ^short = "処方箋全体の指示、明細単位での備考情報に関するCommunicationリソースへの情報"
-* section[prescriptionInformation].entry[communication] ^definition = "処方箋全体の指示、明細単位での備考情報に関するCommunicationリソースへの情報。"
-* section[prescriptionInformation].entry[communication].reference ^short = "リソースへの参照"
-* section[prescriptionInformation].entry[communication].reference ^definition = "Bundleリソースに記述されるそのリソースのfullUrl要素に指定されるUUIDを指定。"
-* section[prescriptionInformation].entry[communication].reference MS
 * section[prescriptionInformation].emptyReason ..0
 * section[prescriptionInformation].section ..0
