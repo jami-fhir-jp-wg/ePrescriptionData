@@ -11,10 +11,8 @@ Description: "分割処方を構成する１処方"
 * type MS
 * timestamp 1.. MS
 * timestamp ^short = "このバンドルリソースのインスタンスが作成された日時。"
-* timestamp ^definition = "このリソースを生成した日時。時刻の精度はミリ秒とし、タイムゾーンを含めること。　例：\"2021-02-01T13:28:17.239+09:00\""
+* timestamp ^definition = "このリソースを生成した日時。時刻の精度はミリ秒とし、タイムゾーンを含めること。　例：\"2021-02-01T13:28:17.239+09:00\"  "
 * total ..0
-* link ^definition = "A series of links that provide context to this bundle.\r\nこのBundleへ文脈情報を付与するための一連のリンク情報。"
-* link ^comment = "使用予定はない。　\r\n\r\nBoth Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. [HATEOAS](http://en.wikipedia.org/wiki/HATEOAS)). \n\nBundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.\n\nThis specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction _ the meaning is implementation specific."
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -31,7 +29,6 @@ Description: "分割処方を構成する１処方"
     authorisedAuthor 0..1 MS and
     medicationRequest 1..*  MS and
     communication 0..* 
-
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
 * entry[composition] ^definition = "compositionリソースのエントリー。"
 * entry[composition].fullUrl 1.. MS
@@ -60,7 +57,6 @@ Description: "分割処方を構成する１処方"
 * entry[patient].request ..0
 * entry[patient].response ..0
 
-
 * entry[encounterOnDocument] ^short = "文書作成時の医療側と患者側との接触関係の情報"
 * entry[encounterOnDocument] ^definition = "医療側と患者側との接触関係の情報をEncounterリソースで記述する。"
 * entry[encounterOnDocument] ^comment = "文書が作成された診療場面の情報を表すEncounter情報への参照である。\r\n外来診察で作成された文書の場合には、その外来受診を表すEncounter情報。\r\n入院時、入院中、退院時の場合には、その時点での病棟情報などを表すEncounter情報。"
@@ -75,7 +71,6 @@ Description: "分割処方を構成する１処方"
 * entry[encounterOnDocument].search ..0
 * entry[encounterOnDocument].request ..0
 * entry[encounterOnDocument].response ..0
-
 
 * entry[healthInsurancePublic] ^short = "文書が作成された診療の健康保険に関する情報。"
 * entry[healthInsurancePublic] ^definition = "文書が作成された診療の健康保険に関する情報をCovarageリソースで記述する。\r\nこの文書の作成、あるいはこの文書の内容が実施される場合に適用される（された）医療保険の情報。\r\n保険診療に関わらず作成された文書や、文書内容が保険診療により実施されるのではない場合、文書の用途の観点から保険情報が必須でない場合には、省略できる。"
@@ -202,7 +197,6 @@ Description: "分割処方を構成する１処方"
 * entry[communication].search ..0
 * entry[communication].request ..0
 * entry[communication].response ..0
-
 
 * signature ^definition = "base64でエンコードされた電子署名。JWT仕様。"
 * signature ^comment = "文書情報全体（signature要素以外の部分）に対する電子署名を送受信間で合意にもとづき運用したい場合に使用できる。各要素は参考仕様であり、今後JWT（JSON Web Token）にもとづく仕様が関係団体で策定された場合には、それに置き換える。"
