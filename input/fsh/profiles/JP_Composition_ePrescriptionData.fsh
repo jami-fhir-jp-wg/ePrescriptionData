@@ -179,7 +179,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuInformation].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[bunkatsuInformation].mode ..0
 * section[bunkatsuInformation].orderedBy ..0
-* section[bunkatsuInformation].entry only Reference(JP_Bundle_ePrescriptionDataBunkatsuInline)
+* section[bunkatsuInformation].entry only Reference(JP_Bundle_ePrescriptionData)
 * section[bunkatsuInformation].entry ^short = "分割処方の各Bundleリソース"
 * section[bunkatsuInformation].entry ^definition = "分割処方の各Bundleリソース"
 * section[bunkatsuInformation].entry.reference ^short = "分割処方の各Bundleリソースへの参照"

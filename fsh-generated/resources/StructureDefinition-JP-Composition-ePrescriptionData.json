@@ -764,7 +764,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionDataBunkatsuInline"
+              "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
             ]
           }
         ]

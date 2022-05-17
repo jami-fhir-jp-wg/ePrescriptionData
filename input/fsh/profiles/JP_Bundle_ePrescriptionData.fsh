@@ -18,7 +18,6 @@ Description: "処方情報のBundle Documentのプロファル。分割処方は
 * entry ^slicing.rules = #open
 
 * entry[composition].resource only JP_Composition_ePrescriptionData
-* entry[bundleForBunkatsu].resource only JP_Bundle_ePrescriptionDataBunkatsuInline
 * entry[patient].resource only JP_Patient_ePrescriptionData
 * entry[encounterOnDocument].resource only JP_Encounter_ePrescriptionData
 * entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
