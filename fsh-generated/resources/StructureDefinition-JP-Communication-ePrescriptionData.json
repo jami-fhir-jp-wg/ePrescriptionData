@@ -1,0 +1,144 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Communication-ePrescriptionData",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Request &amp; Response"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_ePrescriptionData",
+  "version": "0.9.3",
+  "name": "JP_Communication_ePrescriptionData",
+  "status": "draft",
+  "description": "処方の全体での備考等情報　JP_Communicationの派生プロファイル",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Communication",
+  "baseDefinition": "http://jpfhir.jp/fhir/StructureDefinition/JP_Communication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Communication.extension",
+        "path": "Communication.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Communication.extension:textContent",
+        "path": "Communication.extension",
+        "sliceName": "textContent",
+        "definition": "処方箋全体における調剤者へのコメントまたは患者へのコメント。\r\n複数の異なるコメントがあるときには、本要素を繰り返す。",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/ePrescription/Extension/StructureDefinition/JP_Communication_CommunicationContent"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.extension:textContent.url",
+        "path": "Communication.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.extension:textContent.value[x]",
+        "path": "Communication.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Communication.extension:textContent.valueString",
+        "path": "Communication.extension.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.status",
+        "path": "Communication.status",
+        "fixedCode": "completed",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.category",
+        "path": "Communication.category",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.category.coding",
+        "path": "Communication.category.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.category.coding.system",
+        "path": "Communication.category.coding.system",
+        "definition": "処方コメントカテゴリー",
+        "min": 1,
+        "fixedUri": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.category.coding.code",
+        "path": "Communication.category.coding.code",
+        "definition": "「2:調剤者への指示」を指定することで、Communicationリソースが表現する内容が調剤者への指示であることを識別する。複数の指示を指定する場合は、Communicationリソース単位で繰り返す。\r\n「1:患者への指示」",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Communication.category.coding.display",
+        "path": "Communication.category.coding.display",
+        "definition": "コード２の場合、「調剤者への指示」",
+        "mustSupport": true
+      }
+    ]
+  }
+}

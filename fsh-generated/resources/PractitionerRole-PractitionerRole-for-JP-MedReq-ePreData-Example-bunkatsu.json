@@ -1,0 +1,32 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "PractitionerRole-for-JP-MedReq-ePreData-Example-bunkatsu",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
+    ]
+  },
+  "language": "ja",
+  "identifier": [
+    {
+      "system": "http://exapmleHospital.jp/IdSystem/hisUserRoleId",
+      "value": "702"
+    }
+  ],
+  "practitioner": {
+    "reference": "urn:uuid:07a43eb6-71d3-816a-0767-45a2a9b39899"
+  },
+  "organization": {
+    "reference": "urn:uuid:ef7892cc-fb3a-b951-9ac7-f8cd6c746f0a"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "doctor",
+          "system": "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category"
+        }
+      ]
+    }
+  ]
+}
