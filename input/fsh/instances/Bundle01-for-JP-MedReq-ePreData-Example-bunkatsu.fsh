@@ -181,7 +181,7 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.qualification[=].identifier.value = "123456"
 * entry[=].resource.qualification[=].code = $practitioner-certificate-category#MedicalDoctorLicense
 * entry[=].resource.qualification[+].identifier.system = "urn:oid:1.2.392.100495.20.3.32.113"
-* entry[=].resource.qualification[=].identifier.value = "4-321" 
+* entry[=].resource.qualification[=].identifier.value = "4-321"
 * entry[=].resource.qualification[=].code = $practitioner-certificate-category#NarcoticsPractitioner
 * entry[10].fullUrl = "urn:uuid:a58040b7-6283-fb0c-4b25-a17dca08cc3d"
 * entry[=].resource.resourceType = "MedicationRequest"
@@ -196,7 +196,7 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.medicationCodeableConcept.coding[0] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.text = "カルボシステイン錠２５０ｍｇ"
-* entry[=].resource.subject.reference =                                                                 "
+* entry[=].resource.subject.reference = "urn:uuid:e22017ff-4c65-649c-2dfe-c6676b654be5"
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"
 * entry[=].resource.note.text = "薬剤単位の備考"
