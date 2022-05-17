@@ -18,35 +18,35 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.status = #final
 * entry[=].resource.type = $doc-typecodes#57833-6 "処方箋"
 * entry[=].resource.category = $prescription-category#01 "一般処方箋"
-* entry[=].resource.subject = Reference(Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
+* entry[=].resource.subject = Reference(Patient/Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
 * entry[=].resource.subject.display = "患者リソースPatient"
-* entry[=].resource.encounter = Reference(Inline-Encounter-for-JP-Bundle01-ePreData-Example01-3)
+* entry[=].resource.encounter = Reference(Encounter/Inline-Encounter-for-JP-Bundle01-ePreData-Example01-3)
 * entry[=].resource.encounter.display = "受診Encounterリソース"
 * entry[=].resource.date = "2020-08-21T12:12:20+09:00"
-* entry[=].resource.author[0] = Reference(Inline-PractitionerRole-for-JP-Bundle01-ePreData-Example01-10)
+* entry[=].resource.author[0] = Reference(PractitionerRole/Inline-PractitionerRole-for-JP-Bundle01-ePreData-Example01-10)
 * entry[=].resource.author[=].display = "処方作成者PractitionerRoleリソース"
-* entry[=].resource.author[+] = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
+* entry[=].resource.author[+] = Reference(Organaization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
 * entry[=].resource.author[=].display = "処方作成機関Organaizationリソース"
 * entry[=].resource.title = "処方箋"
-* entry[=].resource.custodian = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
+* entry[=].resource.custodian = Reference(Organaization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
 * entry[=].resource.custodian.display = "処方箋交付責任機関Organaizationリソース"
 * entry[=].resource.event.code.text = "処方箋交付"
 * entry[=].resource.event.period.start = "2020-08-21"
 * entry[=].resource.section[0].title = "処方情報"
 * entry[=].resource.section[=].code = $prescription-section#01 "処方情報セクション"
-* entry[=].resource.section[=].entry[0] = Reference(Inline-Coverage-for-JP-Bundle01-ePreData-Example01-4)
+* entry[=].resource.section[=].entry[0] = Reference(Coverage/Inline-Coverage-for-JP-Bundle01-ePreData-Example01-4)
 * entry[=].resource.section[=].entry[=].display = "健康保険Coverage"
 * entry[=].resource.section[=].entry[+] = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-6)
 * entry[=].resource.section[=].entry[=].display = "健康保険者Organaization"
-* entry[=].resource.section[=].entry[+] = Reference(Inline-Coverage-for-JP-Bundle01-ePreData-Example01-5)
+* entry[=].resource.section[=].entry[+] = Reference(Coverage/Inline-Coverage-for-JP-Bundle01-ePreData-Example01-5)
 * entry[=].resource.section[=].entry[=].display = "公費負担Coverage"
-* entry[=].resource.section[=].entry[+] = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-7)
+* entry[=].resource.section[=].entry[+] = Reference(Organization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-7)
 * entry[=].resource.section[=].entry[=].display = "公費負担者Organaization"
-* entry[=].resource.section[=].entry[+] = Reference(Inline-MedicationRequest-for-JP-Bundle01-ePreData-Example01-12)
+* entry[=].resource.section[=].entry[+] = Reference(MedicationRequest/Inline-MedicationRequest-for-JP-Bundle01-ePreData-Example01-12)
 * entry[=].resource.section[=].entry[=].display = "処方指示 内服処方7日分MedicationRequestリソース"
-* entry[=].resource.section[=].entry[+] = Reference(Inline-MedicationRequest-for-JP-Bundle01-ePreData-Example01-13)
+* entry[=].resource.section[=].entry[+] = Reference(MedicationRequest/Inline-MedicationRequest-for-JP-Bundle01-ePreData-Example01-13)
 * entry[=].resource.section[=].entry[=].display = "処方指示 外用MedicationRequestリソース"
-* entry[=].resource.section[=].entry[+] = Reference(Inline-Communication-for-JP-Bundle01-ePreData-Example01-14)
+* entry[=].resource.section[=].entry[+] = Reference(Communication/Inline-Communication-for-JP-Bundle01-ePreData-Example01-14)
 * entry[=].resource.section[=].entry[=].display = "調剤者への指示"
 * entry[+].fullUrl = "urn:uuid:e22017ff-4c65-649c-2dfe-c6676b654be5"
 * entry[=].resource.resourceType = "Patient"
@@ -89,12 +89,12 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.extension[=].valueString = "01"
 * entry[=].resource.status = #active
 * entry[=].resource.type = urn:oid:1.2.392.100495.20.2.61#1
-* entry[=].resource.beneficiary = Reference(Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
+* entry[=].resource.beneficiary = Reference(Patient/Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
 * entry[=].resource.beneficiary.display = "患者Patientリソース"
 * entry[=].resource.dependent = "01"
 * entry[=].resource.relationship = urn:oid:1.2.392.100495.20.2.62#1 "被保険者"
 * entry[=].resource.period.start = "2018-04-01"
-* entry[=].resource.payor = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-6)
+* entry[=].resource.payor = Reference(Organization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-6)
 * entry[=].resource.payor.display = "保険者Organizationリソース"
 * entry[=].resource.costToBeneficiary.type = $coverage-copay-type#copaypct "負担率"
 * entry[=].resource.costToBeneficiary.valueQuantity = 30 '%' "%"
@@ -105,11 +105,11 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.status = #active
 * entry[=].resource.type = urn:oid:1.2.392.100495.20.2.61#8
 * entry[=].resource.subscriberId = "12345678"
-* entry[=].resource.beneficiary = Reference(Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
+* entry[=].resource.beneficiary = Reference(Patient/Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
 * entry[=].resource.beneficiary.display = "患者Patientリソース"
 * entry[=].resource.period.start = "2020-01-01"
 * entry[=].resource.period.end = "2020-12-31"
-* entry[=].resource.payor = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-7)
+* entry[=].resource.payor = Reference(Organization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-7)
 * entry[=].resource.payor.display = "公費負担者Organization"
 * entry[=].resource.order = 1
 * entry[=].resource.costToBeneficiary.type = $coverage-copay-type#copaypct "負担率"
@@ -156,9 +156,9 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
 * entry[=].resource.identifier.system = "http://exapmleHospital.jp/IdSystem/hisUserRoleId"
 * entry[=].resource.identifier.value = "702"
-* entry[=].resource.practitioner = Reference(Inline-Practitioner-for-JP-Bundle01-ePreData-Example01-11)
+* entry[=].resource.practitioner = Reference(Practitioner/Inline-Practitioner-for-JP-Bundle01-ePreData-Example01-11)
 * entry[=].resource.practitioner.display = "医療者Practionerリソース"
-* entry[=].resource.organization = Reference(Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
+* entry[=].resource.organization = Reference(Organization/Inline-Organization-for-JP-Bundle01-ePreData-Example01-8)
 * entry[=].resource.organization.display = "医療機関Organizationリソース"
 * entry[=].resource.code = $practitioner-role-category#doctor
 * entry[+].fullUrl = "urn:uuid:a871437d-03eb-edfb-9ac7-f3313c54f31a"
@@ -196,7 +196,7 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.medicationCodeableConcept.coding[0] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ"
 * entry[=].resource.medicationCodeableConcept.text = "カルボシステイン錠２５０ｍｇ"
-* entry[=].resource.subject = Reference(Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
+* entry[=].resource.subject = Reference(Patient/Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"
 * entry[=].resource.note.text = "薬剤単位の備考"
@@ -227,7 +227,7 @@ Description: "分割処方Bundleリソースの1回目処方のインスタン�
 * entry[=].resource.intent = #order
 * entry[=].resource.medicationCodeableConcept = urn:oid:1.2.392.200119.4.403.1#106062101 "リンデロンＶＧクリーム ５ｇ"
 * entry[=].resource.medicationCodeableConcept.text = "リンデロンＶＧクリーム ５ｇ"
-* entry[=].resource.subject = Reference(Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
+* entry[=].resource.subject = Reference(Patient/Inline-Patient-for-JP-Bundle01-ePreData-Example01-2)
 * entry[=].resource.subject.display = "患者Patientリソース"
 * entry[=].resource.authoredOn = "2020-08-21T12:28:17+09:00"
 * entry[=].resource.dosageInstruction[0].text = "１日３回患部に塗布（膝）"
