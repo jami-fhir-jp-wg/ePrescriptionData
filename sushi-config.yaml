@@ -1,7 +1,11 @@
 # ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
 # │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
 # │  used properties are included. For a list of all supported properties and their functions,     │
+<<<<<<< HEAD
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                 │
+=======
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                     │
+>>>>>>> ae2c63c53e8e492f0132f7986e5a27653d45bf66
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ePrescriptionData
 canonical: http://jpfhir.jp/fhir/ePrescriptionData
