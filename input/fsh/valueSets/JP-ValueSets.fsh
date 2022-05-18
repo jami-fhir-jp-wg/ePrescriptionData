@@ -14,7 +14,7 @@ Description: "FHIR文書の文書区分（医療文書全般）"
 */
 
 // EncounterActコード
-/**/
+/*
 ValueSet:  HL7V3_ActEncounterCode
 Id:   v3-ActEncounterCode
 Description: "EncounterActコード"
