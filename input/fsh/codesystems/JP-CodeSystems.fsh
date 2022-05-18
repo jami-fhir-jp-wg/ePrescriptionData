@@ -765,16 +765,18 @@ Description: "医薬品コード（YJコード）"
 
 // http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
 // EncounterActコード
+/*
 CodeSystem:  HL7V3_ActEncounterCode
 Id:   v3-ActEncounterCode
 Description: "EncounterActコード"
 * ^url = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* ^valueSet = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
+//* ^valueSet = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
 * #AMB  "外来"
 * #IMP  "入院"
+*/
 
 // 厚労省HOTコード（9桁） OID:1.2.392.100495.20.2.74
 // = MEDIS HOTコード（9桁）"urn:oid:1.2.392.200119.4.403.1"

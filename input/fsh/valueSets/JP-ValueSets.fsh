@@ -14,13 +14,14 @@ Description: "FHIR文書の文書区分（医療文書全般）"
 */
 
 // EncounterActコード
+/**/
 ValueSet:  HL7V3_ActEncounterCode
 Id:   v3-ActEncounterCode
 Description: "EncounterActコード"
 * ^url = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
 * ^status = #active
 * include codes from system http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
-
+*/
 
 ValueSet:  MHLW_valueSet_ePreCDA_insuranceCategory_tbl11
 Id:   mhlw-valueSet-ePreCDA-insuranceCategory-tbl11
