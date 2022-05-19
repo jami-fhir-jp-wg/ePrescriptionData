@@ -5,10 +5,10 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                   │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ePrescriptionData
-canonical: http://jpfhir.jp/fhir/ePrescriptionData
-name: ePrescriptionData
-title: "JP ePrescriptionData ImplementationGuide"
-description: "JP ePrescriptionData ImplementationGuide"
+canonical: http://jpfhir.jp/fhir/ImplementationGuide/ePrescriptionData
+name: "JAMIePrescriptionDataImplementationGuide"
+title: "JAMI ePrescriptionData ImplementationGuide"
+description: "JAMI ePrescriptionData ImplementationGuide"
 status: draft # draft | active | retired | unknown 
 version: 0.9.3
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
