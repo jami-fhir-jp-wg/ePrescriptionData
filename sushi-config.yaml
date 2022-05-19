@@ -5,7 +5,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                   │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ePrescriptionData
-canonical: http://jpfhir.jp/fhir/ImplementationGuide/ePrescriptionData
+canonical: http://jpfhir.jp/fhir/ePrescriptionData
 name: "JAMIePrescriptionDataImplementationGuide"
 title: "JAMI ePrescriptionData ImplementationGuide"
 description: "JAMI ePrescriptionData ImplementationGuide"
