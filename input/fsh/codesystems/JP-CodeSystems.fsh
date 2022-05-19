@@ -109,7 +109,7 @@ Description: "JAMI補足用法コード8桁"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
-* #
+
 * #V11NNNNN "不均等・１回目・１単位量"
 * #V12NNNNN "不均等・１回目・２単位量"
 * #V13NNNNN "不均等・１回目・３単位量"
