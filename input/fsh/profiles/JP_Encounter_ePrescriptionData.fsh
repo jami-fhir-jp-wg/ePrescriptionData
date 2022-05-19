@@ -15,7 +15,7 @@ Description: "処方発行時の入退院受診情報などEncouter情報　JP_E
 * class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode" (exactly)
 * class.system ^definition = "コード体系v3.ActEncounterCodeを識別するURI。固定値。"
 * class.code 1.. MS
-* class.code from http://terminology.hl7.org/ValueSet/v3_ActEncounterCode (extensible)
+* class.code from http://terminology.hl7.org/ValueSet/v3-ActEncounterCode (extensible)
 * class.code ^definition = "AMB:外来　EMER:救急　HH:在宅ケア    IMP:入院または入院中    ACUTE: 入院中臨時     NONAC:入院中定時   PRENC:予定入院時    VR:リモート診療"
 * class.display ^definition = "AMB:外来　EMER:救急　HH:在宅ケア    IMP:入院または入院中    ACUTE: 入院中臨時     NONAC:入院中定時   PRENC:予定入院時    VR:リモート診療"
 * class.display MS
