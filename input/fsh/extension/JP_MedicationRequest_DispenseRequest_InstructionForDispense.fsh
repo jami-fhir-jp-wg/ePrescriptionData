@@ -11,4 +11,4 @@ Description: "調剤指示。薬剤単位の調剤指示を表現するための
 * id ..0
 * url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense" (exactly)
 * value[x] only CodeableConcept
-* value[x].coding.system from urn:oid:1.2.392.200250.2.2.30.10
+* value[x].coding.system from http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDispenseInstruction

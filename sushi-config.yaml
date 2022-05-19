@@ -10,7 +10,7 @@ name: "JAMIePrescriptionDataImplementationGuide"
 title: "JAMI ePrescriptionData ImplementationGuide"
 description: "JAMI ePrescriptionData ImplementationGuide"
 status: draft # draft | active | retired | unknown 
-version: 0.9.3
+version: 1.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 
@@ -57,7 +57,7 @@ dependencies:
 
 pages:
   index.md:
-    title: HL7 FHIR 処方情報FHIR v0.9.3
+    title: HL7 FHIR 処方情報FHIR v1.0.0
   ePreTables.md:
     title: 各表一覧
 

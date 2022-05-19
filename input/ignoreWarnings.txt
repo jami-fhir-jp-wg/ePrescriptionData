@@ -5,6 +5,6 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Your Reason Here
-%v3-Act% 
 %Found code (from%
 Display Name for%
+The Implementation Guide contains no examples for this extension

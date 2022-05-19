@@ -23,6 +23,15 @@ Description: "EncounterActコード"
 * include codes from system http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
 */
 
+
+
+ValueSet:  JAMI_valueSet_ePreDispenseInstruction
+Id:   jami-valueSet-ePreDispenseInstruction
+Description: "調剤指示コード（備考欄）"
+* ^url = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDispenseInstruction"
+* ^status = #active
+* include codes from system urn:oid:1.2.392.200250.2.2.30.10
+
 ValueSet:  MHLW_valueSet_ePreCDA_insuranceCategory_tbl11
 Id:   mhlw-valueSet-ePreCDA-insuranceCategory-tbl11
 Description: "厚労省電子処方CDA規格別表11 保険種別コード"
