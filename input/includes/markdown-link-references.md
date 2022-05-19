@@ -13,7 +13,7 @@
 [JP_DiagnosticReport_Common_interaction]: StructureDefinition-jp-diagnosticreport-common.html#interaction一覧
 
 <!-- ImplementationGuide -->
-[ePrescriptionData]: ImplementationGuide-ePrescriptionData.html
+[JAMIePrescriptionDataImplementationGuide]: ImplementationGuide-ePrescriptionData.html
 
 <!-- StructureDefinition: Profile, DataType -->
 [JP_Bundle_CCLIX]: StructureDefinition-JP-Bundle-CCLIX.html
@@ -35,6 +35,7 @@
 
 <!-- StructureDefinition: Extension -->
 [JP_Communication_CommunicationContent]: StructureDefinition-JP-Communication-CommunicationContent.html
+[JP_MedicationRequest_DispenseRequest_InstructionForDispense]: StructureDefinition-jp-medicationrequest-dispenserequest-instructionfordispense.html
 
 <!-- CapabilityStatement -->
 
@@ -44,6 +45,7 @@
 [JAMI_codeSystem_ePreBasicUsageMethod_OneDigit]: CodeSystem-jami-codeSystem-ePreBasicUsageMethod-OneDigit.html
 [JAMI_codeSystem_ePreDetailUsageMethod_TwoDigits]: CodeSystem-jami-codeSystem-ePreDetailUsageMethod-TwoDigits.html
 [JAMI_codeSystem_ePreDispenseInstruction]: CodeSystem-jami-codeSystem-ePreDispenseInstruction.html
+[JAMI_codeSystem_ePreOrderUsageAuxCode]: CodeSystem-jami-codeSystem-ePreOrderUsageAuxCode.html
 [JAMI_codeSystem_ePreSiteCode]: CodeSystem-jami-codeSystem-ePreSiteCode.html
 [JAMI_codeSystem_ePreUsageRoute]: CodeSystem-jami-codeSystem-ePreUsageRoute.html
 [JP_codeSystem_documentTypeCode]: CodeSystem-jp-codeSystem-documentTypeCode.html
@@ -68,15 +70,18 @@
 [MHLW_codeSystem_ePreCDA_insuredRelationship_tbl12]: CodeSystem-mhlw-codeSystem-ePreCDA-insuredRelationship-tbl12.html
 [MHLW_codeSystem_ePreCDA_sectionCategory_tbl02]: CodeSystem-mhlw-codeSystem-ePreCDA-sectionCategory-tbl02.html
 [MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08]: CodeSystem-mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08.html
-[HL7V3_ActEncounterCode]: CodeSystem-v3-ActEncounterCode.html
 
 <!-- ValueSet -->
+[JAMI_valueSet_ePreOrderUsageCode_16digits]: ValueSet-jami-valueSet-ePreOrderUsageCode-16digits.html
+[JP_valueSet_documentTypeCode]: ValueSet-jp-valueSet-documentTypeCode.html
+[JP_valueSet_drugCode_gs1_14]: ValueSet-jp-valueSet-drugCode-gs1-14.html
+[JP_valueSet_drugCode_hot9]: ValueSet-jp-valueSet-drugCode-hot9.html
+[JP_valueSet_drugCode_yj]: ValueSet-jp-valueSet-drugCode-yj.html
+[MHLW_valueSet_drugCode_generalNameCode]: ValueSet-mhlw-valueSet-drugCode-generalNameCode.html
+[MHLW_valueSet_ePreCDA_insuranceCategory_tbl11]: ValueSet-mhlw-valueSet-ePreCDA-insuranceCategory-tbl11.html
 
 <!-- Example -->
 [Bundle-for-JP-MedReq-ePreData-Example01]: Bundle-Bundle-for-JP-MedReq-ePreData-Example01.html
-[Bundle-for-JP-MedReq-ePreData-Example02]: Bundle-Bundle-for-JP-MedReq-ePreData-Example02.html
-[Bundle-for-JP-MedReq-ePreData-Example03]: Bundle-Bundle-for-JP-MedReq-ePreData-Example03.html
-[JP-MedReq-ePreData-Example-bunkatsu]: Bundle-JP-MedReq-ePreData-Example-bunkatsu.html
 [JP-Coverage-ePreData-insurance-Example]: Coverage-JP-Coverage-ePreData-insurance-Example.html
 [JP-Coverage-ePreData-publicPayment-Example]: Coverage-JP-Coverage-ePreData-publicPayment-Example.html
 [JP-Encounter-ePreData-Example]: Encounter-JP-Encounter-ePreData-Example.html
