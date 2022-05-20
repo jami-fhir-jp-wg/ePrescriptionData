@@ -57,7 +57,7 @@ dependencies:
 
 pages:
   index.md:
-    title: HL7 FHIR 処方情報FHIR v1.0.0
+    title: 処方情報HL7&reg; FHIR&reg;記述仕様書 第1版
   ePreTables.md:
     title: 各表一覧
 
