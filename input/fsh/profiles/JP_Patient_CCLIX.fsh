@@ -14,7 +14,7 @@ Description: "診療情報交換に共通の患者情報プロファイル　JP_
 * extension ^min = 0
 * extension[religion] 0..0
 * extension[birthPlace] 0..0
-* extension[Race] 0..0
+* extension[race] 0..0
 * identifier.id ..0
 * identifier.use ..0
 * identifier.type ..0
