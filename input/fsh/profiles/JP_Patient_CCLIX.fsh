@@ -41,7 +41,7 @@ Description: "診療情報交換に共通の患者情報プロファイル　JP_
 * address.district ..0
 * address.state ..0
 * address.postalCode 1..
-* address.country ..0
+* address.country ..1
 * address.period ..0
 * maritalStatus ..0
 * multipleBirth[x] ..0

@@ -1,5 +1,5 @@
 Profile: JP_Patient_ePrescriptionData
-Parent: JP_Patient
+Parent: JP_Patient_CCLIX
 Id: JP-Patient-ePrescriptionData
 Description: "処方情報の対象患者のPatientプロファイル　JP_Patientの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
