@@ -1,7 +1,7 @@
 Profile: JP_Patient_CCLIX
 Parent: JP_Patient
 Id: JP-Patient-CCLIX
-Description: "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル"
+Description: "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル "
 * ^url = "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Patient_CCLIX"
 * ^status = #draft
 * text.id ..0
