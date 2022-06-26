@@ -112,8 +112,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.timing.repeat.when ..0
 * dosageInstruction.timing.repeat.offset ..0
 * dosageInstruction.timing.code 1.. MS
-//* dosageInstruction.timing.code from http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode
-* dosageInstruction.timing.code from http://test/ePrescription/ValueSet/test12010001
+* dosageInstruction.timing.code from http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode
 * dosageInstruction.timing.code ^short = "用法コード"
 * dosageInstruction.timing.code ^definition = "服用タイミングなどを表す用法をJAMI標準用法コード16桁コードで記述する。"
 * dosageInstruction.timing.code.coding 1..1 MS
