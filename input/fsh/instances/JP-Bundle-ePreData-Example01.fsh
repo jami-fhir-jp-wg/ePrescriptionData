@@ -1,5 +1,5 @@
 // 一般処方サンプル０１
-Instance: Bundle-for-JP-MedReq-ePreData-Example01
+Instance: Bundle-for-JP-MedReq-ePreBundleExample01
 InstanceOf: Bundle
 Usage: #example
 Description: "処方Bundleのインスタンス例"
@@ -8,6 +8,9 @@ Description: "処方Bundleのインスタンス例"
 * identifier.value = "urn:uuid:0c3151bd-1cbf-4d64-b04d-cd9187a4c6e0"
 * type = #document
 * timestamp = "2020-08-21T12:12:21+09:00"
+* entry[0].fullUrl = "urn:uuid:fd13ba04-3b58-ac07-fad6-464cec87691d"
+* entry[=].resource = JP-Composition-ePreBundleExample01
+
 * entry[0].fullUrl = "urn:uuid:20ade057-b106-9223-585e-20aa8d1635af"
 * entry[=].resource.resourceType = "Composition"
 * entry[=].resource.id = "Inline-Instance-for-JP-Bundle-ePreData-Example01-1"

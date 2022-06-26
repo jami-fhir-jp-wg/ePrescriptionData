@@ -40,11 +40,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * extension contains $composition-clinicaldocument-versionNumber named version 0..1
 * extension[version] ^short = "処方箋の文書バージョンを表す拡張"
 * extension[version] ^min = 0
-* extension[version] 1..1 MS
 * extension[version].url 1..1 MS
-* extension[version].value[x] ^short = "文書のバージョン番号を表す文字列。"
-* extension[version].value[x] ^definition = "文書のバージョン番号を表す文字列。\r\n例 : 第１版は  \"1\" とする。"
-* extension[version].value[x] 1..1 MS
+* extension[version].value[x] only string
+* extension[version].valueString 1..1 MS
+* extension[version].valueString  ^short = "文書のバージョン番号を表す文字列。"
 * identifier 1.. MS
 * identifier.system 1.. MS
 * identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier" (exactly)
