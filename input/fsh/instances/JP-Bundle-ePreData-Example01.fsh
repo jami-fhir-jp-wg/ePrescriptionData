@@ -1,4 +1,4 @@
-// 一般処方サンプル０１
+// 一般処方サンプル０１ 内服と外用の処方
 Instance: Bundle-for-JP-MedReq-ePreBundleExample01
 InstanceOf: JP_Bundle_ePrescriptionData
 Usage: #example
