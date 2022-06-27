@@ -16,7 +16,7 @@ Description: "処方Bundleのインスタンス例"
 * entry[=].resource = JP-Encounter-ePreData-Example
 * entry[+].fullUrl = "urn:uuid:2e61a47b-a7fa-1d23-ebbf-eade736e9b00"
 * entry[=].resource = JP-PractitionerRole-ePreData-author-Example
-* entry[+].reference = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
+* entry[+].fullUrl = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
 * entry[=].resource = JP-Organization-ePreData-departmentOfIssuer-Example
 * entry[+].fullUrl = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
 * entry[=].resource = JP-Organization-ePreData-departmentOfIssuer-Example
