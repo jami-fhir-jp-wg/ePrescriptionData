@@ -28,6 +28,7 @@ Usage: #example
 * title = "処方箋"
 * custodian.reference = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
 * custodian.display = "処方箋交付責任機関Organaizationリソース"
+
 * event.code.text = "処方箋交付"
 * event.period.start = "2020-08-21"
 * section.title = "処方情報"
