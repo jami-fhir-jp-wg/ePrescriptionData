@@ -1,5 +1,5 @@
 Instance: JP-Patient-ePreData-Example
-InstanceOf: Patient
+InstanceOf: JP_Patient_ePrescriptionData
 Usage: #example
 Description: "処方対象の患者 Patientリソースのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"

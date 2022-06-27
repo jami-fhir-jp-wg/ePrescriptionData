@@ -1,5 +1,5 @@
 Instance: JP-Encounter-ePreData-Example
-InstanceOf:  Encounter
+InstanceOf:  JP_Encounter_ePrescriptionData
 Usage: #example
 Description: "受診情報Encounterリソースのインスタンス例（外来）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Encounter_ePrescriptionData"

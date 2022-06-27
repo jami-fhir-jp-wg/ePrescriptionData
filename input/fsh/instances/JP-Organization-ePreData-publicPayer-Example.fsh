@@ -1,5 +1,5 @@
 Instance: JP-Organization-ePreData-publicPayer-Example
-InstanceOf: Organization
+InstanceOf: JP_Organization_ePrescriptionData_coveragePayer
 Usage: #example
 Description: "公費負担者組織（自治体） Organizationリソースのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_coveragePayer"

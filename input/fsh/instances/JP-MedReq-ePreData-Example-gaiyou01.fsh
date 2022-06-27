@@ -1,5 +1,5 @@
 Instance: JP-MedReq-ePreData-Example-gaiyou01
-InstanceOf: MedicationRequest
+InstanceOf: JP_MedicationRequest_ePrescriptionData
 Usage: #example
 Description: "外用点眼　処方例１件　MedicationRequestリソースのインスタンス例"
 
