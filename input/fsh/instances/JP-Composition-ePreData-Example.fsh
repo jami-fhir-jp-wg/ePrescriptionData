@@ -19,6 +19,7 @@ Usage: #example
 * encounter.reference = "urn:uuid:d151a740-d8a1-9c19-29f0-f52476e619d7"
 * encounter.display = "受診Encounterリソース"
 * date = "2020-08-21T12:12:20+09:00"
+
 * author[0].reference = "urn:uuid:2e61a47b-a7fa-1d23-ebbf-eade736e9b00"
 * author[=].display = "処方作成者PractitionerRoleリソース"
 * author[+].reference = "urn:uuid:51c6333d-92ff-0113-56cd-a1f566f43a09"
