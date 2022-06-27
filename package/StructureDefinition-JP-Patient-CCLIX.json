@@ -15,7 +15,7 @@
   "version": "1.0.0",
   "name": "JP_Patient_CCLIX",
   "status": "draft",
-  "description": "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル ",
+  "description": "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
