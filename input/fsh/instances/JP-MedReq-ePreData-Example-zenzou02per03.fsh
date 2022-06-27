@@ -1,5 +1,5 @@
 Instance: JP-MedReq-ePreData-Example-zenzou02per03
-InstanceOf: JP_MedicationRequest_ePrescriptionData
+InstanceOf: JP_MedicationRequest
 Usage: #example
 Description: "漸増内服処方　次の３日間　処方例１件　MedicationRequestリソースのインスタンス例"
 

@@ -1,5 +1,5 @@
 Instance: JP-MedReq-ePreData-Example-kakujitsu
-InstanceOf: JP_MedicationRequest_ePrescriptionData
+InstanceOf: JP_MedicationRequest
 Usage: #example
 Description: "隔日投与内服　処方例１件　MedicationRequestリソースのインスタンス例"
 

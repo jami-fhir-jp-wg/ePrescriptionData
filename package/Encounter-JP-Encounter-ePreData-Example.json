@@ -3,6 +3,7 @@
   "id": "JP-Encounter-ePreData-Example",
   "meta": {
     "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Encounter",
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Encounter_ePrescriptionData"
     ]
   },

@@ -134,7 +134,7 @@
           "reference": "StructureDefinition/JP-Patient-CCLIX"
         },
         "name": "JP_Patient_CCLIX",
-        "description": "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル ",
+        "description": "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル",
         "exampleBoolean": false
       },
       {
@@ -467,11 +467,25 @@
       },
       {
         "reference": {
-          "reference": "Bundle/Bundle-for-JP-MedReq-ePreData-Example01"
+          "reference": "Bundle/Bundle-for-JP-MedReq-ePreBundleExample01"
         },
-        "name": "Bundle-for-JP-MedReq-ePreData-Example01",
+        "name": "Bundle-for-JP-MedReq-ePreBundleExample01",
         "description": "処方Bundleのインスタンス例",
         "exampleCanonical": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
+      },
+      {
+        "reference": {
+          "reference": "Communication/JP-Commumication-ePreData-Example"
+        },
+        "name": "JP-Commumication-ePreData-Example",
+        "exampleCanonical": "http://jpfhir.jp/fhir/StructureDefinition/JP_Communication"
+      },
+      {
+        "reference": {
+          "reference": "Composition/JP-Composition-ePreBundleExample01"
+        },
+        "name": "JP-Composition-ePreBundleExample01",
+        "exampleCanonical": "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
       },
       {
         "reference": {

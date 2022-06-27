@@ -1,6 +1,6 @@
 // 一般処方サンプル０１ 内服と外用の処方
 Instance: Bundle-for-JP-MedReq-ePreBundleExample01
-InstanceOf: JP_Bundle_ePrescriptionData
+InstanceOf: Bundle
 Usage: #example
 Description: "処方Bundleのインスタンス例"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"

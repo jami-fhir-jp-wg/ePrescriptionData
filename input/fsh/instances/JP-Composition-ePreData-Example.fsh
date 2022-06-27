@@ -1,6 +1,6 @@
 // 一般処方サンプル０１
 Instance: JP-Composition-ePreBundleExample01
-InstanceOf: JP_Composition_ePrescriptionData
+InstanceOf: Composition
 Usage: #example
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_ePrescriptionData"
 * language = #ja

@@ -3,9 +3,11 @@
   "id": "JP-MedReq-ePreData-Example-gaiyou03",
   "meta": {
     "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest",
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
     ]
   },
+  "intent": "order",
   "identifier": [
     {
       "system": "urn:oid:1.2.392.100495.20.3.81",
@@ -16,24 +18,50 @@
       "value": "1"
     }
   ],
-  "status": "active",
-  "intent": "order",
-  "medicationCodeableConcept": {
-    "coding": [
-      {
-        "code": "105638903",
-        "system": "urn:oid:1.2.392.200119.4.403.1",
-        "display": "ネリプロクト坐剤"
-      }
-    ],
-    "text": "ネリプロクト坐剤"
-  },
-  "subject": {
-    "reference": "Patient/JP-Patient-ePreData-Example"
-  },
-  "authoredOn": "2020-08-21T12:28:17+09:00",
   "dosageInstruction": [
     {
+      "route": {
+        "coding": [
+          {
+            "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+            "code": "AP",
+            "display": "外用"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:oid:1.2.392.100495.20.2.22",
+                "code": "1",
+                "display": "製剤量"
+              }
+            ]
+          },
+          "rateRatio": {
+            "numerator": {
+              "system": "urn:oid:1.2.392.100495.20.2.101",
+              "value": 2,
+              "code": "KO",
+              "unit": "個"
+            },
+            "denominator": {
+              "value": 1,
+              "unit": "日",
+              "system": "http://unitsofmeasure.org",
+              "code": "d"
+            }
+          },
+          "doseQuantity": {
+            "value": 1,
+            "code": "KO",
+            "system": "urn:oid:1.2.392.100495.20.2.101",
+            "unit": "個"
+          }
+        }
+      ],
       "text": "外用・肛門挿入・１日２回朝夕　1回1個（1日2個）",
       "timing": {
         "code": {
@@ -55,15 +83,6 @@
           }
         ]
       },
-      "route": {
-        "coding": [
-          {
-            "code": "AP",
-            "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
-            "display": "外用"
-          }
-        ]
-      },
       "method": {
         "coding": [
           {
@@ -72,54 +91,36 @@
             "display": "肛門挿入"
           }
         ]
-      },
-      "doseAndRate": [
-        {
-          "type": {
-            "coding": [
-              {
-                "code": "1",
-                "system": "urn:oid:1.2.392.100495.20.2.22",
-                "display": "製剤量"
-              }
-            ]
-          },
-          "doseQuantity": {
-            "value": 1,
-            "code": "KO",
-            "system": "urn:oid:1.2.392.100495.20.2.101",
-            "unit": "個"
-          },
-          "rateRatio": {
-            "numerator": {
-              "value": 2,
-              "code": "KO",
-              "system": "urn:oid:1.2.392.100495.20.2.101",
-              "unit": "個"
-            },
-            "denominator": {
-              "value": 1,
-              "code": "d",
-              "system": "http://unitsofmeasure.org",
-              "unit": "日"
-            }
-          }
-        }
-      ]
+      }
     }
   ],
   "dispenseRequest": {
     "quantity": {
+      "system": "urn:oid:1.2.392.100495.20.2.101",
       "value": 28,
       "code": "KO",
-      "system": "urn:oid:1.2.392.100495.20.2.101",
       "unit": "個"
     },
     "expectedSupplyDuration": {
-      "value": 14,
-      "code": "d",
+      "unit": "日",
       "system": "http://unitsofmeasure.org",
-      "unit": "日"
+      "code": "d",
+      "value": 14
     }
-  }
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "105638903",
+        "system": "urn:oid:1.2.392.200119.4.403.1",
+        "display": "ネリプロクト坐剤"
+      }
+    ],
+    "text": "ネリプロクト坐剤"
+  },
+  "subject": {
+    "reference": "Patient/JP-Patient-ePreData-Example"
+  },
+  "authoredOn": "2020-08-21T12:28:17+09:00"
 }

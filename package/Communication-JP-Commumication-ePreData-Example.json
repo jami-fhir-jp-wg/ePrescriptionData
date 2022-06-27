@@ -1,0 +1,27 @@
+{
+  "resourceType": "Communication",
+  "id": "JP-Commumication-ePreData-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/StructureDefinition/JP_Communication"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://jpfhir.jp/fhir/ePrescription/Extension/StructureDefinition/JP_Communication_CommunicationContent",
+      "valueString": "患者は聴覚障害のため説明を紙に記載して渡すようにしてください。"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "2",
+          "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+          "display": "調剤者への指示"
+        }
+      ]
+    }
+  ],
+  "status": "completed"
+}

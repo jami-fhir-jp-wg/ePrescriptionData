@@ -1,5 +1,5 @@
 Instance: JP-MedReq-ePreData-Example-youbiShiitei
-InstanceOf: JP_MedicationRequest_ePrescriptionData
+InstanceOf: JP_MedicationRequest
 Usage: #example
 Description: "曜日指定の内服　処方例１件　MedicationRequestリソースのインスタンス例"
 

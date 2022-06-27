@@ -3,6 +3,7 @@
   "id": "JP-Organization-ePreData-departmentOfIssuer-ExampleType2",
   "meta": {
     "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Organization",
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
     ]
   },

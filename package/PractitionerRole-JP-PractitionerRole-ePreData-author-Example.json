@@ -3,6 +3,7 @@
   "id": "JP-PractitionerRole-ePreData-author-Example",
   "meta": {
     "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_PractitionerRole",
       "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
     ]
   },

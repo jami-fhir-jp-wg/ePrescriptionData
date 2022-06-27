@@ -1,5 +1,5 @@
 Instance: JP-PractitionerRole-ePreData-author-Example
-InstanceOf: JP_PractitionerRole_ePrescriptionData_author
+InstanceOf: JP_PractitionerRole
 Usage: #example
 Description: "処方した医師の役割 PractitionerRoleリソースのインスタンス例"
 

@@ -1,5 +1,5 @@
 Instance: JP-Coverage-ePreData-publicPayment-Example
-InstanceOf: JP_Coverage_ePrescriptionData_publicPayment
+InstanceOf: JP_Coverage
 Usage: #example
 Description: "公費Coverageリソースのインスタンス例（公費負担者番号12345678）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_publicPayment"

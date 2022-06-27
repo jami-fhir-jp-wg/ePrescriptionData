@@ -1,5 +1,5 @@
 Instance: JP-Practitioner-ePreData-author-Example
-InstanceOf: JP_Practitioner_ePrescriptionData_author
+InstanceOf: JP_Practitioner
 Usage: #example
 Description: "処方した医師 Practitionerリソースのインスタンス例（医師免許番号と麻薬施用者番号あり）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_ePrescriptionData_author"

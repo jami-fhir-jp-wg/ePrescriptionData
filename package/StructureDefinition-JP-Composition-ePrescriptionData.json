@@ -79,15 +79,14 @@
             }
           ],
           "rules": "open"
-        },
-        "min": 1
+        }
       },
       {
         "id": "Composition.extension:version",
         "path": "Composition.extension",
         "sliceName": "version",
         "short": "処方箋の文書バージョンを表す拡張",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -96,8 +95,7 @@
               "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       },
       {
         "id": "Composition.extension:version.url",
@@ -105,10 +103,11 @@
         "mustSupport": true
       },
       {
-        "id": "Composition.extension:version.value[x]",
-        "path": "Composition.extension.value[x]",
+        "id": "Composition.extension:version.valueString",
+        "path": "Composition.extension.valueString",
         "short": "文書のバージョン番号を表す文字列。",
-        "definition": "文書のバージョン番号を表す文字列。\r\n例 : 第１版は  \"1\" とする。",
+        "min": 1,
+        "max": "1",
         "mustSupport": true
       },
       {

@@ -1,5 +1,5 @@
 Instance: JP-Coverage-ePreData-insurance-Example
-InstanceOf: JP_Coverage_ePrescriptionData_insurance
+InstanceOf: JP_Coverage
 Usage: #example
 Description: "医療保険Coverageリソースのインスタンス例（被保険者記号12345　番号６７８９０ 枝番01）"
 * meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_insurance"

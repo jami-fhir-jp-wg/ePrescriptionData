@@ -1,5 +1,5 @@
 Instance: JP-MedReq-ePreData-Example-fukintouByTimes01
-InstanceOf: JP_MedicationRequest_ePrescriptionData
+InstanceOf: JP_MedicationRequest
 Usage: #example
 Description: "不均等投与の各回処方例　医薬品処方１件　MedicationRequestリソースのインスタンス例（1回目）"
 

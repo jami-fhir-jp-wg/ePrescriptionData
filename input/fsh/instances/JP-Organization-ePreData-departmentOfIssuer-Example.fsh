@@ -1,5 +1,5 @@
 Instance: JP-Organization-ePreData-departmentOfIssuer-Example
-InstanceOf: JP_Organization_ePrescriptionData_departmentOfIssuer
+InstanceOf: JP_Organization
 Usage: #example
 Description: "処方発行の診療科　 Organizationリソースのインスタンス例（診療科コードがある例）"
 
