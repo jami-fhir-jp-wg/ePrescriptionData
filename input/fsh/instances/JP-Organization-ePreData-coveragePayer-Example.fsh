@@ -1,5 +1,5 @@
 Instance: JP-Organization-ePreData-coveragePayer-Example
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_ePrescriptionData_coveragePayer
 Usage: #example
 Description: "健康保険者　 Organizationリソースのインスタンス例"
 
