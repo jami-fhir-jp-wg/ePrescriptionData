@@ -7,7 +7,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * extension.valueString = "1"
 * text.status = #generated
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"ja\" xml:lang=\"ja\"><p>自治体検診結果報告書</p></div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"ja\" xml:lang=\"ja\"><p>処方せん情報</p></div>"
 * identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier"
 * identifier.value = "34875506"
 * status = #final
