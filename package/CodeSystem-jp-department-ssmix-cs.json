@@ -1,0 +1,72 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_Department_SsMix_CS",
+  "id": "jp-department-ssmix-cs",
+  "title": "JP Core Department SS-MIX CodeSystem",
+  "description": "SS-MIX統一診療科コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.200250.2.2.2",
+  "concept": [
+    {
+      "code": "2Digits",
+      "display": "２桁診療科",
+      "definition": "２桁体系の診療科コード体系",
+      "concept": [
+        {
+          "code": "01",
+          "display": "内科"
+        },
+        {
+          "code": "02",
+          "display": "精神科"
+        }
+  
+      ]
+    },
+    {
+      "code": "3Digits",
+      "display": "３桁診療科",
+      "definition": "３桁体系の診療科コード体系",
+      "concept": [
+        {
+          "code": "011",
+          "display": "第１内科"
+        },
+        {
+          "code": "012",
+          "display": "第２内科"
+        },
+        {
+          "code": "013",
+          "display": "第３内科"
+        },
+        {
+          "code": "014",
+          "display": "第４内科"
+        },
+        {
+          "code": "018",
+          "display": "一般内科"
+        },
+        {
+          "code": "01A",
+          "display": "被爆放射線医療内科"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:1.2.392.200250.2.2.2"
+    }
+  ],
+  "experimental": false,
+  "date": "2022-09-26",
+  "caseSensitive": true,
+  "hierarchyMeaning": "part-of",
+  "copyright": "Copyright Japan Association of Medical Informatics (JAMI)  一般社団法人日本医療情報学会",
+  "count": 322
+}

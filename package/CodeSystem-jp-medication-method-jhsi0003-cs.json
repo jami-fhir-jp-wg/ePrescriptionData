@@ -1,0 +1,23 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_MedicationMethodJHSI0003_CS",
+  "id": "jp-medication-method-jhsi0003-cs",
+  "title": "JP Core Medication JHSI0003 Method CodeSystem",
+  "description": "JAHIS注射データ交換規約Ver.2.1C JHSI表0003精密持続点滴コードのコードシステム",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/core/CodeSystem/JHSI0003",
+  "concept": [
+    {
+      "code": "01",
+      "display": "精密持続点滴"
+    }
+  ],
+  "experimental": false,
+  "date": "2022-09-26",
+  "caseSensitive": true,
+  "valueSet": "http://jpfhir.jp/fhir/core/ValueSet/JP_MedicationMethodJHSI0003_VS",
+  "copyright": "Copyright Japanese  Association of Healthcare Information Systems Industry(JAHIS)  一般社団法人保健医療福祉情報システム工業会",
+  "count": 1
+}

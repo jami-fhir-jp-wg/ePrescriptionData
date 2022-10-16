@@ -1,0 +1,54 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "fragment",
+  "name": "JP_MedicationUsageJAMIAdditional_CS",
+  "id": "jp-medication-usage-jami-additional-cs",
+  "title": "JP Core Medication JAMI Additional Usage CodeSystem",
+  "description": "JAMI標準用法規格補足用法コードのコードシステム",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.200250.2.2.20.22",
+  "concept": [
+    {
+      "code": "I1100000",
+      "display": "１日おき"
+    },
+    {
+      "code": "W0100100",
+      "display": "月曜日、木曜日"
+    },
+    {
+      "code": "D0AK0000",
+      "display": "毎月10日、20日"
+    },
+    {
+      "code": "DCAKU000",
+      "display": "12月10日、12月20日、12月30日"
+    },
+    {
+      "code": "D1FU0000",
+      "display": "1月15日、1月30日"
+    },
+    {
+      "code": "D0148BFI",
+      "display": "毎月1日、4日、8日、11日、15日、18日"
+    },
+    {
+      "code": "D0MPT000",
+      "display": "毎月22日、25日、29日"
+    },
+    {
+      "code": "CW100000",
+      "display": "週１回"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:1.2.392.200250.2.2.20.22"
+    }
+  ],
+  "experimental": false,
+  "date": "2022-09-26",
+  "caseSensitive": true
+}
