@@ -33,7 +33,6 @@ jobs:
       run: |
         sudo apt-get install jekyll
 
-    # -- DUMMY download from here
     - name: Download IG Publisher
       uses: Legion2/download-release-action@v2.1.0
       with:
@@ -41,12 +40,6 @@ jobs:
         tag: 'latest'
         path: .
         file: publisher.jar
-    # -- DUMMY download until here
-
-    - name: Wget IG PublisherJPFHIR
-      uses: wei/wget@v1
-      with:
-        args:  https://tx.jpfhir.jp/download/publisherJPFHIR.jar
 
     - name: Run IG Publisher
       env:
