@@ -7,24 +7,24 @@ Description: "処方に適用される保険の保険者または公費の公費
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値.テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
-* extension[PrefectureNo] ..0
-* extension[OrganizationCategory] ..0
-* extension[OrganizationNo] ..0
-* identifier[MedicalInstitutionCode] ..0
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
-* identifier[InsurerNumber] 0..1 MS
-* identifier[InsurerNumber].id ..0
-* identifier[InsurerNumber].use ..0
-* identifier[InsurerNumber].type ..0
-* identifier[InsurerNumber].system ^short = "保険者番号の名前空間を示すURIを指定"
-* identifier[InsurerNumber].system ^definition = "保険者番号の名前空間を示すURIを指定。固定値"
-* identifier[InsurerNumber].system MS
-* identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
-* identifier[InsurerNumber].value ^short = "保険者番号"
-* identifier[InsurerNumber].value ^definition = "保険者番号を半角数字で８ケタ以内の文字列で記述する。"
-* identifier[InsurerNumber].value MS
-* identifier[InsurerNumber].period ..0
-* identifier[InsurerNumber].assigner ..0
+* extension[prefectureNo] ..0
+* extension[organizationCategory] ..0
+* extension[organizationNo] ..0
+* identifier[medicalInstitutionCode] ..0
+* identifier[medicalInstitutionCode].system = "http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no" (exactly)
+* identifier[insurerNumber] 0..1 MS
+* identifier[insurerNumber].id ..0
+* identifier[insurerNumber].use ..0
+* identifier[insurerNumber].type ..0
+* identifier[insurerNumber].system ^short = "保険者番号の名前空間を示すURIを指定"
+* identifier[insurerNumber].system ^definition = "保険者番号の名前空間を示すURIを指定。固定値"
+* identifier[insurerNumber].system MS
+* identifier[insurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
+* identifier[insurerNumber].value ^short = "保険者番号"
+* identifier[insurerNumber].value ^definition = "保険者番号を半角数字で８ケタ以内の文字列で記述する。"
+* identifier[insurerNumber].value MS
+* identifier[insurerNumber].period ..0
+* identifier[insurerNumber].assigner ..0
 * identifier contains publicPayer 0..1  MS
 * identifier[publicPayer].id ..0
 * identifier[publicPayer].use ..0

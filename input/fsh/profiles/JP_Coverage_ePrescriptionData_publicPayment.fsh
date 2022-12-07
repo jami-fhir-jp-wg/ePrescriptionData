@@ -15,9 +15,9 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension ^min = 0
-* extension[InsuredPersonSymbol] 0..0
-* extension[InsuredPersonNumber] 0..0
-* extension[InsuredPersonSubNumber] 0..0
+* extension[insuredPersonSymbol] 0..0
+* extension[insuredPersonNumber] 0..0
+* extension[insuredPersonSubNumber] 0..0
 * status = #active (exactly)
 * status ^short = "リソースインスタンスのステータス"
 * status ^definition = "リソースインスタンスのステータス。固定値active。処方箋発行時に真に有効な保険かどうかは意味しない。"

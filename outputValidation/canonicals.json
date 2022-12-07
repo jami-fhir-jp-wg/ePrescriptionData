@@ -1,8 +1,0 @@
-[
-  {
-    "id": "hl7.fhir.test.ig",
-    "type": "ImplementationGuide",
-    "url": "http://hl7.org/fhir/ig/ImplementationGuide/hl7.fhir.test.ig",
-    "name": "Implementation Guide Template"
-  }
-]
