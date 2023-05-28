@@ -116,7 +116,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.timing.code ^definition = "服用タイミングなどを表す用法をJAMI標準用法コード16桁コードで記述する。"
 * dosageInstruction.timing.code.coding 1..1 MS
 * dosageInstruction.timing.code.coding ^definition = "JAMI １６桁用法コードでの記述を必須としており、そのコードに対応する用法文字列は、 display要素に記述されるため、text要素と併用すると不一致があった場合に混乱するためtext要素は記述しない。"
-* dosageInstruction.timing.code.coding.system = "urn:oid:1.2.392.200250.2.2.20.20" (exactly)
+* dosageInstruction.timing.code.coding.system = "urn:oid:1.2.392.200250.2.2.20" (exactly)
 * dosageInstruction.timing.code.coding.system MS
 * dosageInstruction.timing.code.coding.code ^short = "JAMI標準用法コード"
 * dosageInstruction.timing.code.coding.code MS
